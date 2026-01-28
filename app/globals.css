@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0B0E14;
+  --foreground: #ededed;
+  --global-font-size: 15px;
+  /* Use a more readable weight for body text */
+  --global-font-weight: 400; 
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* This stays! It creates the .font-schabo utility class */
+  --font-schabo: var(--font-schabo), ui-sans-serif, system-ui;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* ⬇️ CHANGE: Use standard fonts for the body so the Heading stands out ⬇️ */
+  font-family: ui-sans-serif, system-ui, sans-serif; 
+  font-size: var(--global-font-size);
+  font-weight: var(--global-font-weight);
+  -webkit-font-smoothing: antialiased;
 }
