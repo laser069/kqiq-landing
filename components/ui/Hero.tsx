@@ -5,11 +5,19 @@ import React from "react";
 import Image from "next/image";
 
 interface HeroProps {
+  badgeText?: string;
+  primaryCtaText?: string;
+  onPrimaryClick?: () => void;
+  onSecondaryClick?: () => void;
   subtitleLine1?: string;
   subtitleLine2?: string;
 }
 
 export default function Hero({
+  badgeText = "SYSTEM STATUS: ONLINE // 2026",
+  primaryCtaText = "CONTACT SALES",
+  onPrimaryClick,
+  onSecondaryClick,
   subtitleLine1 = "Next-generation revenue infrastructure designed for high-velocity global transactions.",
   subtitleLine2 = "Seamlessly integrate automated ledger reconciliation, tax compliance, and real-time merchant reporting.",
 }: HeroProps): React.JSX.Element {
@@ -80,8 +88,11 @@ export default function Hero({
             transition={{ delay: 0.8, duration: 0.8 }}
             className="lg:col-span-5 flex flex-col justify-start items-start lg:items-end mt-10 lg:mt-16"
           >
-            <button className="bg-slate-950 text-white px-10 py-5 rounded-none font-oswald font-bold text-lg uppercase tracking-[0.2em] transition-all duration-300 hover:bg-slate-800 hover:-translate-y-1 active:scale-95">
-              Contact Sales
+            <button 
+              onClick={onPrimaryClick}
+              className="bg-slate-950 text-white px-10 py-5 rounded-none font-oswald font-bold text-lg uppercase tracking-[0.2em] transition-all duration-300 hover:bg-slate-800 hover:-translate-y-1 active:scale-95"
+            >
+              {primaryCtaText}
             </button>
           </motion.div>
         </div>
@@ -90,9 +101,9 @@ export default function Hero({
 
       {/* 3. Decorative Frame Elements */}
       <div className="absolute top-10 left-0 w-full px-12 hidden lg:flex justify-between pointer-events-none">
-        <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-[0.3em]">Institutional Grade</span>
-        <div className="flex gap-8">
-            <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-[0.3em]">Node: 04-Global</span>
+        <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-[0.3em]">{badgeText}</span>
+        <div className="flex gap-8 pointer-events-auto">
+            <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-[0.3em] cursor-pointer" onClick={onSecondaryClick}>Node: 04-Global</span>
             <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-[0.3em]">2026_KV</span>
         </div>
       </div>
