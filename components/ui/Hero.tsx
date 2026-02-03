@@ -11,18 +11,24 @@ interface HeroProps {
   onSecondaryClick?: () => void;
   subtitleLine1?: string;
   subtitleLine2?: string;
+  titleLine1?: string;
+  titleLine2?: string;
+  brandName?: string;
 }
 
 export default function Hero({
   badgeText = "SYSTEM STATUS: ONLINE // 2026",
-  primaryCtaText = "CONTACT SALES",
+  primaryCtaText = "GENERATE INVOICE",
   onPrimaryClick,
   onSecondaryClick,
   subtitleLine1 = "Next-generation revenue infrastructure designed for high-velocity global transactions.",
   subtitleLine2 = "Seamlessly integrate automated ledger reconciliation, tax compliance, and real-time merchant reporting.",
+  titleLine1 = "KWIQ",
+  titleLine2 = "BILLING",
+  brandName = "ZIPPY",
 }: HeroProps): React.JSX.Element {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-white">
+    <section className="relative w-full h-screen overflow-hidden bg-[#e0e5ec]">
       
       {/* 1. Background Image - High Visibility */}
       <div className="absolute inset-0 z-0">
@@ -47,8 +53,8 @@ export default function Hero({
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.8] uppercase select-none text-[clamp(4rem,10vw,12rem)]">
-              <span className="block">KWIQ</span>
-              <span className="block text-sky-500">BILLING</span>
+              <span className="block">{titleLine1}</span>
+              <span className="block text-sky-500">{titleLine2}</span>
             </h1>
           </motion.div>
 
@@ -60,12 +66,12 @@ export default function Hero({
           >
             <div className="h-1 w-8 bg-slate-950" />
             <span className="text-lg md:text-xl font-oswald font-bold tracking-[0.4em] text-slate-400 uppercase">
-              BY ZIPPY
+              BY {brandName}
             </span>
           </motion.div>
         </div>
 
-        {/* SUBTITLE & BUTTON SECTION - Border Removed */}
+        {/* SUBTITLE & BUTTON SECTION */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-17">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +87,7 @@ export default function Hero({
             </p>
           </motion.div>
 
-          {/* Button Container - mt-10/16 moves it down */}
+          {/* Button Container */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
