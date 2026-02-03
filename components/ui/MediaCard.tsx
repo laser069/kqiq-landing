@@ -17,42 +17,43 @@ export function MediaCard({
   tag,
 }: MediaCardProps): React.JSX.Element {
   return (
-    <div className="relative aspect-[3/2] w-full bg-slate-950 border border-indigo-500/10 overflow-hidden group shadow-2xl rounded-sm">
-      <div className="relative w-full h-full overflow-hidden">
-        {/* Background Image with Hover Zoom */}
+    /* Changed to aspect-[3/4] for a tall, portrait minimalist look */
+    <div className="relative aspect-[3/4] w-full bg-slate-950 overflow-hidden group">
+      <div className="relative w-full h-full">
+        {/* Background Image - Optimized for Portrait scale */}
         <Image 
           src={imageSrc} 
           alt={title} 
           fill 
-          className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-60 group-hover:opacity-100" 
+          className="object-cover transition-transform duration-1000 group-hover:scale-110 opacity-50 group-hover:opacity-70" 
         />
         
-        {/* Glassmorphism Tag (Top Left) */}
-        <div className="absolute top-6 left-6 bg-slate-900/40 backdrop-blur-xl px-4 py-1.5 border border-indigo-500/20 z-10 rounded-sm">
-          <span className="text-[10px] font-mono font-bold tracking-[0.3em] text-indigo-400 uppercase">
-            {tag || "System_Node"}
+        {/* Tag: Flushed to the absolute top-left corner */}
+        <div className="absolute top-0 left-0 bg-sky-500 px-5 py-3 z-10">
+          <span className="text-[11px] font-mono font-black tracking-[0.25em] text-slate-950 uppercase">
+            {tag || "SYS_NODE"}
           </span>
         </div>
 
-        {/* Deep Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90" />
-
-        {/* Content Section */}
-        <div className="absolute inset-0 p-8 flex flex-col justify-end z-20">
-          <h3 className="text-3xl font-oswald font-bold text-white uppercase tracking-tighter group-hover:text-indigo-400 transition-colors duration-300">
-            {title}
+        {/* Content Section: Vertical layout benefits from tighter padding */}
+        <div className="absolute inset-0 p-10 flex flex-col justify-end z-20">
+          {/* Bigger Typography for Portrait: The vertical space allows for massive text */}
+          <h3 className="text-4xl md:text-6xl font-oswald font-black text-white uppercase tracking-[-0.05em] leading-[0.8] [text-shadow:0_10px_30px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:-translate-y-3">
+            {title.split('_').map((word, i) => (
+              <span key={i} className="block">{word}</span>
+            ))}
           </h3>
           
-          {/* Description reveals and slides up on hover */}
-          <p className="mt-2 text-sm text-slate-400 leading-relaxed line-clamp-2 font-medium opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
-            {description}
-          </p>
+          <div className="overflow-hidden">
+            <p className="mt-6 text-sm text-sky-400 font-black uppercase tracking-[0.2em] leading-tight opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+              {description}
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Animated Bottom Border (Scanning Effect) */}
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-indigo-500/30" />
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-indigo-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center z-30" />
+      {/* Heavy Bottom Scanning Line */}
+      <div className="absolute bottom-0 left-0 w-full h-[6px] bg-sky-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-30" />
     </div>
   );
 }
