@@ -9,7 +9,6 @@ const navItems = [
   { label: "INDEX", href: "/" },
   { label: "OBSERVATORY", href: "/observatory" },
   { label: "EXPEDITION", href: "/expedition" },
-  { label: "TRACES", href: "/traces" },
   { label: "CONTACT", href: "/contact" },
 ];
 

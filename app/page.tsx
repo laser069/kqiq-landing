@@ -52,7 +52,7 @@ export default function Page(): React.JSX.Element {
 
           {/* 6. SECONDARY DATA MESH */}
           <section className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <DataTraceCard title="LATEST_TRACES" description="No encrypted traces found." />
+            <DataTraceCard title="LIVE_STATIONS" description="142 active revenue nodes verified globally." />
             <DataTraceCard title="SYSTEM_LOGS" description="Gateway secure. All protocols nominal." />
           </section>
         </div>
