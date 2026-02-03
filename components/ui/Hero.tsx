@@ -18,7 +18,7 @@ interface HeroProps {
 
 export default function Hero({
   badgeText = "SYSTEM STATUS: ONLINE // 2026",
-  primaryCtaText = "GENERATE INVOICE",
+  primaryCtaText,
   onPrimaryClick,
   onSecondaryClick,
   subtitleLine1 = "Next-generation revenue infrastructure designed for high-velocity global transactions.",
@@ -88,19 +88,21 @@ export default function Hero({
           </motion.div>
 
           {/* Button Container */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="lg:col-span-5 flex flex-col justify-start items-start lg:items-end mt-10 lg:mt-16"
-          >
-            <button 
-              onClick={onPrimaryClick}
-              className="bg-slate-950 text-white px-10 py-5 rounded-none font-oswald font-bold text-lg uppercase tracking-[0.2em] transition-all duration-300 hover:bg-slate-800 hover:-translate-y-1 active:scale-95"
+          {primaryCtaText && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="lg:col-span-5 flex flex-col justify-start items-start lg:items-end mt-10 lg:mt-16"
             >
-              {primaryCtaText}
-            </button>
-          </motion.div>
+              <button 
+                onClick={onPrimaryClick}
+                className="bg-slate-950 text-white px-10 py-5 rounded-none font-oswald font-bold text-lg uppercase tracking-[0.2em] transition-all duration-300 hover:bg-slate-800 hover:-translate-y-1 active:scale-95"
+              >
+                {primaryCtaText}
+              </button>
+            </motion.div>
+          )}
         </div>
 
       </div>
