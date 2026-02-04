@@ -54,8 +54,8 @@ export default function Page(): React.JSX.Element {
 
           {/* 6. SECONDARY DATA MESH */}
           <section className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <DataTraceCard title="LIVE_STATIONS" description="142 active revenue nodes verified globally through secure gateway protocols." />
-            <DataTraceCard title="SYSTEM_LOGS" description="Infrastructure layer stable. All multi-currency ledgers synchronized at interval." />
+            <DataTraceCard title="LIVE BILLING" description="142 active businesses generating bills seamlessly across web, desktop, and mobile — online and offline." />
+            <DataTraceCard title="SYSTEM STATUS" description="Billing system running smoothly. All invoices, expenses, and reports are securely stored and synced." />
           </section>
         </div>
       </div>

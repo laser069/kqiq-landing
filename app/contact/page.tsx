@@ -9,7 +9,7 @@ import ContactFooter from "@/components/ui/ContactFooter";
 
 export default function ContactPage() {
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-white min-h-screen font-oswald">
             <ContactHero />
             <SignalAnalysis />
             <ContactForm />

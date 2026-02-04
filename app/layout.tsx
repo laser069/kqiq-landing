@@ -2,11 +2,23 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import TextOverlayScroll from "@/components/ui/TextOverlayScroll";
+
 
 const schabo = localFont({
   src: "../public/fonts/SCHABO-Condensed.otf",
   variable: "--font-schabo",
+});
+
+const oswald = localFont({
+  src: [
+    { path: "../public/fonts/Oswald-ExtraLight.ttf", weight: "200", style: "normal" },
+    { path: "../public/fonts/Oswald-Light.ttf", weight: "300", style: "normal" },
+    { path: "../public/fonts/Oswald-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Oswald-Medium.ttf", weight: "500", style: "normal" },
+    { path: "../public/fonts/Oswald-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "../public/fonts/Oswald-Bold.ttf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-oswald",
 });
 
 export default function RootLayout({
@@ -15,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`light ${schabo.variable}`}>
+    <html lang="en" className={`light ${schabo.variable} ${oswald.variable}`}>
       <body className="min-h-screen flex flex-col antialiased bg-white text-slate-900">
 
         {/* Changed 'absolute' to 'fixed' to lock it to the top of the viewport */}
