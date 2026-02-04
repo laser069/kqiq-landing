@@ -108,9 +108,12 @@ export default function ContactHero() {
               Facilitating seamless merchant reporting and automated payout scheduling across international borders.
             </p>
           </div>
-          <button className="px-12 py-6 rounded-2xl bg-[#e0e5ec] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] 
-                             active:shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]
-                             text-slate-800 font-oswald font-black text-2xl uppercase tracking-widest transition-all">
+          <button 
+            onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
+            className="px-12 py-6 rounded-2xl bg-[#e0e5ec] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] 
+                               active:shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]
+                               text-slate-800 font-oswald font-black text-2xl uppercase tracking-widest transition-all"
+          >
             Initiate Contact
           </button>
         </motion.div>

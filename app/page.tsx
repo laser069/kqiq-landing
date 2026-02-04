@@ -5,6 +5,7 @@ import Hero from "@/components/ui/Hero";
 import BillingStats from "@/components/ui/BillingStats";
 import TextOverlayScroll from "@/components/ui/TextOverlayScroll";
 import GatewayScroll from "@/components/ui/GatewayScroll";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
 /**
@@ -12,8 +13,9 @@ import { motion } from "framer-motion";
  * Unified Premium Neumorphic Layout (#e0e5ec)
  */
 export default function Page(): React.JSX.Element {
-  const handleInitialize = (): void => console.log("Initializing...");
-  const handleViewArchives = (): void => console.log("Accessing archives...");
+  const router = useRouter();
+  const handleInitialize = (): void => router.push("/contact");
+  const handleViewArchives = (): void => router.push("/observatory");
 
   return (
     <div className="flex flex-col w-full min-h-screen bg-[#e0e5ec] text-slate-900 selection:bg-sky-500/20 font-oswald">
