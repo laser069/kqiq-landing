@@ -24,7 +24,7 @@ export default function Page(): React.JSX.Element {
       <div className="relative z-50">
         <Hero 
           badgeText="SYSTEM STATUS: ONLINE // 2026"
-          primaryCtaText="GENERATE INVOICE"
+          primaryCtaText="COMING SOON..."
           onPrimaryClick={handleInitialize}
           onSecondaryClick={handleViewArchives}
         />
