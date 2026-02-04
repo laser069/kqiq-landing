@@ -26,7 +26,7 @@ export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="bg-white py-32 px-6 md:px-12 relative border-t-2 border-slate-100">
+        <section className="bg-white py-20 md:py-32 px-6 md:px-12 relative border-t-2 border-slate-100">
 
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
 
@@ -37,7 +37,7 @@ export default function FAQSection() {
                             <div className="w-2 h-2 bg-sky-500 rounded-full" />
                             <div className="w-2 h-2 bg-slate-200 rounded-full" />
                         </div>
-                        <h2 className="font-oswald text-5xl text-slate-900 uppercase leading-[1.1] tracking-tighter">
+                        <h2 className="font-oswald text-4xl md:text-5xl text-slate-900 uppercase leading-[1.1] tracking-tighter">
                             COMMON <br />
                             QUESTIONS.
                         </h2>
@@ -66,7 +66,7 @@ export default function FAQSection() {
                             <div className="py-10 px-4 flex items-center justify-between group-hover:bg-slate-50/50 transition-colors">
                                 <div className="flex items-center gap-8">
                                     <span className="font-mono text-[10px] text-slate-400 font-bold">0{index + 1}</span>
-                                    <h3 className="font-oswald text-2xl md:text-3xl text-slate-900 tracking-tight transition-transform group-hover:translate-x-2">
+                                    <h3 className="font-oswald text-xl md:text-3xl text-slate-900 tracking-tight transition-transform group-hover:translate-x-2">
                                         {faq.q}
                                     </h3>
                                 </div>
@@ -86,8 +86,8 @@ export default function FAQSection() {
                                         transition={{ duration: 0.3, ease: "easeOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="pl-20 pr-4 pb-10">
-                                            <p className="text-slate-600 font-medium text-lg leading-relaxed max-w-2xl">
+                                        <div className="pl-12 md:pl-20 pr-4 pb-10">
+                                            <p className="text-slate-600 font-medium text-base md:text-lg leading-relaxed max-w-2xl">
                                                 {faq.a}
                                             </p>
                                             <div className="mt-6">

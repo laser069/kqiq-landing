@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function ContactForm() {
     return (
-        <section id="contact-form" className="bg-[#e0e5ec] py-32 px-6 md:px-12 relative overflow-hidden border-t-[1.5px] border-white/70">
+        <section id="contact-form" className="bg-[#e0e5ec] py-20 md:py-32 px-6 md:px-12 relative overflow-hidden border-t-[1.5px] border-white/70">
 
             {/* Background Structural Detail */}
             <div className="absolute top-0 right-0 w-[50vw] h-full bg-slate-400/5 -skew-x-12 translate-x-32 pointer-events-none" />
@@ -23,7 +23,7 @@ export default function ContactForm() {
                             </h2>
                         </div>
 
-                        <div className="p-10 bg-[#e0e5ec] rounded-[3rem] shadow-[25px_25px_50px_#bebebe,-25px_-25px_50px_#ffffff] space-y-8 border-t border-l border-white/60">
+                        <div className="p-8 md:p-10 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[3rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] space-y-8 border-t border-l border-white/60">
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] flex items-center justify-center text-sky-500">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -63,7 +63,7 @@ export default function ContactForm() {
                     </div>
 
                     {/* Right side: Neumorphic Form */}
-                    <div className="lg:col-span-8 bg-[#e0e5ec] rounded-[4rem] p-8 md:p-16 shadow-[35px_35px_70px_#bebebe,-35px_-35px_70px_#ffffff] border-t border-l border-white/60">
+                    <div className="lg:col-span-8 bg-[#e0e5ec] rounded-[3rem] md:rounded-[4rem] p-8 md:p-16 shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] md:shadow-[35px_35px_70px_#bebebe,-35px_-35px_70px_#ffffff] border-t border-l border-white/60">
                         <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div className="space-y-4">
@@ -97,7 +97,7 @@ export default function ContactForm() {
                                 <motion.button
                                     whileHover={{ scale: 1.01 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="w-full bg-[#e0e5ec] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] active:shadow-[inset_5px_5px_10px_#bebebe,inset_-5px_-5px_10px_#ffffff] text-slate-800 rounded-[2rem] py-8 px-12 font-oswald text-2xl uppercase tracking-[0.3em] flex items-center justify-between group transition-all"
+                                    className="w-full bg-[#e0e5ec] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] active:shadow-[inset_5px_5px_10px_#bebebe,inset_-5px_-5px_10px_#ffffff] text-slate-800 rounded-[1.5rem] md:rounded-[2rem] py-6 md:py-8 px-8 md:px-12 font-oswald text-xl md:text-2xl uppercase tracking-[0.2em] md:tracking-[0.3em] flex items-center justify-between group transition-all"
                                 >
                                     <span className="font-black">Submit Inquiry</span>
                                     <div className="w-12 h-12 rounded-full bg-[#e0e5ec] shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] flex items-center justify-center text-sky-500 group-hover:scale-110 transition-transform">

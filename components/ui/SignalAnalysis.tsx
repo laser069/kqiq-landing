@@ -34,7 +34,7 @@ export default function SignalAnalysis() {
             </div>
 
             {/* Internal Data Grid */}
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-12">
+            <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                 {[
                     { label: "FISCAL_RECORDS", val: "140,291" },
                     { label: "RECONCILIATION", val: "99.992%" },
@@ -47,7 +47,7 @@ export default function SignalAnalysis() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className="border-l-2 border-slate-200 pl-8"
+                        className="border-l-[1px] md:border-l-2 border-slate-200 pl-4 md:pl-8"
                     >
                         <p className="font-mono text-[9px] text-slate-500 font-bold tracking-widest uppercase mb-2">{stat.label}</p>
                         <p className="font-oswald text-2xl text-slate-900 uppercase tracking-wide">{stat.val}</p>

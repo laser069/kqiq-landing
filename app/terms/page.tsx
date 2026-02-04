@@ -8,7 +8,7 @@ export default function TermsPage(): React.JSX.Element {
   const lastUpdated = "February 2026";
 
   return (
-    <div className="min-h-screen bg-[#e0e5ec] text-slate-800 selection:bg-sky-500/20 font-oswald overflow-x-hidden pt-32 pb-24 px-6 md:px-24">
+    <div className="min-h-screen bg-[#e0e5ec] text-slate-800 selection:bg-sky-500/20 font-oswald overflow-x-hidden pt-32 pb-24 px-6 md:px-12 lg:px-24">
       
       {/* HEADER SECTION */}
       <div className="max-w-4xl mx-auto mb-20 space-y-4">
@@ -25,7 +25,7 @@ export default function TermsPage(): React.JSX.Element {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-6xl md:text-8xl font-black tracking-tighter text-slate-800 uppercase leading-none"
+          className="text-5xl md:text-8xl font-black tracking-tighter text-slate-800 uppercase leading-none"
         >
           TERMS & <span className="text-sky-500">CONDITIONS</span>
         </motion.h1>
@@ -47,9 +47,9 @@ export default function TermsPage(): React.JSX.Element {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="p-10 bg-[#e0e5ec] rounded-[3rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/40 space-y-6"
+          className="p-8 md:p-10 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[3rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/40 space-y-6"
         >
-          <p className="text-xl md:text-2xl text-slate-600 font-bold leading-relaxed italic">
+          <p className="text-lg md:text-2xl text-slate-600 font-bold leading-relaxed italic">
             &quot;Welcome to KwiqBill. By accessing or using this website or software, you agree to the following terms.&quot;
           </p>
         </motion.div>
@@ -120,14 +120,14 @@ export default function TermsPage(): React.JSX.Element {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-24 p-12 bg-slate-950 rounded-[4rem] text-center space-y-8 shadow-2xl"
+          className="mt-20 md:mt-24 p-8 md:p-12 bg-slate-950 rounded-[3rem] md:rounded-[4rem] text-center space-y-8 shadow-2xl"
         >
-          <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">HAVE QUESTIONS?</h2>
+          <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter">HAVE QUESTIONS?</h2>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-            <Link href="/contact" className="px-12 py-6 bg-sky-500 text-white font-black text-xl tracking-widest uppercase hover:bg-sky-400 transition-all rounded-3xl">
+            <Link href="/contact" className="w-full md:w-auto px-12 py-6 bg-sky-500 text-white font-black text-xl tracking-widest uppercase hover:bg-sky-400 transition-all rounded-2xl md:rounded-3xl">
               CONTACT TEAM
             </Link>
-            <div className="text-slate-400 font-mono text-xs tracking-widest uppercase">
+            <div className="text-slate-400 font-mono text-[10px] md:text-xs tracking-widest uppercase">
               OR EMAIL: SUPPORT@KWIQBILL.IO
             </div>
           </div>

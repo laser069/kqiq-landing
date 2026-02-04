@@ -43,7 +43,7 @@ export default function Hero({
       </div>
       
       {/* 2. Main Content Container */}
-      <div className="relative z-20 container mx-auto px-8 lg:px-20 h-full flex flex-col justify-start pt-32 md:pt-22 gap-12 lg:gap-16">
+      <div className="relative z-20 container mx-auto px-6 md:px-12 lg:px-20 h-full flex flex-col justify-start pt-32 md:pt-22 gap-10 lg:gap-16">
         
         {/* TITLED SECTION */}
         <div className="flex flex-col">
@@ -52,7 +52,7 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.8] uppercase select-none text-[clamp(4rem,10vw,12rem)]">
+            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.8] uppercase select-none text-[clamp(3.5rem,12vw,12rem)]">
               <span className="block">{titleLine1}</span>
               <span className="block text-sky-500">{titleLine2}</span>
             </h1>
@@ -64,8 +64,8 @@ export default function Hero({
             transition={{ delay: 0.4 }}
             className="flex items-center gap-3 mt-6"
           >
-            <div className="h-1 w-8 bg-slate-950" />
-            <span className="text-lg md:text-xl font-oswald font-bold tracking-[0.4em] text-slate-400 uppercase">
+            <div className="h-0.5 md:h-1 w-6 md:w-8 bg-slate-950" />
+            <span className="text-sm md:text-xl font-oswald font-bold tracking-[0.2em] md:tracking-[0.4em] text-slate-400 uppercase">
               BY {brandName}
             </span>
           </motion.div>
