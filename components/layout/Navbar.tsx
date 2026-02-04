@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const navItems = [
   { label: "INDEX", href: "/" },
   { label: "OBSERVATORY", href: "/observatory" },
-  { label: "EXPEDITION", href: "/expedition" },
+  { label: "MISSION", href: "/expedition" },
   { label: "CONTACT", href: "/contact" },
 ];
 

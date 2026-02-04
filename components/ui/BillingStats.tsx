@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { motion, useMotionValue, useSpring, useInView } from "framer-motion";
+import { useMotionValue, useSpring, useInView } from "framer-motion";
 
 const stats = [
-  { label: "TOTAL TRANSACTIONS", value: 42, color: "bg-sky-500", suffix: "K" },
-  { label: "REVENUE VOLUME", value: 89, color: "bg-sky-600", suffix: "%" },
-  { label: "ACTIVE NODES", value: 124, color: "bg-sky-500", suffix: "+" },
-  { label: "SECURE GATEWAYS", value: 12, color: "bg-sky-400", suffix: "" },
+  { label: "TOTAL BILLS GENERATED", value: 42, color: "bg-sky-500", suffix: "K+" },
+  { label: "MONTHLY REVENUE", value: 8.9, color: "bg-sky-600", suffix: "L", prefix: "₹" },
+  { label: "ACTIVE BUSINESSES", value: 124, color: "bg-sky-500", suffix: "+" },
+  { label: "ACTIVE STORES", value: 12, color: "bg-sky-400", suffix: "" },
 ];
 
 function AnimatedNumber({ value }: { value: number }) {
@@ -30,9 +30,14 @@ function AnimatedNumber({ value }: { value: number }) {
 
   useEffect(() => {
     return springValue.on("change", (latest) => {
-      setDisplayValue(Math.floor(latest).toString());
+      // If it's a decimal value (like 8.9), show 1 decimal place. Otherwise show integer.
+      if (value % 1 !== 0) {
+        setDisplayValue(latest.toFixed(1));
+      } else {
+        setDisplayValue(Math.floor(latest).toString());
+      }
     });
-  }, [springValue]);
+  }, [springValue, value]);
 
   return <span ref={ref}>{displayValue}</span>;
 }
@@ -59,6 +64,11 @@ export default function BillingStats() {
 
           {/* Value Section - Oswald Font */}
           <div className="text-6xl font-oswald font-bold text-slate-900 tabular-nums z-10 flex items-baseline tracking-tighter">
+            {stat.prefix && (
+              <span className="text-sky-600 mr-1 text-4xl">
+                {stat.prefix}
+              </span>
+            )}
             <AnimatedNumber value={stat.value} />
             {stat.suffix && (
               <span className="text-sky-600 ml-1 text-4xl">

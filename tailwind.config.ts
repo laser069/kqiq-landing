@@ -9,6 +9,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         schabo: ["var(--font-schabo)", "sans-serif"],
+        oswald: ["var(--font-oswald)", "sans-serif"],
       },
     },
   },
