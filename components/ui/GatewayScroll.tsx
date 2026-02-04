@@ -3,12 +3,14 @@
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import React, { useRef } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 /**
  * OPTIMIZED GATEWAY SCROLL
  * Cinematic dark break with Sky-Blue accents
  */
 export default function GatewayScroll(): React.JSX.Element {
+  const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -48,7 +50,10 @@ export default function GatewayScroll(): React.JSX.Element {
             </p>
 
             <motion.div style={{ opacity: btnOpacity, scale: btnScale }} className="pt-12">
-              <button className="px-12 py-5 bg-slate-900 border border-sky-500/20 text-sky-400 font-mono text-sm tracking-[0.3em] uppercase hover:border-sky-500 transition-all duration-700 rounded-sm shadow-[0_0_40px_rgba(14,165,233,0.1)]">
+              <button 
+                onClick={() => router.push("/contact")}
+                className="px-12 py-5 bg-slate-900 border border-sky-500/20 text-sky-400 font-mono text-sm tracking-[0.3em] uppercase hover:border-sky-500 transition-all duration-700 rounded-sm shadow-[0_0_40px_rgba(14,165,233,0.1)]"
+              >
                 Initialize System
               </button>
             </motion.div>
