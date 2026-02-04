@@ -41,16 +41,16 @@ export default function Page(): React.JSX.Element {
         <div className="container mx-auto px-6 pb-32">
           
           {/* Section Divider */}
-          <div className="flex items-center gap-6 mb-24 pt-32">
-            <div className="h-[2px] flex-1 bg-slate-300/30" />
-            <h2 className="text-[12px] font-black tracking-[0.5em] text-slate-400 uppercase whitespace-nowrap">
+          <div className="flex items-center gap-3 md:gap-6 mb-16 md:mb-24 pt-24 md:pt-32">
+            <div className="h-[px] md:h-[2px] flex-1 bg-slate-300/30" />
+            <h2 className="text-[10px] md:text-[12px] font-black tracking-[0.3em] md:tracking-[0.5em] text-slate-400 uppercase whitespace-nowrap">
               Resource Allocation Metrics
             </h2>
-            <div className="h-[2px] flex-1 bg-slate-300/30" />
+            <div className="h-[px] md:h-[2px] flex-1 bg-slate-300/30" />
           </div>
 
           {/* 5. STATS GRID */}
-          <section className="bg-[#e0e5ec] rounded-[4rem] p-12 shadow-[inset_20px_20px_40px_#bebebe,inset_-20px_-20px_40px_#ffffff] border-b border-r border-white/20">
+          <section className="bg-[#e0e5ec] rounded-[3rem] md:rounded-[4rem] p-6 md:p-12 shadow-[inset_15px_15px_30px_#bebebe,inset_-15px_-15px_30px_#ffffff] border-b border-r border-white/20">
             <BillingStats />
           </section>
 
@@ -70,15 +70,15 @@ function DataTraceCard({ title, description }: { title: string, description: str
   return (
     <motion.div 
       whileHover={{ scale: 1.02 }}
-      className="group relative bg-[#e0e5ec] p-12 rounded-[2.5rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/60 transition-all duration-300"
+      className="group relative bg-[#e0e5ec] p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/60 transition-all duration-300"
     >
       <div className="flex justify-between items-start mb-6">
-        <h3 className="text-4xl font-black text-slate-800 tracking-tight uppercase">{title}</h3>
-        <div className="w-10 h-10 rounded-full bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] flex items-center justify-center">
-          <div className="w-2 h-2 rounded-full bg-sky-500" />
+        <h3 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight uppercase">{title}</h3>
+        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] flex items-center justify-center">
+          <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-sky-500" />
         </div>
       </div>
-      <p className="text-slate-500 text-lg font-bold italic leading-relaxed">{description}</p>
+      <p className="text-slate-500 text-base md:text-lg font-bold italic leading-relaxed">{description}</p>
       <div className="mt-8 h-[2px] w-full bg-slate-300/20 group-hover:bg-sky-500/30 transition-colors" />
     </motion.div>
   );

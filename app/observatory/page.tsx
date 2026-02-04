@@ -34,9 +34,9 @@ export default function ObservatoryPage(): React.JSX.Element {
       {/* 2. TEAM SECTION */}
       <section className="pt-24 pb-12 px-6 md:px-24 bg-[#e0e5ec]">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16 border-b border-slate-300/30 pb-6">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-slate-800 uppercase leading-none">
-              Mission <span className="text-sky-500 text-3xl md:text-5xl">Team</span>
+          <div className="mb-12 md:mb-16 border-b border-slate-300/30 pb-6">
+            <h2 className="text-4xl md:text-8xl font-black tracking-tighter text-slate-800 uppercase leading-none">
+              Mission <span className="text-sky-500 text-2xl md:text-5xl">Team</span>
             </h2>
           </div>
           
@@ -48,7 +48,7 @@ export default function ObservatoryPage(): React.JSX.Element {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.8 }}
-                className="p-6 bg-[#e0e5ec] rounded-[2.5rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/40 group hover:scale-[1.02] transition-all duration-500"
+                className="p-6 md:p-8 bg-[#e0e5ec] rounded-[2rem] md:rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 group hover:scale-[1.02] transition-all duration-500"
               >
                 <div className="aspect-[3/4] rounded-[1.5rem] overflow-hidden mb-6 shadow-inner relative">
                   <Image 
@@ -84,11 +84,11 @@ export default function ObservatoryPage(): React.JSX.Element {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="p-10 bg-[#e0e5ec] rounded-[3rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/40 space-y-6"
+                className="p-8 md:p-10 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[3rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6"
               >
                 <span className="font-mono text-[10px] text-sky-500 font-bold tracking-widest uppercase">{metric.label}</span>
-                <h3 className="text-5xl font-black text-slate-800 uppercase leading-none">{metric.val}</h3>
-                <p className="text-slate-500 font-bold leading-relaxed">{metric.desc}</p>
+                <h3 className="text-4xl md:text-5xl font-black text-slate-800 uppercase leading-none">{metric.val}</h3>
+                <p className="text-slate-500 font-bold leading-relaxed text-sm md:text-base">{metric.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -116,11 +116,11 @@ export default function ObservatoryPage(): React.JSX.Element {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-12 bg-[#e0e5ec] rounded-[4rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/40 space-y-6"
+                className="p-8 md:p-12 bg-[#e0e5ec] rounded-[3rem] md:rounded-[4rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6"
               >
                 <span className="font-mono text-[10px] text-sky-500 font-black tracking-widest uppercase">{spec.tag}</span>
-                <h3 className="text-4xl font-black text-slate-800 uppercase tracking-tight leading-none">{spec.title}</h3>
-                <p className="text-slate-500 font-bold leading-relaxed italic">{spec.desc}</p>
+                <h3 className="text-3xl md:text-4xl font-black text-slate-800 uppercase tracking-tight leading-none">{spec.title}</h3>
+                <p className="text-slate-500 font-bold leading-relaxed italic text-sm md:text-base">{spec.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -130,7 +130,7 @@ export default function ObservatoryPage(): React.JSX.Element {
       {/* 5. VISION CTA */}
       <section className="pt-24 pb-32 flex flex-col items-center text-center px-6 border-t-[1.5px] border-white/70">
           <div className="space-y-12">
-            <h2 className="text-6xl md:text-[10rem] font-black tracking-tighter text-slate-800 uppercase leading-[0.8]">
+            <h2 className="text-[clamp(3.5rem,15vw,10rem)] font-black tracking-tighter text-slate-800 uppercase leading-[0.8]">
               READY TO BILL  <br /><span className="text-sky-500">KWIQBILL</span>
             </h2>
             <div className="flex flex-col md:flex-row gap-8 justify-center items-center">

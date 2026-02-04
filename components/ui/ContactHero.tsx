@@ -13,10 +13,10 @@ export default function ContactHero() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:col-span-4 lg:col-span-8 row-span-2 rounded-[3.5rem] bg-[#e0e5ec] p-12 lg:p-20 
-                     shadow-[25px_25px_50px_#bebebe,-25px_-25px_50px_#ffffff] 
+          className="md:col-span-4 lg:col-span-8 row-span-2 rounded-[2.5rem] md:rounded-[3.5rem] bg-[#e0e5ec] p-8 md:p-20 
+                     shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] md:shadow-[25px_25px_50px_#bebebe,-25px_-25px_50px_#ffffff] 
                      border-t-[1.5px] border-l-[1.5px] border-white/70
-                     flex flex-col justify-between relative overflow-hidden min-h-[550px]"
+                     flex flex-col justify-between relative overflow-hidden min-h-[450px] md:min-h-[550px]"
         >
           {/* Top Metadata */}
           <div className="relative z-10 flex justify-between items-start">
@@ -27,8 +27,8 @@ export default function ContactHero() {
           </div>
           
           {/* THE BOLD TYPOGRAPHY SECTION */}
-          <div className="relative z-10 mt-12">
-            <h1 className="font-oswald font-black text-[8rem] md:text-[12rem] lg:text-[14rem] leading-[0.75] text-slate-800 uppercase tracking-[-0.06em]">
+          <div className="relative z-10 mt-8 md:mt-12">
+            <h1 className="font-oswald font-black text-[clamp(4.5rem,15vw,14rem)] leading-[0.75] text-slate-800 uppercase tracking-[-0.06em]">
               <span className="block drop-shadow-[4px_6px_8px_rgba(0,0,0,0.15)]">KWIQ</span>
               <span className="block text-sky-500 [text-shadow:_-2px_-2px_0_#fff,2px_-2px_0_#fff,-2px_2px_0_#fff,2px_2px_0_#fff,6px_8px_12px_rgba(14,165,233,0.3)]">
                 BILLING
@@ -54,14 +54,14 @@ export default function ContactHero() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="md:col-span-2 lg:col-span-4 bg-[#e0e5ec] rounded-[3rem] p-10 
-                     shadow-[inset_20px_20px_40px_#bebebe,inset_-20px_-20px_40px_#ffffff] 
+          className="md:col-span-2 lg:col-span-4 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-10 
+                     shadow-[inset_15px_15px_30px_#bebebe,inset_-15px_-15px_30px_#ffffff] 
                      flex flex-col justify-center border-b border-r border-white/20"
         >
-          <p className="font-mono text-[11px] text-slate-400 font-black tracking-[0.4em] uppercase mb-6 text-center">Global_Scale</p>
+          <p className="font-mono text-[10px] md:text-[11px] text-slate-400 font-black tracking-[0.4em] uppercase mb-4 md:mb-6 text-center">Global_Scale</p>
           <div className="text-center">
-            <h2 className="font-oswald font-black text-8xl text-slate-800 tracking-tighter leading-none">140+</h2>
-            <p className="font-oswald text-2xl text-sky-500 font-bold uppercase tracking-widest mt-2">Currency Pairs</p>
+            <h2 className="font-oswald font-black text-6xl md:text-8xl text-slate-800 tracking-tighter leading-none">140+</h2>
+            <p className="font-oswald text-xl md:text-2xl text-sky-500 font-bold uppercase tracking-widest mt-2">Currency Pairs</p>
           </div>
         </motion.div>
 
@@ -100,11 +100,11 @@ export default function ContactHero() {
                      shadow-[25px_25px_50px_#bebebe,-25px_-25px_50px_#ffffff] 
                      flex flex-col lg:flex-row items-center justify-between gap-10"
         >
-          <div className="flex-1">
-            <p className="font-oswald font-black text-5xl text-slate-800 uppercase leading-[0.9] mb-4">
+          <div className="flex-1 text-center lg:text-left">
+            <p className="font-oswald font-black text-3xl md:text-5xl text-slate-800 uppercase leading-[0.9] mb-4">
               Designed for <span className="text-sky-500">Global Scale.</span>
             </p>
-            <p className="text-slate-500 font-bold text-lg max-w-2xl">
+            <p className="text-slate-500 font-bold text-sm md:text-lg max-w-2xl mx-auto lg:mx-0">
               Facilitating seamless merchant reporting and automated payout scheduling across international borders.
             </p>
           </div>

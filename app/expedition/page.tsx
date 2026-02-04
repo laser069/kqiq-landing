@@ -84,7 +84,7 @@ export default function ExpeditionPage(): React.JSX.Element {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.8] uppercase select-none text-[clamp(4rem,10vw,12rem)] flex flex-col">
+            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.8] uppercase select-none text-[clamp(3.5rem,12vw,12rem)] flex flex-col">
               <span className="block drop-shadow-[4px_6px_8px_rgba(0,0,0,0.05)]">KWIQBILL</span>
               <span className="block text-sky-500">MISSION</span>
             </h1>
@@ -98,14 +98,14 @@ export default function ExpeditionPage(): React.JSX.Element {
         </div>
 
         {/* Tactical Coordinates Decor */}
-        <div className="absolute bottom-12 right-12 md:right-24 text-right space-y-4 font-mono">
+        <div className="absolute bottom-8 right-6 md:bottom-12 md:right-24 text-right space-y-2 md:space-y-4 font-mono">
             <div className="space-y-1">
-                <p className="text-[10px] text-slate-400 font-black tracking-widest uppercase italic">Project_Status</p>
-                <p className="text-xl text-emerald-500 font-bold uppercase transition-all duration-300">OPEN SOURCE — STABLE</p>
+                <p className="text-[9px] md:text-[10px] text-slate-400 font-black tracking-widest uppercase italic">Project_Status</p>
+                <p className="text-lg md:text-xl text-emerald-500 font-bold uppercase transition-all duration-300">OPEN SOURCE — STABLE</p>
             </div>
             <div className="space-y-1">
-                <p className="text-[10px] text-slate-400 font-black tracking-widest uppercase italic">License</p>
-                <p className="text-xl text-slate-800 font-bold">APACHE 2.0</p>
+                <p className="text-[9px] md:text-[10px] text-slate-400 font-black tracking-widest uppercase italic">License</p>
+                <p className="text-lg md:text-xl text-slate-800 font-bold uppercase">APACHE 2.0</p>
             </div>
         </div>
       </section>
@@ -116,7 +116,7 @@ export default function ExpeditionPage(): React.JSX.Element {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="space-y-8">
-               <h2 className="text-6xl md:text-8xl font-oswald font-black tracking-tighter text-slate-800 uppercase leading-none">Why KWIQBILL?</h2>
+               <h2 className="text-4xl md:text-8xl font-oswald font-black tracking-tighter text-slate-800 uppercase leading-none">Why KWIQBILL?</h2>
                <div className="h-2 w-24 bg-sky-500" />
                <p className="text-xl text-slate-500 font-bold leading-relaxed">
                   Most billing software is expensive and restrictive. KwiqBill offers a powerful, multi-platform solution that anyone can use, customize, and deploy freely.
@@ -136,9 +136,9 @@ export default function ExpeditionPage(): React.JSX.Element {
             <div className="aspect-square bg-[#e0e5ec] rounded-[4rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#00afef_1px,transparent_1px)] [background-size:20px_20px]" />
                 
-                <div className="text-center space-y-6 relative z-10 mb-12">
-                    <h3 className="text-5xl md:text-6xl font-oswald font-black text-slate-800 tracking-wider">CORE MISSION</h3>
-                    <p className="text-slate-500 font-bold uppercase tracking-widest leading-none">
+                <div className="text-center space-y-4 md:space-y-6 relative z-10 mb-8 md:mb-12">
+                    <h3 className="text-4xl md:text-6xl font-oswald font-black text-slate-800 tracking-wider uppercase">CORE MISSION</h3>
+                    <p className="text-slate-500 font-bold uppercase tracking-widest leading-none text-xs md:text-sm">
                         Accessible Professional Billing For Everyone
                     </p>
                 </div>
@@ -150,10 +150,10 @@ export default function ExpeditionPage(): React.JSX.Element {
                     { label: "PRIVATE", val: "100%", desc: "Full data ownership." },
                     { label: "GLOBAL", val: "V1.0", desc: "Multi-currency support." }
                   ].map((item, idx) => (
-                    <div key={idx} className="p-6 bg-[#e0e5ec] rounded-3xl shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] space-y-2 border-t border-l border-white/20">
-                      <span className="block font-mono text-[9px] text-sky-500 font-black tracking-widest uppercase">{item.label}</span>
-                      <p className="text-3xl font-oswald font-black text-slate-800 leading-none">{item.val}</p>
-                      <p className="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">{item.desc}</p>
+                    <div key={idx} className="p-4 md:p-6 bg-[#e0e5ec] rounded-2xl md:rounded-3xl shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] space-y-2 border-t border-l border-white/20">
+                      <span className="block font-mono text-[8px] md:text-[9px] text-sky-500 font-black tracking-widest uppercase">{item.label}</span>
+                      <p className="text-xl md:text-3xl font-oswald font-black text-slate-800 leading-none">{item.val}</p>
+                      <p className="text-[8px] md:text-[10px] text-slate-400 font-bold uppercase tracking-tighter">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -187,7 +187,7 @@ export default function ExpeditionPage(): React.JSX.Element {
 
         <div className="relative z-10 text-center space-y-16">
           <div className="space-y-4">
-             <h2 className="text-7xl md:text-9xl font-oswald font-black tracking-tighter text-slate-800 uppercase leading-none">SUPPORT THE VISION</h2>
+             <h2 className="text-[clamp(3.5rem,15vw,9rem)] font-oswald font-black tracking-tighter text-slate-800 uppercase leading-[0.8]">SUPPORT THE VISION</h2>
              <p className="max-w-2xl mx-auto text-slate-500 font-mono text-xs tracking-[0.4em] uppercase font-bold italic">
                Join the community building free and open-source billing software. Help shape the future of KwiqBill.
              </p>
@@ -219,7 +219,7 @@ function PhaseCard({ phase, index }: { phase: Phase; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.8 }}
-      className="p-12 bg-[#e0e5ec] rounded-[3.5rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/40 space-y-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500"
+      className="p-8 md:p-12 bg-[#e0e5ec] rounded-[3rem] md:rounded-[3.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500"
     >
       <div className="flex justify-between items-start relative z-10">
         <div className={`px-4 py-1 rounded-sm ${phase.color} text-white font-mono text-[9px] font-black tracking-widest uppercase`}>
