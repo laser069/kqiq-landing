@@ -1,220 +1,88 @@
 "use client";
 
-import { memo, useEffect, useLayoutEffect, useMemo, useState, useRef } from "react";
-import {
-    motion,
-    useMotionValue,
-    useTransform,
-    useScroll,
-} from "framer-motion";
+import { useRef } from "react";
+import { motion, useTransform, useScroll } from "framer-motion";
 
-export const useIsomorphicLayoutEffect =
-    typeof window !== "undefined" ? useLayoutEffect : useEffect;
+export function ThreeDPhotoCarousel() {
+  const containerRef = useRef(null);
 
-const IS_SERVER = typeof window === "undefined";
+  const cards = [
+    "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800",
+    "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800",
+    "https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?w=800",
+    "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=800",
+    "https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800",
+  ];
 
-export function useMediaQuery(
-    query,
-    { defaultValue = false, initializeWithValue = true } = {}
-) {
-    const getMatches = (query) => {
-        if (IS_SERVER) {
-            return defaultValue;
-        }
-        return window.matchMedia(query).matches;
-    };
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
 
-    const [matches, setMatches] = useState(() => {
-        if (initializeWithValue) {
-            return getMatches(query);
-        }
-        return defaultValue;
-    });
+  // 1. Rotation logic (360 degrees)
+  const rotation = useTransform(scrollYProgress, [0, 1], [0, 360]);
 
-    const handleChange = () => {
-        setMatches(getMatches(query));
-    };
+  // 2. THE PAUSE MAGIC:
+  // We translate the content vertically to counteract the natural scroll.
+  // 0vh at the start, 200vh at the end (because the track is 300vh total).
+  const yTranslate = useTransform(scrollYProgress, [0, 1], ["0vh", "200vh"]);
 
-    useIsomorphicLayoutEffect(() => {
-        const matchMedia = window.matchMedia(query);
-        handleChange();
+  // 3D Math
+  const faceCount = cards.length;
+  const cylinderWidth = 1300; 
+  const faceWidth = cylinderWidth / faceCount;
+  const radius = cylinderWidth / (2 * Math.PI);
 
-        matchMedia.addEventListener("change", handleChange);
-
-        return () => {
-            matchMedia.removeEventListener("change", handleChange);
-        };
-    }, [query]);
-
-    return matches;
-}
-
-const keywords = [
-    "portrait",
-    "people",
-    "nature",
-    "urban",
-    "abstract",
-];
-
-// Production-level animation constants
-const duration = 0.3;
-const transition = {
-    duration,
-    ease: [0.4, 0.0, 0.2, 1], // Material Design easing
-};
-
-const Carousel = memo(
-    ({ cards }) => {
-        const isScreenSizeSm = useMediaQuery("(max-width: 640px)");
-        const cylinderWidth = isScreenSizeSm ? 1100 : 1800;
-        const faceCount = cards.length;
-        const faceWidth = cylinderWidth / faceCount;
-        const radius = cylinderWidth / (2 * Math.PI);
-        const rotation = useMotionValue(0);
-        const transform = useTransform(
-            rotation,
-            (value) => `rotate3d(0, 1, 0, ${value}deg)`
-        );
-
-        return (
-            <div
-                className="flex h-full items-center justify-center bg-[#e0e5ec]"
-                style={{
-                    perspective: "1000px",
-                    transformStyle: "preserve-3d",
-                    willChange: "transform",
-                }}
-            >
-                <motion.div
-                    className="relative flex h-full origin-center justify-center"
-                    style={{
-                        transform,
-                        rotateY: rotation,
-                        width: cylinderWidth,
-                        transformStyle: "preserve-3d",
-                    }}
-                >
-                    {cards.map((imgUrl, i) => (
-                        <motion.div
-                            key={`key-${imgUrl}-${i}`}
-                            className="absolute flex h-full origin-center items-center justify-center rounded-xl bg-[#e0e5ec] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] border-0 overflow-hidden"
-                            style={{
-                                width: `${faceWidth}px`,
-                                transform: `rotateY(${i * (360 / faceCount)
-                                    }deg) translateZ(${radius}px)`,
-                            }}
-                        >
-                            <motion.img
-                                src={imgUrl}
-                                alt={`keyword_${i} ${imgUrl}`}
-                                className="pointer-events-none w-full rounded-xl object-cover aspect-[9/16]"
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{
-                                    opacity: { duration: 0.4, ease: [0.4, 0.0, 0.2, 1] },
-                                    scale: { duration: 0.5, ease: [0.4, 0.0, 0.2, 1] }
-                                }}
-                            />
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </div>
-        );
-    }
-);
-
-Carousel.displayName = "Carousel";
-
-function ThreeDPhotoCarousel() {
-    const containerRef = useRef(null);
-    const cards = useMemo(
-        () => keywords.map((keyword) => `https://picsum.photos/300/500?${keyword}`),
-        []
-    );
-
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"] // Start when component enters viewport, end when it leaves
-    });
-
-    // Map scroll progress to rotation (each image gets equal scroll space)
-    const rotation = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [0, 360] // Full rotation through all images
-    );
-
-    return (
-        <div ref={containerRef} className="relative h-[120vh]"> {/* Minimal height for scroll animation */}
-            <div className="sticky top-0 h-screen w-full flex items-center pt-24">
-                <motion.div layout className="relative h-full">
-                    <div className="relative h-[500px] w-full overflow-visible flex items-center">
-                        <CarouselWithScroll cards={cards} rotation={rotation} />
-                    </div>
-                </motion.div>
-            </div>
-        </div>
-    );
-}
-
-const CarouselWithScroll = memo(({ cards, rotation }) => {
-    const isScreenSizeSm = useMediaQuery("(max-width: 640px)");
-    const cylinderWidth = isScreenSizeSm ? 990 : 1620; // 10% smaller
-    const faceCount = cards.length;
-    const faceWidth = cylinderWidth / faceCount;
-    const radius = cylinderWidth / (2 * Math.PI);
-    const transform = useTransform(
-        rotation,
-        (value) => `rotate3d(0, 1, 0, ${value}deg)`
-    );
-
-    return (
-        <div
-            className="flex h-full items-center justify-center bg-[#e0e5ec] w-full"
-            style={{
-                perspective: "1000px",
-                transformStyle: "preserve-3d",
-                willChange: "transform",
-            }}
+  return (
+    /* The Track: 300vh height provides the scroll distance */
+    <div 
+      ref={containerRef} 
+      className="relative w-full overflow-visible" 
+      style={{ height: "300vh", backgroundColor: "#0B0E14" }}
+    >
+      {/* This is the "Visual Frame". 
+        Instead of 'sticky', we use the 'yTranslate' to make it look stationary.
+      */}
+      <motion.div 
+        style={{ y: yTranslate }}
+        className="relative h-screen w-full flex items-center justify-center overflow-hidden z-10"
+      >
+        {/* Security Dark Canvas */}
+        <div className="absolute inset-0 bg-[#0B0E14] shadow-[0_0_100px_rgba(0,0,0,1)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1e293b_0%,#0B0E14_100%)] opacity-70" />
+        
+        {/* 3D Scene */}
+        <div 
+          className="relative flex h-full w-full items-center justify-center" 
+          style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
         >
-            <motion.div
-                className="relative flex h-full origin-center justify-center"
+          <motion.div
+            className="relative flex h-full w-full items-center justify-center"
+            style={{ 
+              transformStyle: "preserve-3d",
+              rotateY: rotation 
+            }}
+          >
+            {cards.map((img, i) => (
+              <div
+                key={i}
+                className="absolute flex h-[450px] items-center justify-center rounded-2xl border border-white/10 bg-slate-900 shadow-2xl"
                 style={{
-                    transform,
-                    rotateY: rotation,
-                    width: cylinderWidth,
-                    transformStyle: "preserve-3d",
+                  width: `${faceWidth}px`,
+                  backfaceVisibility: "hidden",
+                  transform: `rotateY(${i * (360 / faceCount)}deg) translateZ(${radius}px)`,
                 }}
-            >
-                {cards.map((imgUrl, i) => (
-                    <motion.div
-                        key={`key-${imgUrl}-${i}`}
-                        className="absolute flex h-full origin-center items-center justify-center rounded-xl bg-[#e0e5ec] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] border-0 overflow-hidden"
-                        style={{
-                            width: `${faceWidth}px`,
-                            transform: `rotateY(${i * (360 / faceCount)
-                                }deg) translateZ(${radius}px)`,
-                        }}
-                    >
-                        <motion.img
-                            src={imgUrl}
-                            alt={`keyword_${i} ${imgUrl}`}
-                            className="pointer-events-none w-full rounded-xl object-cover aspect-[9/16]"
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{
-                                opacity: { duration: 0.4, ease: [0.4, 0.0, 0.2, 1] },
-                                scale: { duration: 0.5, ease: [0.4, 0.0, 0.2, 1] }
-                            }}
-                        />
-                    </motion.div>
-                ))}
-            </motion.div>
+              >
+                <img src={img} alt="" className="h-full w-full object-cover opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 via-transparent to-transparent" />
+              </div>
+            ))}
+          </motion.div>
         </div>
-    );
-});
 
-CarouselWithScroll.displayName = "CarouselWithScroll";
+        {/* HUD Elements */}
 
-export { ThreeDPhotoCarousel };
+      </motion.div>
+    </div>
+  );
+}
