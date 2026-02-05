@@ -28,5 +28,4 @@ body {
   font-size: var(--global-font-size);
   font-weight: var(--global-font-weight);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }

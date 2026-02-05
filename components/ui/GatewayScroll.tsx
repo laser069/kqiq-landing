@@ -7,18 +7,19 @@ import { useRouter } from "next/navigation";
 
 /**
  * REFINED GATEWAY SCROLL
- * Features a "Zipper" sequential opening effect.
- * Images appear in pairs (1st two, then 2nd two, then 3rd two).
+ * Zipper effect with NON-LINEAR scroll compression
+ * → images move slower per scroll
  */
 export default function GatewayScroll(): React.JSX.Element {
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  // Text Reveal Logic - stays late after images unzip
+  // Text reveal (unchanged)
   const contentOpacity = useTransform(scrollYProgress, [0.7, 0.85], [0, 1]);
   const contentY = useTransform(scrollYProgress, [0.7, 0.85], ["40px", "0px"]);
   const btnOpacity = useTransform(scrollYProgress, [0.85, 1], [0, 1]);
@@ -34,13 +35,13 @@ export default function GatewayScroll(): React.JSX.Element {
     <section ref={containerRef} className="relative h-[120vh] bg-slate-950 z-40">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
-        {/* Cinematic Backdrop Decor */}
+        {/* Background */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="w-full h-full bg-[radial-gradient(circle_at_center,#0ea5e9_0,transparent_75%)] opacity-20" />
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
         </div>
 
-        {/* TEXT REVEAL (Final Background layer) */}
+        {/* TEXT */}
         <motion.div
           style={{ opacity: contentOpacity, y: contentY }}
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-0"
@@ -49,8 +50,10 @@ export default function GatewayScroll(): React.JSX.Element {
             <h2 className="text-sky-500 font-mono text-sm tracking-[1em] uppercase opacity-60">
               Infrastructure_View
             </h2>
+
             <p className="text-white text-7xl md:text-[10rem] font-oswald uppercase max-w-7xl leading-[0.8] tracking-tighter">
-              Seamless <br /><span className="text-slate-700">Integration</span>
+              Seamless <br />
+              <span className="text-slate-700">Integration</span>
             </p>
 
             <motion.div style={{ opacity: btnOpacity, scale: btnScale }} className="pt-12">
@@ -65,14 +68,14 @@ export default function GatewayScroll(): React.JSX.Element {
           </div>
         </motion.div>
 
-        {/* ZIPPER IMAGE CONTAINER */}
+        {/* IMAGES */}
         <div className="relative w-full max-w-[90vw] h-full flex items-center justify-center z-20 pointer-events-none px-4">
           {pairs.map((pair) => (
             <ZipperPair
               key={pair.id}
               leftSrc={pair.left}
               rightSrc={pair.right}
-              range={pair.range as [number, number]}
+              range={pair.range}
               progress={scrollYProgress}
               zIndex={pair.z}
             />
@@ -83,24 +86,44 @@ export default function GatewayScroll(): React.JSX.Element {
   );
 }
 
-function ZipperPair({ range, progress, zIndex, leftSrc, rightSrc }: { range: [number, number], progress: MotionValue<number>, zIndex: number, leftSrc: string, rightSrc: string }) {
-  // Define animation milestones within the range
+/* ---------------- Zipper Pair ---------------- */
+
+function ZipperPair({
+  range,
+  progress,
+  zIndex,
+  leftSrc,
+  rightSrc,
+}: {
+  range: [number, number];
+  progress: MotionValue<number>;
+  zIndex: number;
+  leftSrc: string;
+  rightSrc: string;
+}) {
   const start = range[0];
   const end = range[1];
+
+  // 🔑 NON-LINEAR compression (this slows movement per scroll)
+  const compressedProgress = useTransform(progress, (v) => Math.pow(v, 2.4));
 
   const fadeInEnd = start + (end - start) * 0.2;
   const unzipStart = start + (end - start) * 0.45;
 
-  const opacity = useTransform(progress, [start, fadeInEnd, unzipStart, end], [0, 1, 1, 0]);
+  const opacity = useTransform(
+    progress,
+    [start, fadeInEnd, unzipStart, end],
+    [0, 1, 1, 0]
+  );
+
   const scale = useTransform(progress, [start, unzipStart], [0.9, 1]);
 
-  // Zipper X translation
-  const leftX = useTransform(progress, [unzipStart, end], ["0%", "-180%"]);
-  const rightX = useTransform(progress, [unzipStart, end], ["0%", "180%"]);
+  // Image movement (SLOW)
+  const leftX = useTransform(compressedProgress, [unzipStart, end], ["0%", "-90%"]);
+  const rightX = useTransform(compressedProgress, [unzipStart, end], ["0%", "90%"]);
 
-  // Rotation
-  const leftRotate = useTransform(progress, [unzipStart, end], [0, -15]);
-  const rightRotate = useTransform(progress, [unzipStart, end], [0, 15]);
+  const leftRotate = useTransform(compressedProgress, [unzipStart, end], [0, -7]);
+  const rightRotate = useTransform(compressedProgress, [unzipStart, end], [0, 7]);
 
   return (
     <motion.div
@@ -108,38 +131,23 @@ function ZipperPair({ range, progress, zIndex, leftSrc, rightSrc }: { range: [nu
       className="absolute inset-0 flex items-center justify-center p-4 md:p-12"
     >
       <div className="flex w-full h-full max-h-[60vh] gap-4 md:gap-8 items-center justify-center">
-        {/* Left Full Image */}
+
+        {/* Left */}
         <motion.div
           style={{ x: leftX, rotate: leftRotate }}
           className="relative flex-1 aspect-video bg-slate-900 border border-sky-500/10 rounded-xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)]"
         >
-          <Image
-            src={leftSrc}
-            alt="System View Left"
-            fill
-            className="object-contain p-2 opacity-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/5 to-transparent pointer-events-none" />
+          <Image src={leftSrc} alt="System View Left" fill className="object-contain p-2" />
         </motion.div>
 
-        {/* Right Full Image */}
+        {/* Right */}
         <motion.div
           style={{ x: rightX, rotate: rightRotate }}
           className="relative flex-1 aspect-video bg-slate-900 border border-sky-500/10 rounded-xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)]"
         >
-          <Image
-            src={rightSrc}
-            alt="System View Right"
-            fill
-            className="object-contain p-2 opacity-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-tl from-sky-500/5 to-transparent pointer-events-none" />
+          <Image src={rightSrc} alt="System View Right" fill className="object-contain p-2" />
         </motion.div>
       </div>
     </motion.div>
   );
 }
-
-
-
-
