@@ -31,17 +31,17 @@ export default function GatewayScroll(): React.JSX.Element {
   ];
 
   return (
-    <section ref={containerRef} className="relative h-[800vh] bg-slate-950 z-40">
+    <section ref={containerRef} className="relative h-[120vh] bg-slate-950 z-40">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        
+
         {/* Cinematic Backdrop Decor */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <div className="w-full h-full bg-[radial-gradient(circle_at_center,#0ea5e9_0,transparent_75%)] opacity-20" />
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+          <div className="w-full h-full bg-[radial-gradient(circle_at_center,#0ea5e9_0,transparent_75%)] opacity-20" />
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
         </div>
 
         {/* TEXT REVEAL (Final Background layer) */}
-        <motion.div 
+        <motion.div
           style={{ opacity: contentOpacity, y: contentY }}
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-0"
         >
@@ -50,11 +50,11 @@ export default function GatewayScroll(): React.JSX.Element {
               Infrastructure_View
             </h2>
             <p className="text-white text-7xl md:text-[10rem] font-oswald uppercase max-w-7xl leading-[0.8] tracking-tighter">
-              Seamless <br/><span className="text-slate-700">Integration</span>
+              Seamless <br /><span className="text-slate-700">Integration</span>
             </p>
 
             <motion.div style={{ opacity: btnOpacity, scale: btnScale }} className="pt-12">
-              <button 
+              <button
                 onClick={() => router.push("/contact")}
                 className="group relative px-16 py-6 bg-transparent overflow-hidden border border-sky-500/30 text-sky-400 font-mono text-xs tracking-[0.5em] uppercase hover:text-white transition-colors duration-500"
               >
@@ -68,7 +68,7 @@ export default function GatewayScroll(): React.JSX.Element {
         {/* ZIPPER IMAGE CONTAINER */}
         <div className="relative w-full max-w-[90vw] h-full flex items-center justify-center z-20 pointer-events-none px-4">
           {pairs.map((pair) => (
-            <ZipperPair 
+            <ZipperPair
               key={pair.id}
               leftSrc={pair.left}
               rightSrc={pair.right}
@@ -87,10 +87,10 @@ function ZipperPair({ range, progress, zIndex, leftSrc, rightSrc }: { range: [nu
   // Define animation milestones within the range
   const start = range[0];
   const end = range[1];
-  
+
   const fadeInEnd = start + (end - start) * 0.2;
   const unzipStart = start + (end - start) * 0.45;
-  
+
   const opacity = useTransform(progress, [start, fadeInEnd, unzipStart, end], [0, 1, 1, 0]);
   const scale = useTransform(progress, [start, unzipStart], [0.9, 1]);
 
@@ -103,7 +103,7 @@ function ZipperPair({ range, progress, zIndex, leftSrc, rightSrc }: { range: [nu
   const rightRotate = useTransform(progress, [unzipStart, end], [0, 15]);
 
   return (
-    <motion.div 
+    <motion.div
       style={{ opacity, scale, zIndex }}
       className="absolute inset-0 flex items-center justify-center p-4 md:p-12"
     >
@@ -113,10 +113,10 @@ function ZipperPair({ range, progress, zIndex, leftSrc, rightSrc }: { range: [nu
           style={{ x: leftX, rotate: leftRotate }}
           className="relative flex-1 aspect-video bg-slate-900 border border-sky-500/10 rounded-xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)]"
         >
-          <Image 
-            src={leftSrc} 
-            alt="System View Left" 
-            fill 
+          <Image
+            src={leftSrc}
+            alt="System View Left"
+            fill
             className="object-contain p-2 opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/5 to-transparent pointer-events-none" />
@@ -127,10 +127,10 @@ function ZipperPair({ range, progress, zIndex, leftSrc, rightSrc }: { range: [nu
           style={{ x: rightX, rotate: rightRotate }}
           className="relative flex-1 aspect-video bg-slate-900 border border-sky-500/10 rounded-xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)]"
         >
-          <Image 
-            src={rightSrc} 
-            alt="System View Right" 
-            fill 
+          <Image
+            src={rightSrc}
+            alt="System View Right"
+            fill
             className="object-contain p-2 opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-tl from-sky-500/5 to-transparent pointer-events-none" />
