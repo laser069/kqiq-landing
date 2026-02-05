@@ -3,8 +3,8 @@
 import React from "react";
 import Hero from "@/components/ui/Hero";
 import BillingStats from "@/components/ui/BillingStats";
-import TextOverlayScroll from "@/components/ui/TextOverlayScroll";
 import GatewayScroll from "@/components/ui/GatewayScroll";
+import { ThreeDPhotoCarouselDemo } from "@/components/ui/ThreeDCarouselDemo";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
@@ -18,18 +18,31 @@ export default function Page(): React.JSX.Element {
   const handleViewArchives = (): void => router.push("/observatory");
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-[#e0e5ec] text-slate-900 selection:bg-sky-500/20 font-oswald">
-      
-      {/* 1. HERO SECTION & 2. TEXT OVERLAY */}
+    <div className="flex flex-col w-full min-h-screen bg-[#e0e5ec] text-slate-900 selection:bg-sky-500/20 font-oswald overflow-x-hidden">
+
+      {/* 1. HERO SECTION */}
       <div className="relative z-50">
-        <Hero 
+        <Hero
           badgeText="SYSTEM STATUS: ONLINE // 2026"
           primaryCtaText="COMING SOON..."
           onPrimaryClick={handleInitialize}
           onSecondaryClick={handleViewArchives}
         />
-        <div className="relative bg-[#e0e5ec] border-t-[1.5px] border-white/70">
-           <TextOverlayScroll />
+      </div>
+
+      {/* 2. 3D PHOTO CAROUSEL */}
+      <div className="relative bg-[#e0e5ec] border-t-[1.5px] border-white/70">
+        <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <div className="flex items-center gap-3 md:gap-6 mb-8">
+            <div className="h-[1px] md:h-[2px] flex-1 bg-slate-300/30" />
+            <h2 className="text-[10px] md:text-[12px] font-black tracking-[0.3em] md:tracking-[0.5em] text-slate-400 uppercase whitespace-nowrap">
+              Visual Gallery Matrix
+            </h2>
+            <div className="h-[1px] md:h-[2px] flex-1 bg-slate-300/30" />
+          </div>
+
+          <ThreeDPhotoCarouselDemo />
         </div>
       </div>
 
@@ -39,7 +52,7 @@ export default function Page(): React.JSX.Element {
       {/* 4. MAIN CONTENT AREA */}
       <div className="relative z-50 bg-[#e0e5ec] border-t-[1.5px] border-white/70">
         <div className="container mx-auto px-6 pb-32">
-          
+
           {/* Section Divider */}
           <div className="flex items-center gap-3 md:gap-6 mb-16 md:mb-24 pt-24 md:pt-32">
             <div className="h-[px] md:h-[2px] flex-1 bg-slate-300/30" />
@@ -68,7 +81,7 @@ export default function Page(): React.JSX.Element {
 // --- HELPER COMPONENT: NEUMORPHIC DATA CARD ---
 function DataTraceCard({ title, description }: { title: string, description: string }) {
   return (
-    <motion.div 
+    <motion.div
       whileHover={{ scale: 1.02 }}
       className="group relative bg-[#e0e5ec] p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/60 transition-all duration-300"
     >
