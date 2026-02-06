@@ -34,14 +34,29 @@ export default function Footer() {
           <h4 className="font-oswald font-black text-xs tracking-[0.3em] text-slate-400 uppercase">Navigation</h4>
           <ul className="space-y-3 font-oswald font-bold text-sm uppercase tracking-widest">
             <li><Link href="/" className="hover:text-sky-500 transition-colors">Index</Link></li>
+            <li><Link href="/features" className="hover:text-sky-500 transition-colors">Features</Link></li>
             <li><Link href="/observatory" className="hover:text-sky-500 transition-colors">Observatory</Link></li>
+            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Resources</Link></li>
             <li><Link href="/expedition" className="hover:text-sky-500 transition-colors">Mission</Link></li>
             <li><Link href="/contact" className="hover:text-sky-500 transition-colors">Contact</Link></li>
           </ul>
         </div>
 
+        {/* RESOURCES LIST */}
+        <div className="space-y-6">
+          <h4 className="font-oswald font-black text-xs tracking-[0.3em] text-slate-400 uppercase">Resources</h4>
+          <ul className="space-y-3 font-oswald font-bold text-sm uppercase tracking-widest">
+            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Invoice Templates</Link></li>
+            <li><Link href="/terms" className="hover:text-sky-500 transition-colors">Terms</Link></li>
+            <li><Link href="/terms" className="hover:text-sky-500 transition-colors">Privacy</Link></li>
+            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Compare</Link></li>
+            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Support</Link></li>
+            <li><Link href="#" className="hover:text-sky-500 transition-colors">GitHub</Link></li>
+          </ul>
+        </div>
+
         {/* TERMS & CONDITIONS SUMMARY */}
-        <div className="lg:col-span-2 space-y-6 lg:pl-12">
+        <div className="lg:col-span-1 space-y-6">
           <h4 className="font-oswald font-black text-xs tracking-[0.3em] text-slate-400 uppercase">Legal & Terms</h4>
           <div className="bg-[#e0e5ec] rounded-3xl p-6 shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] border-t border-l border-white/40">
             <p className="text-[11px] font-bold leading-relaxed uppercase tracking-tight text-slate-500 italic">

@@ -44,7 +44,7 @@ function AnimatedNumber({ value }: { value: number }) {
 
 export default function BillingStats() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 bg-white">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-2 md:p-4 bg-transparent text-slate-800">
       {stats.map((stat, index) => (
         <div 
           key={index}

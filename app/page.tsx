@@ -49,7 +49,7 @@ export default function Page(): React.JSX.Element {
       {/* ------------------------------------------------------------ */}
       {/* 5. MAIN CONTENT                                              */}
       {/* ------------------------------------------------------------ */}
-      <div className="relative z-50 bg-[#e0e5ec] border-t-[1.5px] border-white/70">
+      <div id="features" className="relative z-50 bg-[#e0e5ec] border-t-[1.5px] border-white/70">
         <div className="container mx-auto px-6 pb-32">
 
           {/* Divider */}
