@@ -25,7 +25,7 @@ export default function GatewayScroll(): React.JSX.Element {
   const btnOpacity = useTransform(scrollYProgress, [0.85, 1], [0, 1]);
   const btnScale = useTransform(scrollYProgress, [0.85, 1], [0.8, 1]);
 
-  const pairs = [
+  const pairs: { id: string; left: string; right: string; range: [number, number]; z: number }[] = [
     { id: "pair-1", left: "/billing.png", right: "/dashboard.png", range: [0.0, 0.45], z: 30 },
     { id: "pair-2", left: "/dashboard.png", right: "/billing.png", range: [0.25, 0.75], z: 20 },
     { id: "pair-3", left: "/billing.png", right: "/dashboard.png", range: [0.55, 0.95], z: 10 },
@@ -51,7 +51,7 @@ export default function GatewayScroll(): React.JSX.Element {
               Infrastructure_View
             </h2>
 
-            <p className="text-white text-7xl md:text-[10rem] font-oswald uppercase max-w-7xl leading-[0.8] tracking-tighter">
+            <p className="text-white text-4xl sm:text-7xl md:text-[10rem] font-oswald uppercase max-w-7xl leading-[0.9] md:leading-[0.8] tracking-tighter">
               Seamless <br />
               <span className="text-slate-700">Integration</span>
             </p>
@@ -130,12 +130,12 @@ function ZipperPair({
       style={{ opacity, scale, zIndex }}
       className="absolute inset-0 flex items-center justify-center p-4 md:p-12"
     >
-      <div className="flex w-full h-full max-h-[60vh] gap-4 md:gap-8 items-center justify-center">
+      <div className="flex flex-col md:flex-row w-full h-full max-h-[70vh] md:max-h-[60vh] gap-4 md:gap-8 items-center justify-center">
 
         {/* Left */}
         <motion.div
           style={{ x: leftX, rotate: leftRotate }}
-          className="relative flex-1 aspect-video bg-slate-900 border border-sky-500/10 rounded-xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)]"
+          className="relative w-full md:flex-1 aspect-[2/1] md:aspect-video bg-slate-900 border border-sky-500/10 rounded-xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)]"
         >
           <Image src={leftSrc} alt="System View Left" fill className="object-contain p-2" />
         </motion.div>
@@ -143,7 +143,7 @@ function ZipperPair({
         {/* Right */}
         <motion.div
           style={{ x: rightX, rotate: rightRotate }}
-          className="relative flex-1 aspect-video bg-slate-900 border border-sky-500/10 rounded-xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)]"
+          className="relative w-full md:flex-1 aspect-[2/1] md:aspect-video bg-slate-900 border border-sky-500/10 rounded-xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.9)]"
         >
           <Image src={rightSrc} alt="System View Right" fill className="object-contain p-2" />
         </motion.div>

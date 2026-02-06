@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "INDEX", href: "/" },
+  { label: "FEATURES", href: "/features" },
+  { label: "RESOURCES", href: "/resources" },
   { label: "OBSERVATORY", href: "/observatory" },
   { label: "MISSION", href: "/expedition" },
   { label: "CONTACT", href: "/contact" },
@@ -37,7 +39,7 @@ export default function Navbar(): React.JSX.Element {
   }, [lastScrollY]);
 
   return (
-    <nav className="w-full flex justify-center pt-4 bg-transparent">
+    <nav className="fixed top-0 left-0 w-full z-[1000] flex justify-center bg-transparent pointer-events-none">
       {/* Desktop Chamfered Bar (Hidden on Mobile) */}
       <motion.div
         initial={{ y: -80, opacity: 0 }}
@@ -53,10 +55,10 @@ export default function Navbar(): React.JSX.Element {
         }}
         className="
           hidden md:flex relative items-center justify-center
-          bg-white/70 backdrop-blur-xl 
+          bg-white/80 backdrop-blur-2xl 
           border-b border-sky-400/20
           shadow-[0_8px_32px_rgba(56,189,248,0.1)]
-          px-14 py-3 min-h-[52px]
+          px-14 py-3 min-h-[52px] pointer-events-auto
         "
         style={{ clipPath: "polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%)" }}
       >
@@ -96,20 +98,25 @@ export default function Navbar(): React.JSX.Element {
         />
       </motion.div>
 
-      {/* Mobile Toggle Button (Visible on Mobile) */}
-      <div className="md:hidden flex justify-between w-full px-6 items-center">
-        <Link href="/" className="font-oswald font-black text-xl tracking-tighter text-slate-800">
+      {/* Mobile Bar - Sticky on Mobile */}
+      <motion.div 
+        animate={{ y: isVisible ? 0 : -100 }}
+        className="md:hidden flex justify-between w-full px-6 py-4 items-center bg-white/80 backdrop-blur-xl border-b border-slate-200/50 pointer-events-auto shadow-sm"
+      >
+        <Link href="/" className="font-oswald font-black text-2xl tracking-tighter text-slate-800">
           KWIQ<span className="text-sky-500">BILL</span>
         </Link>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-3 bg-white/80 backdrop-blur-md rounded-2xl shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] text-slate-800 z-[1001]"
+          className="p-2 sm:p-3 bg-white/50 backdrop-blur-md rounded-2xl shadow-[4px_4px_10px_#bebebe,-4px_-4px_10px_#ffffff] text-slate-800 z-[1001] transition-all active:scale-95 border border-white/40"
         >
-          <div className={`w-6 h-0.5 bg-slate-800 mb-1.5 transition-all ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <div className={`w-6 h-0.5 bg-slate-800 mb-1.5 transition-all ${isMobileMenuOpen ? "opacity-0" : ""}`} />
-          <div className={`w-6 h-0.5 bg-slate-800 transition-all ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <div className="flex flex-col gap-1.5">
+            <div className={`w-6 h-0.5 bg-slate-800 transition-all ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <div className={`w-6 h-0.5 bg-slate-800 transition-all ${isMobileMenuOpen ? "opacity-0" : ""}`} />
+            <div className={`w-6 h-0.5 bg-slate-800 transition-all ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          </div>
         </button>
-      </div>
+      </motion.div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

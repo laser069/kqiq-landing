@@ -79,6 +79,18 @@ export default function TermsPage(): React.JSX.Element {
             { 
               title: "6. Data & Privacy", 
               content: "Data is stored locally or in user-configured cloud services. We do not collect or sell data by default. Syncing services like Google Drive are user-controlled." 
+            },
+            { 
+              title: "7. Contributions", 
+              content: "By contributing code or designs, you agree they are licensed under Apache 2.0 and that you have the right to submit them." 
+            },
+            { 
+              title: "8. Third-Party Services", 
+              content: "We are not responsible for the availability or behavior of third-party integrations like cloud storage or authentication." 
+            },
+            { 
+              title: "9. Changes to Terms", 
+              content: "We may update these terms occasionally. Continued use of KwiqBill implies acceptance of the updated terms." 
             }
           ].map((item, i) => (
             <motion.div 
@@ -86,33 +98,15 @@ export default function TermsPage(): React.JSX.Element {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-8 bg-[#e0e5ec] rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-4"
+              transition={{ delay: i * 0.05 }}
+              className={`p-8 bg-[#e0e5ec] rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-4 ${
+                i === 8 ? "md:col-span-2" : ""
+              }`}
             >
               <h3 className="text-2xl font-black text-slate-800 uppercase tracking-tight">{item.title}</h3>
               <p className="text-slate-500 font-bold leading-relaxed text-sm">{item.content}</p>
             </motion.div>
           ))}
-        </div>
-
-        {/* FINAL SECTIONS */}
-        <div className="space-y-12 pt-12">
-            {[
-                { title: "7. Contributions", content: "By contributing code or designs, you agree they are licensed under Apache 2.0 and that you have the right to submit them." },
-                { title: "8. Third-Party Services", content: "We are not responsible for the availability or behavior of third-party integrations like cloud storage or authentication." },
-                { title: "9. Changes to Terms", content: "We may update these terms occasionally. Continued use of KwiqBill implies acceptance of the updated terms." }
-            ].map((section, i) => (
-                <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="border-b border-slate-300/30 pb-8"
-                >
-                    <h3 className="text-3xl font-black text-slate-800 uppercase tracking-tight mb-4">{section.title}</h3>
-                    <p className="text-slate-500 font-bold leading-relaxed max-w-2xl">{section.content}</p>
-                </motion.div>
-            ))}
         </div>
 
         {/* CONTACT SECTION */}
