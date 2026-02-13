@@ -67,7 +67,7 @@ export default function ResourcesClient() {
                <div className="h-[2px] w-8 bg-sky-500" />
                <span className="font-mono text-[9px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">System_Resources // Vol. 01</span>
             </div>
-            <h1 className="font-oswald font-black text-4xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8">
+            <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8">
               Resources for Using <span className="text-sky-500">KWIQBILL</span> Effectively
             </h1>
             <p className="font-oswald text-lg md:text-2xl text-slate-500 font-bold italic leading-relaxed uppercase tracking-tight">
