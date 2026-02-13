@@ -25,7 +25,7 @@ const coreFeatures = [
       "Touch-friendly interface",
       "Ideal for on-the-go businesses"
     ],
-    image: "/mobile_billing.png",
+    image: "/mobile_final_v1.png",
     id: "feature-mobile"
   },
   {
@@ -38,7 +38,7 @@ const coreFeatures = [
       "Local data storage",
       "Suitable for retail & wholesale stores"
     ],
-    image: "/billing.png",
+    image: "/desktop_dashboard_v1.png",
     id: "feature-desktop"
   },
   {
@@ -51,7 +51,7 @@ const coreFeatures = [
       "Payment method insights",
       "Export reports to PDF"
     ],
-    image: "/dashboard.png",
+    image: "/reporting_dashboard_v1.png",
     id: "feature-reporting"
   },
   {
@@ -64,7 +64,7 @@ const coreFeatures = [
       "Custom invoice templates",
       "Invoice history & reprints"
     ],
-    image: "/dashboard.png",
+    image: "/bill_management_v1.png",
     id: "feature-billing"
   }
 ];
@@ -80,13 +80,13 @@ const subFeatures = [
 
 export default function FeaturesClient() {
   return (
-    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-32 pb-24 px-6 md:px-12">
+    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-20 pb-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         
         {/* 1. Page Hero Section */}
         <section className="mb-20 md:mb-32">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="md:max-w-4xl"
@@ -95,7 +95,7 @@ export default function FeaturesClient() {
                <div className="h-[2px] w-8 bg-sky-500" />
                <span className="font-mono text-[9px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">Capabilties // V2.0</span>
             </div>
-            <h1 className="font-oswald font-black text-4xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8">
+            <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8">
               Powerful Billing & Store <span className="text-sky-500">Management</span> — Made Simple
             </h1>
             <p className="font-oswald text-lg md:text-2xl text-slate-500 font-bold italic leading-relaxed uppercase tracking-tight mb-12">
@@ -119,8 +119,8 @@ export default function FeaturesClient() {
         </section>
 
         {/* 2. Feature Overview Strip */}
-        <section className="mb-32 overflow-hidden">
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+        <section className="mb-32">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 py-4">
             {highlights.map((h, i) => (
               <motion.div
                 key={h.label}
@@ -193,28 +193,28 @@ export default function FeaturesClient() {
               >
                 {feature.id === 'feature-mobile' ? (
                   /* 9:16 Mobile Card */
-                  <div className="relative bg-[#e0e5ec] rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] p-6 lg:p-10 border-t border-l border-white/60 max-w-sm aspect-[9/16] w-full">
-                    <div className="relative w-full h-full overflow-hidden rounded-[2rem] shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff]">
+                  <div className="relative bg-white rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 max-w-sm aspect-[9/19.5] w-full overflow-hidden">
+                    <div className="relative w-full h-full">
                         <Image 
-                          src={feature.image}
-                          alt={feature.title}
-                          fill
-                          className="object-cover contrast-110 saturate-125"
+                           src={feature.image}
+                           alt={feature.title}
+                           fill
+                           className="object-contain"
                         />
-                        <div className="absolute inset-0 bg-sky-500/10 mix-blend-overlay" />
+
                     </div>
                   </div>
                 ) : (
                   /* Original 16:9 Widescreen Card */
-                  <div className="absolute inset-0 bg-[#e0e5ec] rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] p-6 lg:p-10 border-t border-l border-white/60">
-                    <div className="relative w-full h-full overflow-hidden rounded-[2rem] shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff]">
+                  <div className="absolute inset-0 bg-white rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 overflow-hidden">
+                    <div className="relative w-full h-full">
                         <Image 
-                          src={feature.image}
-                          alt={feature.title}
-                          fill
-                          className="object-cover contrast-110 saturate-125"
+                           src={feature.image}
+                           alt={feature.title}
+                           fill
+                           className="object-contain"
                         />
-                        <div className="absolute inset-0 bg-sky-500/10 mix-blend-overlay" />
+
                     </div>
                   </div>
                 )}

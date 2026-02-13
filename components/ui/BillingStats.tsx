@@ -4,10 +4,10 @@ import { useEffect, useState, useRef } from "react";
 import { useMotionValue, useSpring, useInView } from "framer-motion";
 
 const stats = [
-  { label: "TOTAL BILLS GENERATED", value: 42, color: "bg-sky-500", suffix: "K+" },
-  { label: "MONTHLY REVENUE", value: 8.9, color: "bg-sky-600", suffix: "L", prefix: "₹" },
-  { label: "ACTIVE BUSINESSES", value: 124, color: "bg-sky-500", suffix: "+" },
-  { label: "ACTIVE STORES", value: 12, color: "bg-sky-400", suffix: "" },
+  { label: "TOTAL BILLS GENERATED", value: 10, color: "bg-sky-500", suffix: "K+" },
+  { label: "MONTHLY REVENUE", value: 50, color: "bg-sky-600", suffix: "K+", prefix: "₹" },
+  { label: "ACTIVE BUSINESSES", value: 15, color: "bg-sky-500", suffix: "+" },
+  { label: "ACTIVE STORES", value: 10, color: "bg-sky-400", suffix: "" },
 ];
 
 function AnimatedNumber({ value }: { value: number }) {

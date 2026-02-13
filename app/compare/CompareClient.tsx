@@ -15,13 +15,11 @@ import {
   ShieldCheck,
   Cpu,
   CheckCircle2,
-  AlertCircle,
   XCircle,
-  FlaskConical,
   ChevronDown
 } from "lucide-react";
 
-type Status = "Available" | "Limited" | "Not Available" | "Beta";
+type Status = "Available" | "Not Available";
 
 interface ComparisonRow {
   feature: string;
@@ -39,9 +37,7 @@ interface Category {
 
 const statusIcons: Record<Status, React.ReactNode> = {
   Available: <CheckCircle2 className="w-6 h-6 text-emerald-500" />,
-  Limited: <AlertCircle className="w-6 h-6 text-amber-500" />,
   "Not Available": <XCircle className="w-6 h-6 text-rose-500" />,
-  Beta: <FlaskConical className="w-6 h-6 text-sky-500" />,
 };
 
 const comparisonData: Category[] = [
@@ -50,14 +46,14 @@ const comparisonData: Category[] = [
     icon: <Receipt className="w-8 h-8" />,
     features: [
       { feature: "Basic Billing / POS", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Fast Checkout & Shortcuts", zoho: "Limited", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Fast Checkout & Shortcuts", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Barcode Billing", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Invoice Templates", zoho: "Available", vyapar: "Available", kwiqbill: "Limited" },
+      { feature: "Invoice Templates", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Thermal / A4 / A5 Printing", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Live Invoice Preview", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "GST (CGST/SGST/IGST)", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Discounts (Item & Bill)", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Multiple Bills / Tabs", zoho: "Not Available", vyapar: "Available", kwiqbill: "Beta" },
+      { feature: "Multiple Bills / Tabs", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Custom Footer & Terms", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
     ],
   },
@@ -68,11 +64,11 @@ const comparisonData: Category[] = [
       { feature: "Product Catalog", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "SKU & HSN Support", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Stock Tracking", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Low Stock Alerts", zoho: "Available", vyapar: "Available", kwiqbill: "Beta" },
+      { feature: "Low Stock Alerts", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Barcode Generation", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
       { feature: "Product Images", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Inventory Reports", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Multi-Warehouse Support", zoho: "Available", vyapar: "Limited", kwiqbill: "Not Available" },
+      { feature: "Multi-Warehouse Support", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
     ],
   },
   {
@@ -83,9 +79,9 @@ const comparisonData: Category[] = [
       { feature: "GSTIN Tracking", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Purchase History", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Outstanding / Due Tracking", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Customer Types (Retail/Wholesale)", zoho: "Available", vyapar: "Available", kwiqbill: "Limited" },
+      { feature: "Customer Types (Retail/Wholesale)", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Loyalty Points", zoho: "Not Available", vyapar: "Available", kwiqbill: "Not Available" },
-      { feature: "Visit / Engagement Tracking", zoho: "Available", vyapar: "Not Available", kwiqbill: "Beta" },
+      { feature: "Visit / Engagement Tracking", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
     ],
   },
   {
@@ -96,9 +92,9 @@ const comparisonData: Category[] = [
       { feature: "Profit & Loss", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Payment Method Analysis", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Top Products", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Date Range Comparison", zoho: "Available", vyapar: "Available", kwiqbill: "Limited" },
+      { feature: "Date Range Comparison", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Export to PDF", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Charts & Graphs", zoho: "Available", vyapar: "Available", kwiqbill: "Beta" },
+      { feature: "Charts & Graphs", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Owner-Level Summary", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
     ],
   },
@@ -108,7 +104,7 @@ const comparisonData: Category[] = [
     features: [
       { feature: "Expense Recording", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Expense Categories", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Cash Flow View", zoho: "Available", vyapar: "Available", kwiqbill: "Limited" },
+      { feature: "Cash Flow View", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Expense vs Revenue", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Receipt Upload", zoho: "Available", vyapar: "Not Available", kwiqbill: "Not Available" },
     ],
@@ -119,7 +115,7 @@ const comparisonData: Category[] = [
     features: [
       { feature: "Web Application", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
       { feature: "Desktop Application", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Android App", zoho: "Available", vyapar: "Available", kwiqbill: "Beta" },
+      { feature: "Android App", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Offline Mode", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Local Device Storage", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
     ],
@@ -129,7 +125,7 @@ const comparisonData: Category[] = [
     icon: <Settings className="w-8 h-8" />,
     features: [
       { feature: "Store Profile & Logo", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Invoice Customization", zoho: "Available", vyapar: "Available", kwiqbill: "Limited" },
+      { feature: "Invoice Customization", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "GST Slab Configuration", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Printer Configuration", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "QR Code on Invoice", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
@@ -141,10 +137,10 @@ const comparisonData: Category[] = [
     icon: <ShieldCheck className="w-8 h-8" />,
     features: [
       { feature: "Cloud Backup", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Google Drive Backup", zoho: "Not Available", vyapar: "Available", kwiqbill: "Beta" },
+      { feature: "Google Drive Backup", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Local Backup", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Role-Based Access", zoho: "Available", vyapar: "Limited", kwiqbill: "Beta" },
-      { feature: "Audit Logs", zoho: "Available", vyapar: "Not Available", kwiqbill: "Beta" },
+      { feature: "Role-Based Access", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Audit Logs", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
     ],
   },
   {
@@ -152,9 +148,9 @@ const comparisonData: Category[] = [
     icon: <Cpu className="w-8 h-8" />,
     features: [
       { feature: "Workflow Automation", zoho: "Available", vyapar: "Not Available", kwiqbill: "Not Available" },
-      { feature: "API Access", zoho: "Available", vyapar: "Not Available", kwiqbill: "Beta" },
-      { feature: "AI / Smart Insights", zoho: "Limited", vyapar: "Not Available", kwiqbill: "Not Available" },
-      { feature: "Deep Transaction Logging", zoho: "Available", vyapar: "Limited", kwiqbill: "Available" },
+      { feature: "API Access", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
+      { feature: "AI / Smart Insights", zoho: "Available", vyapar: "Not Available", kwiqbill: "Not Available" },
+      { feature: "Deep Transaction Logging", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Modular Architecture", zoho: "Not Available", vyapar: "Not Available", kwiqbill: "Available" },
     ],
   },
@@ -193,7 +189,9 @@ export default function CompareClient() {
           {Object.entries(statusIcons).map(([label, icon]) => (
             <div key={label} className="flex items-center gap-3">
               <span>{icon}</span>
-              <span className="text-xs font-black text-slate-500 uppercase tracking-widest">{label}</span>
+              <span className="text-xs font-black text-slate-500 uppercase tracking-widest">
+                {label === "Available" ? "RIGHT" : "WRONG"}
+              </span>
             </div>
           ))}
         </div>
@@ -237,7 +235,7 @@ export default function CompareClient() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
-                    <div className="px-4 pb-8 md:px-10 overflow-x-hidden">
+                    <div className="px-4 pb-8 md:px-10 overflow-x-auto">
                       <table className="w-full border-collapse table-fixed">
                         <thead>
                           <tr className="border-b-2 border-slate-300/30">

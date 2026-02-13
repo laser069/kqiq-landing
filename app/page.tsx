@@ -70,7 +70,7 @@ export default function Page(): React.JSX.Element {
           <section className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <DataTraceCard
               title="LIVE BILLING"
-              description="142 active businesses generating bills seamlessly across web, desktop, and mobile — online and offline."
+              description="15 active businesses generating bills seamlessly across web, desktop, and mobile — online and offline."
             />
             <DataTraceCard
               title="SYSTEM STATUS"
@@ -95,7 +95,7 @@ function DataTraceCard({ title, description }: { title: string; description: str
       className="group relative bg-[#e0e5ec] p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/60 transition-all duration-300"
     >
       <div className="flex justify-between items-start mb-6">
-        <h3 className="text-3xl md:text-4xl font-black text-slate-800 tracking-tight uppercase">
+        <h3 className="text-2xl sm:text-4xl font-black text-slate-800 tracking-tight uppercase">
           {title}
         </h3>
         <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] flex items-center justify-center">

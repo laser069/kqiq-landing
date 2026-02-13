@@ -28,7 +28,7 @@ export default function ContactHero() {
           
           {/* THE BOLD TYPOGRAPHY SECTION */}
           <div className="relative z-10 mt-8 md:mt-12">
-            <h1 className="font-oswald font-black text-[clamp(4.5rem,15vw,14rem)] leading-[0.75] text-slate-800 uppercase tracking-[-0.06em]">
+            <h1 className="font-oswald font-black text-[clamp(3.5rem,15vw,14rem)] leading-[0.75] text-slate-800 uppercase tracking-[-0.06em]">
               <span className="block drop-shadow-[4px_6px_8px_rgba(0,0,0,0.15)]">KWIQ</span>
               <span className="block text-sky-500 [text-shadow:_-2px_-2px_0_#fff,2px_-2px_0_#fff,-2px_2px_0_#fff,2px_2px_0_#fff,6px_8px_12px_rgba(14,165,233,0.3)]">
                 BILLING
