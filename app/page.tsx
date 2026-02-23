@@ -373,7 +373,7 @@ export default function Page(): React.JSX.Element {
           <section className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <DataTraceCard
               title="LIVE BILLING"
-              description="142 active businesses generating bills seamlessly across web, desktop, and mobile — online and offline."
+              description="15 active businesses generating bills seamlessly across web, desktop, and mobile — online and offline."
             />
             <DataTraceCard
               title="SYSTEM STATUS"

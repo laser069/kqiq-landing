@@ -37,7 +37,7 @@ export default function FAQSection() {
                             <div className="w-2 h-2 bg-sky-500 rounded-full" />
                             <div className="w-2 h-2 bg-slate-200 rounded-full" />
                         </div>
-                        <h2 className="font-oswald text-4xl md:text-5xl text-slate-900 uppercase leading-[1.1] tracking-tighter">
+                        <h2 className="font-oswald text-3xl md:text-5xl text-slate-900 uppercase leading-[1.1] tracking-tighter">
                             COMMON <br />
                             QUESTIONS.
                         </h2>

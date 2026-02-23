@@ -33,9 +33,20 @@ export function ThreeDPhotoCarousel() {
 
   // 3D Math - Responsive
   const isMobile = windowWidth < 768;
+  const isTablet = windowWidth >= 768 && windowWidth < 1024;
   const faceCount = cards.length;
-  const cylinderWidth = isMobile ? windowWidth * 1.8 : 1300;
-  const faceWidth = isMobile ? windowWidth * 0.7 : cylinderWidth / faceCount;
+
+  // Adjusted for better spacing on mobile/tablet
+  const cylinderWidth = isMobile
+    ? windowWidth * 2.2
+    : isTablet
+      ? windowWidth * 1.6
+      : 1300;
+  const faceWidth = isMobile
+    ? windowWidth * 0.65
+    : isTablet
+      ? windowWidth * 0.4
+      : cylinderWidth / faceCount;
   const radius = cylinderWidth / (2 * Math.PI);
   const perspective = isMobile ? "800px" : "1200px";
 

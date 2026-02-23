@@ -2,8 +2,38 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function ContactForm() {
+    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("submitting");
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            setStatus("error");
+        }
+    };
     return (
         <section id="contact-form" className="bg-[#e0e5ec] py-20 md:py-32 px-6 md:px-12 relative overflow-hidden border-t-[1.5px] border-white/70">
 
@@ -17,7 +47,7 @@ export default function ContactForm() {
                     <div className="lg:col-span-4 space-y-12">
                         <div className="space-y-6">
                             <span className="font-mono text-[10px] text-sky-500 font-bold tracking-[0.4em] uppercase block">Client Relations</span>
-                            <h2 className="font-oswald text-6xl text-slate-900 uppercase leading-[0.9] tracking-tighter">
+                            <h2 className="font-oswald text-4xl md:text-6xl text-slate-900 uppercase leading-[0.9] tracking-tighter">
                                 START A <br />
                                 <span className="text-sky-500">PROJECT.</span>
                             </h2>
@@ -44,7 +74,7 @@ export default function ContactForm() {
                                 </div>
                                 <div className="flex justify-between items-center text-[10px] font-mono">
                                     <span className="text-slate-400">Office Region</span>
-                                    <span className="text-slate-800 uppercase tracking-wider">North America</span>
+                                    <span className="text-slate-800 uppercase tracking-wider">Madurai, Tamil Nadu</span>
                                 </div>
                                 <div className="h-1.5 w-full bg-[#e0e5ec] rounded-full shadow-[inset_1px_1px_3px_#bebebe,inset_-1px_-1px_3px_#ffffff] overflow-hidden">
                                     <motion.div
@@ -64,13 +94,16 @@ export default function ContactForm() {
 
                     {/* Right side: Neumorphic Form */}
                     <div className="lg:col-span-8 bg-[#e0e5ec] rounded-[3rem] md:rounded-[4rem] p-8 md:p-16 shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] md:shadow-[35px_35px_70px_#bebebe,-35px_-35px_70px_#ffffff] border-t border-l border-white/60">
-                        <form className="space-y-12" onSubmit={(e) => e.preventDefault()}>
+                        <form className="space-y-12" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div className="space-y-4">
                                     <label className="font-mono text-[10px] text-slate-400 font-black uppercase tracking-widest ml-1">Official Name</label>
                                     <input
                                         type="text"
                                         placeholder="First and Last Name"
+                                        required
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                         className="w-full bg-[#e0e5ec] rounded-2xl px-6 py-5 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] outline-none focus:text-sky-500 transition-all font-sans font-bold text-slate-700 placeholder:text-slate-400/50"
                                     />
                                 </div>
@@ -79,6 +112,9 @@ export default function ContactForm() {
                                     <input
                                         type="email"
                                         placeholder="email@company.com"
+                                        required
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                         className="w-full bg-[#e0e5ec] rounded-2xl px-6 py-5 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] outline-none focus:text-sky-500 transition-all font-sans font-bold text-slate-700 placeholder:text-slate-400/50"
                                     />
                                 </div>
@@ -89,6 +125,9 @@ export default function ContactForm() {
                                 <textarea
                                     rows={5}
                                     placeholder="Please describe your requirements..."
+                                    required
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                     className="w-full bg-[#e0e5ec] rounded-3xl px-8 py-6 shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff] outline-none focus:text-sky-500 transition-all font-sans font-bold text-slate-700 placeholder:text-slate-400/50 resize-none"
                                 />
                             </div>
@@ -97,14 +136,26 @@ export default function ContactForm() {
                                 <motion.button
                                     whileHover={{ scale: 1.01 }}
                                     whileTap={{ scale: 0.98 }}
-                                    className="w-full bg-[#e0e5ec] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] active:shadow-[inset_5px_5px_10px_#bebebe,inset_-5px_-5px_10px_#ffffff] text-slate-800 rounded-[1.5rem] md:rounded-[2rem] py-6 md:py-8 px-8 md:px-12 font-oswald text-xl md:text-2xl uppercase tracking-[0.2em] md:tracking-[0.3em] flex items-center justify-between group transition-all"
+                                    disabled={status === "submitting"}
+                                    className={`w-full bg-[#e0e5ec] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] active:shadow-[inset_5px_5px_10px_#bebebe,inset_-5px_-5px_10px_#ffffff] text-slate-800 rounded-[1.5rem] md:rounded-[2rem] py-6 md:py-8 px-8 md:px-12 font-oswald text-xl md:text-2xl uppercase tracking-[0.2em] md:tracking-[0.3em] flex items-center justify-between group transition-all ${status === "submitting" ? "opacity-50 cursor-not-allowed" : ""}`}
                                 >
-                                    <span className="font-black">Submit Inquiry</span>
+                                    <span className="font-black">
+                                        {status === "idle" && "Submit Inquiry"}
+                                        {status === "submitting" && "Transmitting..."}
+                                        {status === "success" && "Inquiry Sent"}
+                                        {status === "error" && "Retry Submission"}
+                                    </span>
                                     <div className="w-12 h-12 rounded-full bg-[#e0e5ec] shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] flex items-center justify-center text-sky-500 group-hover:scale-110 transition-transform">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                                            <line x1="5" y1="12" x2="19" y2="12" />
-                                            <polyline points="12 5 19 12 12 19" />
-                                        </svg>
+                                        {status === "success" ? (
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                                <polyline points="20 6 9 17 4 12" />
+                                            </svg>
+                                        ) : (
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                                                <line x1="5" y1="12" x2="19" y2="12" />
+                                                <polyline points="12 5 19 12 12 19" />
+                                            </svg>
+                                        )}
                                     </div>
                                 </motion.button>
                             </div>

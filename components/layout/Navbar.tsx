@@ -126,7 +126,7 @@ export default function Navbar(): React.JSX.Element {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-[#e0e5ec] z-[1000] flex flex-col pt-32 px-12"
+            className="fixed inset-0 bg-[#e0e5ec] z-[1000] flex flex-col pt-32 px-12 pointer-events-auto"
           >
             <div className="space-y-8">
               {navItems.map((item, idx) => (
@@ -139,7 +139,7 @@ export default function Navbar(): React.JSX.Element {
                   <Link
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-5xl font-oswald font-black uppercase tracking-tighter block ${pathname === item.href ? "text-sky-500" : "text-slate-800"
+                    className={`text-4xl sm:text-5xl font-oswald font-black uppercase tracking-tighter block ${pathname === item.href ? "text-sky-500" : "text-slate-800"
                       }`}
                   >
                     {item.label}

@@ -52,8 +52,8 @@ export default function ObservatoryPage(): React.JSX.Element {
       {/* 3. SYSTEM PROTOCOLS */}
       <section className="pt-24 pb-8 px-6 md:px-24 bg-[#e0e5ec] relative z-20">
         <div className="max-w-7xl w-full mx-auto mb-12 border-b border-slate-300/30 pb-6">
-           <h2 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-slate-800 uppercase leading-none">
-              Core <span className="text-sky-500 text-2xl sm:text-3xl md:text-5xl">Features</span>
+           <h2 className="text-3xl sm:text-6xl md:text-8xl font-black tracking-tighter text-slate-800 uppercase leading-none">
+              Core <span className="text-sky-500 text-xl sm:text-3xl md:text-5xl">Features</span>
            </h2>
         </div>
 

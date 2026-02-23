@@ -118,9 +118,29 @@ function ZipperPair({
 
   const scale = useTransform(progress, [start, unzipStart], [0.9, 1]);
 
-  // Image movement (SLOW)
-  const leftX = useTransform(compressedProgress, [unzipStart, end], ["0%", "-90%"]);
-  const rightX = useTransform(compressedProgress, [unzipStart, end], ["0%", "90%"]);
+  const [windowWidth, setWindowWidth] = React.useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
+
+  React.useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowWidth < 768;
+
+  // Image movement (Adjusted for mobile)
+  const leftX = useTransform(
+    compressedProgress,
+    [unzipStart, end],
+    ["0%", isMobile ? "-15%" : "-90%"]
+  );
+  const rightX = useTransform(
+    compressedProgress,
+    [unzipStart, end],
+    ["0%", isMobile ? "15%" : "90%"]
+  );
 
   const leftRotate = useTransform(compressedProgress, [unzipStart, end], [0, -7]);
   const rightRotate = useTransform(compressedProgress, [unzipStart, end], [0, 7]);

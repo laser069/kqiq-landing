@@ -52,7 +52,7 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.85] md:leading-[0.8] uppercase select-none text-[3.5rem] sm:text-[5rem] md:text-[8rem] lg:text-[12rem]">
+            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.85] md:leading-[0.8] uppercase select-none text-[2.8rem] sm:text-[5rem] md:text-[8rem] lg:text-[12rem]">
               <span className="block">{titleLine1}</span>
               <span className="block text-sky-500">{titleLine2}</span>
             </h1>
