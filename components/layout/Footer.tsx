@@ -78,9 +78,9 @@ export default function Footer() {
           © {currentYear} KWIQBILL PROJECT // POWERED BY ZIPPY
         </p>
         <div className="flex gap-8 font-oswald font-bold text-[10px] text-slate-400 uppercase tracking-[0.2em]">
-           <span>ZippyDigitalSolutions</span>
-           <span>2026</span>
-        </div>
+           <span>NORTH_AMERICA_HQ</span>
+           <span>EST_2026</span>
+         </div>
       </div>
     </footer>
   );
