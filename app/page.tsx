@@ -29,7 +29,7 @@ export default function Page() {
       {/* ------------------------------------------------------------ */}
       {/* 2. PLATFORM ARCHITECTURE                                     */}
       {/* ------------------------------------------------------------ */}
-      <section className="relative z-40 bg-[#e0e5ec] py-24 border-t-[1.5px] border-white/70 overflow-hidden">
+      <section className="relative z-40 bg-[#e0e5ec] py-12 md:py-24 border-t-[1.5px] border-white/70 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 space-y-8">

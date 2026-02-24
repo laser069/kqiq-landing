@@ -28,7 +28,7 @@ export default function Hero({
   brandName = "ZIPPY",
 }: HeroProps): React.JSX.Element {
   return (
-    <section className="relative w-full min-h-[85vh] md:min-h-screen overflow-hidden bg-[#e0e5ec] flex items-center">
+    <section className="relative w-full min-h-fit md:min-h-screen pt-32 pb-12 md:py-0 overflow-hidden bg-[#e0e5ec] flex items-center">
 
       {/* 1. Background Image - High Visibility */}
       <div className="absolute inset-0 z-0">
@@ -43,7 +43,7 @@ export default function Hero({
       </div>
 
       {/* 2. Main Content Container */}
-      <div className="relative z-20 container mx-auto px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-24 h-full flex flex-col justify-center gap-6 md:gap-10 lg:gap-16">
+      <div className="relative z-20 container mx-auto px-4 sm:px-6 md:px-12 lg:px-20 h-full flex flex-col justify-center gap-6 md:gap-10 lg:gap-16">
 
         {/* TITLED SECTION */}
         <div className="flex flex-col">
