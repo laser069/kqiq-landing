@@ -32,10 +32,6 @@ export default function Page() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 space-y-8">
-              <div className="flex items-center gap-3">
-                <div className="h-[2px] w-8 bg-sky-500" />
-                <span className="font-mono text-[10px] font-black tracking-[0.4em] text-slate-400 uppercase">Architecture // V2.0</span>
-              </div>
               <h2 className="font-oswald font-black text-4xl sm:text-5xl md:text-7xl text-slate-900 uppercase leading-[0.9] tracking-tighter">
                 Multi-Platform <br />
                 <span className="text-sky-500 text-3xl sm:text-5xl md:text-7xl">Stability</span>
@@ -45,11 +41,9 @@ export default function Page() {
               </p>
               <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4">
                 <div className="p-4 sm:p-6 bg-[#e0e5ec] rounded-2xl shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] border-t border-l border-white/40">
-                  <span className="font-mono text-[10px] text-sky-500 font-black block mb-2">OS_MOBILE</span>
                   <span className="font-oswald font-black text-lg md:text-xl text-slate-800 uppercase">Android</span>
                 </div>
                 <div className="p-4 sm:p-6 bg-[#e0e5ec] rounded-2xl shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] border-t border-l border-white/40">
-                  <span className="font-mono text-[10px] text-sky-500 font-black block mb-2">OS_DESKTOP</span>
                   <span className="font-oswald font-black text-lg md:text-xl text-slate-800 uppercase">Windows</span>
                 </div>
               </div>
@@ -92,29 +86,38 @@ export default function Page() {
       {/* ------------------------------------------------------------ */}
       {/* 4. STRATEGIC ADVANTAGES (TICKER)                              */}
       {/* ------------------------------------------------------------ */}
-      <section className="relative z-40 bg-slate-900 py-10 overflow-hidden">
-        <div className="flex w-fit animate-marquee whitespace-nowrap">
-          <div className="flex gap-12 items-center px-6">
-            {[
-              "SECURE_AES_256", "CLOUD_BACKUP_ENABLED", "BARCODE_READY",
-              "THERMAL_PRINT_SUPPORT", "A4_INVOICING", "INVENTORY_TRACKING",
-              "EXPENSE_MANAGEMENT", "LIVE_API_READY", "MULTI_CURRENCY"
-            ].map((tag, idx) => (
-              <span key={idx} className="font-mono text-[11px] font-black text-sky-500/50 tracking-[0.3em] uppercase">
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex gap-12 items-center px-6" aria-hidden="true">
-            {[
-              "SECURE_AES_256", "CLOUD_BACKUP_ENABLED", "BARCODE_READY",
-              "THERMAL_PRINT_SUPPORT", "A4_INVOICING", "INVENTORY_TRACKING",
-              "EXPENSE_MANAGEMENT", "LIVE_API_READY", "MULTI_CURRENCY"
-            ].map((tag, idx) => (
-              <span key={tag + "-dup"} className="font-mono text-[11px] font-black text-sky-500/50 tracking-[0.3em] uppercase">
-                {tag}
-              </span>
-            ))}
+      <section className="relative z-40 py-12 overflow-hidden bg-[#e0e5ec]">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-500/5 to-transparent" />
+        <div className="relative border-y border-sky-500/10 bg-white/40 backdrop-blur-md py-8">
+          <div className="flex w-fit animate-marquee whitespace-nowrap">
+            <div className="flex gap-16 items-center px-8">
+              {[
+                "SECURE_AES_256", "CLOUD_BACKUP_ENABLED", "BARCODE_READY",
+                "THERMAL_PRINT_SUPPORT", "A4_INVOICING", "INVENTORY_TRACKING",
+                "EXPENSE_MANAGEMENT", "LIVE_API_READY", "MULTI_CURRENCY"
+              ].map((tag, idx) => (
+                <div key={idx} className="flex items-center gap-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-sky-500 shadow-[0_0_8px_#0ea5e9]" />
+                  <span className="font-mono text-[10px] font-black text-slate-800 tracking-[0.4em] uppercase opacity-70 hover:opacity-100 hover:text-sky-500 transition-all cursor-default">
+                    {tag}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-16 items-center px-8" aria-hidden="true">
+              {[
+                "SECURE_AES_256", "CLOUD_BACKUP_ENABLED", "BARCODE_READY",
+                "THERMAL_PRINT_SUPPORT", "A4_INVOICING", "INVENTORY_TRACKING",
+                "EXPENSE_MANAGEMENT", "LIVE_API_READY", "MULTI_CURRENCY"
+              ].map((tag, idx) => (
+                <div key={tag + "-dup"} className="flex items-center gap-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-sky-500 shadow-[0_0_8px_#0ea5e9]" />
+                  <span className="font-mono text-[10px] font-black text-slate-800 tracking-[0.4em] uppercase opacity-70 hover:opacity-100 hover:text-sky-500 transition-all cursor-default">
+                    {tag}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -123,15 +126,7 @@ export default function Page() {
       {/* 5. MAIN CONTENT                                              */}
       {/* ------------------------------------------------------------ */}
       <div id="features" className="relative z-50 bg-[#e0e5ec] border-t-[1.5px] border-white/70">
-        <div className="container mx-auto px-4 sm:px-6 pb-32">
-
-          <div className="flex items-center gap-3 md:gap-6 mb-16 md:mb-24 pt-24 md:pt-32">
-            <div className="h-[1px] md:h-[2px] flex-1 bg-slate-300/30" />
-            <h2 className="text-[10px] md:text-[12px] font-black tracking-[0.3em] md:tracking-[0.5em] text-slate-400 uppercase whitespace-nowrap">
-              Resource Allocation Metrics
-            </h2>
-            <div className="h-[1px] md:h-[2px] flex-1 bg-slate-300/30" />
-          </div>
+        <div className="container mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-32">
 
           <Suspense fallback={<div className="h-64 bg-slate-100 animate-pulse rounded-[3rem]" />}>
             <AnimatedStats />

@@ -91,10 +91,6 @@ export default function FeaturesClient() {
             transition={{ duration: 0.8 }}
             className="md:max-w-4xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-[2px] w-8 bg-sky-500" />
-              <span className="font-mono text-[9px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">Capabilties // V2.0</span>
-            </div>
             <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8 text-[clamp(2.5rem,8vw,8rem)]">
               Powerful Billing & Store <span className="text-sky-500">Management</span> — Made Simple
             </h1>
@@ -130,14 +126,9 @@ export default function FeaturesClient() {
                 className="flex items-center gap-2 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-[#e0e5ec] rounded-full shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] border-t border-l border-white/40 group mb-2 sm:mb-0"
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse shadow-[0_0_8px_rgba(14,165,233,0.5)]" />
-                <div className="flex flex-col">
-                  <span className="font-oswald font-black text-[10px] md:text-[11px] text-slate-900 uppercase tracking-widest leading-none">
-                    {h.label}
-                  </span>
-                  <span className="font-mono text-[7px] text-sky-500 font-black tracking-[0.2em] mt-1 opacity-60 group-hover:opacity-100 transition-opacity">
-                    [{h.code}]
-                  </span>
-                </div>
+                <span className="font-oswald font-black text-[10px] md:text-[11px] text-slate-900 uppercase tracking-widest leading-none">
+                  {h.label}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -160,7 +151,6 @@ export default function FeaturesClient() {
                 className="flex-1 space-y-8"
               >
                 <div>
-                  <span className="font-mono text-[10px] text-sky-500 font-black tracking-[0.3em] uppercase mb-4 block">Protocols // 0{index + 1}</span>
                   <h2 className="font-oswald font-black text-2xl sm:text-4xl md:text-6xl text-slate-900 uppercase tracking-tight text-[clamp(1.5rem,8vw,3.75rem)] sm:text-4xl md:text-6xl">
                     {feature.title}
                   </h2>
@@ -240,7 +230,6 @@ export default function FeaturesClient() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-[#e0e5ec] p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] border-t border-l border-white/40 flex flex-col items-start gap-3 sm:gap-4 group hover:shadow-inner transition-all duration-300"
               >
-                <span className="font-mono text-[9px] text-sky-500 font-black tracking-widest">{f.tag}</span>
                 <span className="font-oswald font-black text-lg sm:text-xl text-slate-800 uppercase tracking-[0.1em]">
                   {f.title}
                 </span>
@@ -260,7 +249,6 @@ export default function FeaturesClient() {
           <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-16">
             {["MOBILE (ANDROID)", "DESKTOP", "WEB"].map(platform => (
               <div key={platform} className="px-8 py-6 md:px-12 md:py-8 bg-[#e0e5ec] rounded-2xl shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff] border border-white/20 flex flex-col items-center">
-                <div className="font-mono text-[8px] md:text-[9px] text-sky-500 font-black tracking-[0.4em] mb-4 uppercase">DEPLOYED_STABLE</div>
                 <span className="font-oswald font-black text-lg md:text-xl text-slate-800 tracking-[0.2em]">{platform}</span>
               </div>
             ))}

@@ -18,13 +18,7 @@ export default function ContactHero() {
                      border-t-[1.5px] border-l-[1.5px] border-white/70
                      flex flex-col justify-between relative overflow-hidden min-h-[400px] md:min-h-[550px]"
         >
-          {/* Top Metadata */}
-          <div className="relative z-10 flex justify-between items-start">
-            <div className="px-6 py-2 rounded-full bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]">
-              <span className="font-mono text-[10px] text-sky-500 font-black tracking-[0.3em] uppercase">Enterprise_Ready</span>
-            </div>
-            <span className="font-oswald text-sm text-slate-400 font-bold uppercase tracking-widest">v2.0 // 2026</span>
-          </div>
+
 
           {/* THE BOLD TYPOGRAPHY SECTION */}
           <div className="relative z-10 mt-6 sm:mt-12">
@@ -58,14 +52,14 @@ export default function ContactHero() {
                      shadow-[inset_15px_15px_30px_#bebebe,inset_-15px_-15px_30px_#ffffff] 
                      flex flex-col justify-center border-b border-r border-white/20"
         >
-          <p className="font-mono text-[10px] md:text-[11px] text-slate-400 font-black tracking-[0.4em] uppercase mb-4 md:mb-6 text-center">Global_Scale</p>
+
           <div className="text-center">
             <h2 className="font-oswald font-black text-6xl md:text-8xl text-slate-800 tracking-tighter leading-none">140+</h2>
             <p className="font-oswald text-xl md:text-2xl text-sky-500 font-bold uppercase tracking-widest mt-2">Currency Pairs</p>
           </div>
         </motion.div>
 
-        {/* Panel 3: Tactile Interaction Section */}
+        {/* Panel 3: Reliability Section */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -75,17 +69,19 @@ export default function ContactHero() {
                      flex flex-col justify-between border-t border-l border-white/60"
         >
           <div className="space-y-4">
-            <h3 className="font-oswald font-black text-3xl text-slate-800 uppercase italic">Infrastructure</h3>
+            <h3 className="font-oswald font-black text-3xl text-slate-800 uppercase italic">Commitment</h3>
             <div className="h-[2px] w-full bg-gradient-to-r from-sky-500 to-transparent" />
           </div>
 
-          <div className="space-y-4 py-8">
-            {["Ledger_Sync", "Tax_Automate", "Payout_Velocity"].map((label) => (
-              <div key={label} className="flex justify-between items-center group cursor-pointer">
-                <span className="font-mono text-[10px] text-slate-500 font-bold uppercase group-hover:text-sky-500 transition-colors">{label}</span>
-                <div className="w-12 h-6 rounded-full bg-[#e0e5ec] shadow-[inset_2px_2px_5px_#bebebe,inset_-2px_-2px_5px_#ffffff] p-1">
-                  <div className="w-4 h-4 rounded-full bg-slate-300 shadow-[1px_1px_3px_#bebebe] group-hover:translate-x-6 group-hover:bg-sky-500 transition-all duration-300" />
-                </div>
+          <div className="space-y-6 py-4">
+            {[
+              { title: "99.99% Uptime", desc: "Enterprise SLA" },
+              { title: "24/7 Support", desc: "Priority Access" },
+              { title: "Bank-Grade", desc: "AES-256 Encryption" }
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col border-l-2 border-sky-500/20 pl-4">
+                <span className="font-oswald text-xl md:text-2xl text-slate-800 font-black uppercase tracking-wide leading-none mb-1">{item.title}</span>
+                <span className="font-mono text-[9px] md:text-[10px] text-slate-500 font-bold uppercase tracking-widest leading-none">{item.desc}</span>
               </div>
             ))}
           </div>

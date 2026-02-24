@@ -145,13 +145,12 @@ export default function ExpeditionPage(): React.JSX.Element {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full relative z-10">
                 {[
-                  { label: "ZERO FEES", val: "$0.00", desc: "Always free software." },
-                  { label: "OPEN CORE", val: "OSS", desc: "Apache 2.0 License." },
-                  { label: "PRIVATE", val: "100%", desc: "Full data ownership." },
-                  { label: "GLOBAL", val: "V1.0", desc: "Multi-currency support." }
+                  { val: "$0.00", desc: "Always free software." },
+                  { val: "OSS", desc: "Apache 2.0 License." },
+                  { val: "100%", desc: "Full data ownership." },
+                  { val: "V1.0", desc: "Multi-currency support." }
                 ].map((item, idx) => (
                   <div key={idx} className="p-4 md:p-6 bg-[#e0e5ec] rounded-2xl md:rounded-3xl shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] space-y-2 border-t border-l border-white/20">
-                    <span className="block font-mono text-[8px] md:text-[9px] text-sky-500 font-black tracking-widest uppercase">{item.label}</span>
                     <p className="text-xl md:text-3xl font-oswald font-black text-slate-800 leading-none">{item.val}</p>
                     <p className="text-[8px] md:text-[10px] text-slate-400 font-bold uppercase tracking-tighter">{item.desc}</p>
                   </div>
@@ -164,7 +163,6 @@ export default function ExpeditionPage(): React.JSX.Element {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-8">
               <div className="space-y-2">
                 <h2 className="text-4xl md:text-8xl font-oswald font-black tracking-tighter text-slate-800 uppercase leading-[0.9]">DEPLOYMENT PHASES</h2>
-                <p className="font-mono text-[10px] md:text-xs text-slate-400 tracking-[0.3em] md:tracking-[0.5em] uppercase font-bold">The KWIQBILL Product Roadmap.</p>
               </div>
               <div className="h-[2px] w-full md:w-1/3 bg-slate-200" />
             </div>

@@ -60,12 +60,12 @@ const comparisonData: Category[] = [
     title: "Inventory Management",
     icon: <Box className="w-8 h-8" />,
     features: [
-      { feature: "Product Catalog", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "SKU & HSN Support", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+
+
       { feature: "Stock Tracking", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Low Stock Alerts", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Barcode Generation", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Product Images", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+
       { feature: "Inventory Reports", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
     ],
   },
@@ -74,7 +74,7 @@ const comparisonData: Category[] = [
     icon: <Users className="w-8 h-8" />,
     features: [
       { feature: "Customer Directory", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "GSTIN Tracking", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+
       { feature: "Purchase History", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Outstanding / Due Tracking", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Customer Types (Retail/Wholesale)", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
@@ -121,10 +121,10 @@ const comparisonData: Category[] = [
     icon: <Settings className="w-8 h-8" />,
     features: [
       { feature: "Store Profile & Logo", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Invoice Customization", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+
       { feature: "GST Slab Configuration", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Printer Configuration", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "QR Code on Invoice", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+
     ],
   },
   {

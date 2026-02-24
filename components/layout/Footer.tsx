@@ -65,7 +65,6 @@ export default function Footer() {
               and liability standards as defined in our official documentation.
             </p>
             <div className="mt-4 pt-4 border-t border-slate-300/30 flex justify-between items-center">
-              <span className="font-mono text-[9px] text-sky-500 font-black">STABLE_RELEASE_V2</span>
               <Link href="/terms" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="font-oswald font-black text-[10px] text-slate-800 hover:text-sky-500 transition-colors uppercase tracking-[0.2em]">View Full Terms →</Link>
             </div>
           </div>
@@ -77,10 +76,6 @@ export default function Footer() {
         <p className="font-mono text-[10px] text-slate-400 font-bold uppercase tracking-widest">
           © {currentYear} KWIQBILL PROJECT // POWERED BY ZIPPY
         </p>
-        <div className="flex gap-8 font-oswald font-bold text-[10px] text-slate-400 uppercase tracking-[0.2em]">
-          <span>NORTH_AMERICA_HQ</span>
-          <span>EST_2026</span>
-        </div>
       </div>
     </footer>
   );

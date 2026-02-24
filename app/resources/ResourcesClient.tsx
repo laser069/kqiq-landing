@@ -59,10 +59,6 @@ export default function ResourcesClient() {
             transition={{ duration: 0.8 }}
             className="md:max-w-4xl"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-[2px] w-8 bg-sky-500" />
-              <span className="font-mono text-[9px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">System_Resources // Vol. 01</span>
-            </div>
             <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8 text-[clamp(2.5rem,10vw,8rem)]">
               Resources for Using <span className="text-sky-500">KWIQBILL</span> Effectively
             </h1>
@@ -84,12 +80,6 @@ export default function ResourcesClient() {
               transition={{ delay: 0.1, duration: 0.8 }}
               className="group relative bg-[#e0e5ec] p-6 sm:p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/60 flex flex-col h-full hover:shadow-[15px_15px_40px_rgba(56,189,248,0.1)] transition-all duration-500"
             >
-              <div className="flex justify-between items-start mb-10">
-                <div className="px-4 py-2 md:px-5 md:py-3 rounded-xl bg-[#e0e5ec] shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] border border-white/40">
-                  <span className="font-mono text-[10px] md:text-xs text-sky-500 font-black tracking-[0.4em] uppercase">{resource.protocol}</span>
-                </div>
-                <div className="font-mono text-[9px] md:text-[10px] text-slate-300 font-black tracking-widest uppercase">NODE_{index + 1}</div>
-              </div>
 
               <h2 className="font-oswald font-black text-2xl md:text-4xl text-slate-800 uppercase mb-6 tracking-tight">
                 {resource.title}

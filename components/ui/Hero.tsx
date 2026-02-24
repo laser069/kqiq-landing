@@ -108,14 +108,7 @@ export default function Hero({
       </div>
 
 
-      {/* 3. Decorative Frame Elements */}
-      <div className="absolute top-10 left-0 w-full px-12 hidden lg:flex justify-between pointer-events-none">
-        <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-[0.3em]">{badgeText}</span>
-        <div className="flex gap-8 pointer-events-auto">
-          <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-[0.3em] cursor-pointer" onClick={onSecondaryClick}>Node: 04-Global</span>
-          <span className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-[0.3em]">2026_KV</span>
-        </div>
-      </div>
+      {/* 3. Decorative Frame Elements Removed */}
 
     </section>
   );

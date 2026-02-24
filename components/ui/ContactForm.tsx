@@ -46,16 +46,18 @@ export default function ContactForm() {
                     {/* Left side: Professional Identity & Security */}
                     <div className="lg:col-span-4 space-y-12">
                         <div className="space-y-6">
-                            <span className="font-mono text-[10px] text-sky-500 font-bold tracking-[0.4em] uppercase block">Client Relations</span>
                             <h2 className="font-oswald text-slate-900 uppercase leading-[0.9] tracking-tighter text-[clamp(2.5rem,10vw,5.5rem)]">
                                 START A <br />
                                 <span className="text-sky-500">PROJECT.</span>
                             </h2>
                         </div>
 
-                        <div className="p-8 md:p-10 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[3rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] space-y-8 border-t border-l border-white/60">
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] flex items-center justify-center text-sky-500">
+                        <div className="p-8 md:p-10 bg-slate-900 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl shadow-sky-900/20 space-y-8 border border-slate-800 relative overflow-hidden">
+                            {/* Decorative glow */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-full blur-3xl" />
+
+                            <div className="flex items-center gap-4 relative z-10">
+                                <div className="w-12 h-12 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-sky-400">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                                         <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                                         <path d="M7 11V7a5 5 0 0 1 10 0v4" />
@@ -63,25 +65,25 @@ export default function ContactForm() {
                                 </div>
                                 <div>
                                     <p className="font-mono text-[9px] text-slate-400 tracking-widest uppercase">Privacy Standard</p>
-                                    <p className="font-oswald text-xl tracking-wide uppercase text-slate-800">Enterprise Grade</p>
+                                    <p className="font-oswald text-xl tracking-wide uppercase text-white">Enterprise Grade</p>
                                 </div>
                             </div>
 
-                            <div className="space-y-4 pt-4 border-t border-slate-300/20">
+                            <div className="space-y-4 pt-4 border-t border-slate-800 relative z-10">
                                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-4 text-[10px] font-mono">
                                     <span className="text-slate-400 shrink-0">Inquiry Status</span>
-                                    <span className="text-emerald-500 font-bold uppercase tracking-wider truncate">Awaiting Entry</span>
+                                    <span className="text-sky-400 font-bold uppercase tracking-wider truncate">Awaiting Entry</span>
                                 </div>
                                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-4 text-[10px] font-mono">
                                     <span className="text-slate-400 shrink-0">Office Region</span>
-                                    <span className="text-slate-800 uppercase tracking-wider truncate">Madurai, Tamil Nadu</span>
+                                    <span className="text-slate-300 uppercase tracking-wider truncate">Global Remote</span>
                                 </div>
-                                <div className="h-1.5 w-full bg-[#e0e5ec] rounded-full shadow-[inset_1px_1px_3px_#bebebe,inset_-1px_-1px_3px_#ffffff] overflow-hidden">
+                                <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden border border-slate-700">
                                     <motion.div
                                         initial={{ width: "30%" }}
                                         animate={{ width: "100%" }}
-                                        transition={{ duration: 4, repeat: Infinity }}
-                                        className="h-full bg-sky-500 shadow-[0_0_10px_rgba(14,165,233,0.5)]"
+                                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                        className="h-full bg-sky-500 shadow-[0_0_10px_rgba(14,165,233,0.8)]"
                                     />
                                 </div>
                             </div>

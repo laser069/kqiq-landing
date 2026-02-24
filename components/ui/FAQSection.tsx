@@ -44,7 +44,7 @@ export default function FAQSection() {
                         <div className="space-y-4 pt-6 md:pt-12">
                             <p className="font-mono text-[10px] sm:text-[11px] text-slate-500 font-bold tracking-widest leading-loose uppercase">
                                 SECTION: GENERAL INQUIRIES <br />
-                                UPDATED: Q1 2026 <br />
+                                UPDATED: 2026 <br />
                                 STATUS: VERIFIED
                             </p>
                         </div>

@@ -77,24 +77,20 @@ export default function ContactFooter() {
                     </div>
 
                     <div className="flex-1 lg:pl-12 space-y-8">
-                        <p className="text-slate-500 font-medium text-sm md:text-base leading-relaxed">
-                            Orbit Matter is an independent observatory lab devoted to quiet study and creative exploration. Every discovery is recorded, decoded and shared with those who wander through our outpost.
+                        <p className="text-slate-500 font-medium text-sm md:text-base leading-relaxed border-l-2 border-sky-500 pl-4">
+                            Questions about enterprise pricing, custom integrations, or migrating your existing billing data to KwiqBill? Our team is available.
                         </p>
 
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8">
-                            {[
-                                "INSTAGRAM", "YOUTUBE SIGNALS", "TWITTER",
-                                "LINKEDIN", "DISCORD HUB",
-                                "DRIBBBLE", "BEHANCE ARCHIVE", "HOMEBASE"
-                            ].map((link) => (
-                                <a
-                                    key={link}
-                                    href="#"
-                                    className="font-mono text-[9px] md:text-[10px] tracking-[0.1em] text-slate-400 hover:text-sky-600 transition-colors uppercase font-bold whitespace-nowrap"
-                                >
-                                    [ {link} ]
-                                </a>
-                            ))}
+                        <div className="space-y-4">
+                            <p className="font-mono text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-2">Direct Inquiries</p>
+                            <div>
+                                <p className="font-oswald text-xl text-slate-800 uppercase">partners@kwiqbill.com</p>
+                                <p className="font-mono text-[9px] text-slate-400 tracking-widest uppercase">For Integrations & Resellers</p>
+                            </div>
+                            <div className="pt-2">
+                                <p className="font-oswald text-xl text-slate-800 uppercase">support@kwiqbill.com</p>
+                                <p className="font-mono text-[9px] text-slate-400 tracking-widest uppercase">For Technical Assistance</p>
+                            </div>
                         </div>
                     </div>
 
@@ -104,12 +100,6 @@ export default function ContactFooter() {
                         <div className="w-[1px] h-full bg-slate-900" />
                     </div>
                 </motion.div>
-
-                <div className="mt-24 text-center">
-                    <p className="font-mono text-[8px] tracking-[0.5em] text-slate-300 uppercase font-bold">
-                        © 2026 ORBIT MATTER // SYSTEM PROTOCOL v.03.221
-                    </p>
-                </div>
             </div>
         </section>
     );

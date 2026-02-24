@@ -19,7 +19,7 @@ export default function ObservatoryPage(): React.JSX.Element {
       <Hero
         titleLine1="CORE"
         titleLine2="BILLING"
-        badgeText="BILLING_OVERVIEW // KWIQBILL_DASHBOARD // 2026"
+        badgeText=""
         subtitleLine1="KWIQBILL IS A COMPLETE, FREE, AND OPEN-SOURCE BILLING SOLUTION BUILT FOR BUSINESSES THAT DON’T WANT SUBSCRIPTIONS OR LOCK-INS."
         subtitleLine2="Designed to be simple, powerful, and offline-friendly — professional billing without subscriptions or lock-ins."
       />
@@ -41,7 +41,6 @@ export default function ObservatoryPage(): React.JSX.Element {
                 viewport={{ once: true }}
                 className="p-8 md:p-10 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[3rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6"
               >
-                <span className="font-mono text-[10px] text-sky-500 font-bold tracking-widest uppercase">{metric.label}</span>
                 <h3 className="text-4xl md:text-5xl font-black text-slate-800 uppercase leading-none">{metric.val}</h3>
                 <p className="text-slate-500 font-bold leading-relaxed text-sm md:text-base">{metric.desc}</p>
               </motion.div>
@@ -73,7 +72,6 @@ export default function ObservatoryPage(): React.JSX.Element {
                 viewport={{ once: true }}
                 className="p-8 md:p-12 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[4rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6"
               >
-                <span className="font-mono text-[9px] md:text-[10px] text-sky-500 font-black tracking-widest uppercase">{spec.tag}</span>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 uppercase tracking-tight leading-none">{spec.title}</h3>
                 <p className="text-slate-500 font-bold leading-relaxed italic text-sm md:text-base">{spec.desc}</p>
               </motion.div>
