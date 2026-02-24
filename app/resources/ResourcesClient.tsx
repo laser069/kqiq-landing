@@ -13,7 +13,6 @@ const resources = [
     items: ["Classic Invoice", "Compact Invoice", "GST-Detailed Invoice", "Minimal Invoice"],
     ctas: [
       { label: "View Templates", href: "#", primary: true },
-      { label: "Customize in App", href: "#", primary: false },
     ],
   },
   {
@@ -24,7 +23,6 @@ const resources = [
     items: ["Terms & Conditions", "Privacy Policy", "Data Ownership Policy", "Open-Source License (Apache 2.0)"],
     ctas: [
       { label: "Read Terms", href: "/terms", primary: true },
-      { label: "View License", href: "#", primary: false },
     ],
   },
   {
@@ -35,7 +33,6 @@ const resources = [
     items: ["Pricing (Free vs Subscription)", "Offline support", "GST readiness", "Data ownership", "Platform support", "Open-source availability"],
     ctas: [
       { label: "Compare Features", href: "/compare", primary: true },
-      { label: "Why Choose KWIQBILL", href: "#", primary: false },
     ],
   },
   {
@@ -46,14 +43,13 @@ const resources = [
     items: ["Getting Started Guide", "Frequently Asked Questions (FAQs)", "Setup & Installation Help", "Contact & Community Support"],
     ctas: [
       { label: "Get Started", href: "#", primary: true },
-      { label: "View Help Docs", href: "#", primary: false },
     ],
   },
 ];
 
 export default function ResourcesClient() {
   return (
-    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-32 pb-24 px-6 md:px-12">
+    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-32 pb-24 px-4 sm:px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Page Hero Section */}
         <section className="mb-20 md:mb-24">
@@ -64,10 +60,10 @@ export default function ResourcesClient() {
             className="md:max-w-4xl"
           >
             <div className="flex items-center gap-3 mb-6">
-               <div className="h-[2px] w-8 bg-sky-500" />
-               <span className="font-mono text-[9px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">System_Resources // Vol. 01</span>
+              <div className="h-[2px] w-8 bg-sky-500" />
+              <span className="font-mono text-[9px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">System_Resources // Vol. 01</span>
             </div>
-            <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8">
+            <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8 text-[clamp(2.5rem,10vw,8rem)]">
               Resources for Using <span className="text-sky-500">KWIQBILL</span> Effectively
             </h1>
             <p className="font-oswald text-lg md:text-2xl text-slate-500 font-bold italic leading-relaxed uppercase tracking-tight">
@@ -86,7 +82,7 @@ export default function ResourcesClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.8 }}
-              className="group relative bg-[#e0e5ec] p-8 md:p-14 rounded-[2.5rem] md:rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 flex flex-col h-full hover:shadow-[15px_15px_40px_rgba(56,189,248,0.1)] transition-all duration-500"
+              className="group relative bg-[#e0e5ec] p-6 sm:p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/60 flex flex-col h-full hover:shadow-[15px_15px_40px_rgba(56,189,248,0.1)] transition-all duration-500"
             >
               <div className="flex justify-between items-start mb-10">
                 <div className="px-4 py-2 md:px-5 md:py-3 rounded-xl bg-[#e0e5ec] shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] border border-white/40">
@@ -98,7 +94,7 @@ export default function ResourcesClient() {
               <h2 className="font-oswald font-black text-2xl md:text-4xl text-slate-800 uppercase mb-6 tracking-tight">
                 {resource.title}
               </h2>
-              
+
               <p className="text-slate-600 font-bold text-sm md:text-lg mb-8 leading-relaxed italic opacity-80 border-l border-sky-500/30 pl-6">
                 {resource.description}
               </p>
@@ -116,11 +112,10 @@ export default function ResourcesClient() {
 
               <div className="flex flex-col sm:flex-row gap-4 mt-auto pt-6 md:pt-8">
                 {resource.ctas.map((cta) => {
-                  const btnClasses = `w-full sm:w-auto text-center px-8 py-4 rounded-xl font-oswald font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 ${
-                    cta.primary
-                      ? "bg-slate-900 text-white shadow-[8px_8px_16px_rgba(0,0,0,0.2)] hover:bg-sky-600 hover:shadow-sky-500/30"
-                      : "bg-[#e0e5ec] text-slate-700 shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] hover:shadow-inner"
-                  }`;
+                  const btnClasses = `w-full sm:w-auto text-center px-8 py-4 rounded-xl font-oswald font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300 ${cta.primary
+                    ? "bg-slate-900 text-white shadow-[8px_8px_16px_rgba(0,0,0,0.2)] hover:bg-sky-600 hover:shadow-sky-500/30"
+                    : "bg-[#e0e5ec] text-slate-700 shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] hover:shadow-inner"
+                    }`;
 
                   return (
                     <Link

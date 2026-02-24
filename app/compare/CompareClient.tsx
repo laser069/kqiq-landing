@@ -54,7 +54,6 @@ const comparisonData: Category[] = [
       { feature: "GST (CGST/SGST/IGST)", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Discounts (Item & Bill)", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Multiple Bills / Tabs", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Custom Footer & Terms", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
     ],
   },
   {
@@ -65,10 +64,9 @@ const comparisonData: Category[] = [
       { feature: "SKU & HSN Support", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Stock Tracking", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Low Stock Alerts", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Barcode Generation", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
+      { feature: "Barcode Generation", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Product Images", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Inventory Reports", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Multi-Warehouse Support", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
     ],
   },
   {
@@ -80,7 +78,7 @@ const comparisonData: Category[] = [
       { feature: "Purchase History", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Outstanding / Due Tracking", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Customer Types (Retail/Wholesale)", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Loyalty Points", zoho: "Not Available", vyapar: "Available", kwiqbill: "Not Available" },
+      { feature: "Loyalty Points", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Visit / Engagement Tracking", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
     ],
   },
@@ -90,12 +88,10 @@ const comparisonData: Category[] = [
     features: [
       { feature: "Sales Summary", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Profit & Loss", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Payment Method Analysis", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Top Products", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Date Range Comparison", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Periodic Comparison", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Export to PDF", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Charts & Graphs", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Owner-Level Summary", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
     ],
   },
   {
@@ -129,29 +125,17 @@ const comparisonData: Category[] = [
       { feature: "GST Slab Configuration", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Printer Configuration", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "QR Code on Invoice", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Watermark Control", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
     ],
   },
   {
     title: "Data, Security & Backup",
     icon: <ShieldCheck className="w-8 h-8" />,
     features: [
-      { feature: "Cloud Backup", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Cloud Backup", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
       { feature: "Google Drive Backup", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Local Backup", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Role-Based Access", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Role-Based Access", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
       { feature: "Audit Logs", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
-    ],
-  },
-  {
-    title: "Advanced / Roadmap",
-    icon: <Cpu className="w-8 h-8" />,
-    features: [
-      { feature: "Workflow Automation", zoho: "Available", vyapar: "Not Available", kwiqbill: "Not Available" },
-      { feature: "API Access", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
-      { feature: "AI / Smart Insights", zoho: "Available", vyapar: "Not Available", kwiqbill: "Not Available" },
-      { feature: "Deep Transaction Logging", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Modular Architecture", zoho: "Not Available", vyapar: "Not Available", kwiqbill: "Available" },
     ],
   },
 ];
@@ -162,7 +146,7 @@ export default function CompareClient() {
   return (
     <main className="min-h-screen bg-[#e0e5ec] pt-32 pb-24 px-6 md:px-12 font-oswald overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Header Section */}
         <section className="mb-20">
           <motion.div
@@ -184,45 +168,32 @@ export default function CompareClient() {
           </motion.div>
         </section>
 
-        {/* Legend */}
-        <div className="mb-12 flex flex-wrap gap-8 p-8 bg-[#e0e5ec] rounded-[2rem] shadow-[inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff]">
-          {Object.entries(statusIcons).map(([label, icon]) => (
-            <div key={label} className="flex items-center gap-3">
-              <span>{icon}</span>
-              <span className="text-xs font-black text-slate-500 uppercase tracking-widest">
-                {label === "Available" ? "RIGHT" : "WRONG"}
-              </span>
-            </div>
-          ))}
-        </div>
-
         {/* Accordion Comparison */}
         <div className="space-y-6">
           {comparisonData.map((category, idx) => (
             <motion.div
               key={category.title}
-              className="bg-[#e0e5ec] rounded-[2.5rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] overflow-hidden border border-white/40"
+              className="bg-[#e0e5ec] rounded-[2rem] md:rounded-[2.5rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] overflow-hidden border border-white/40"
             >
               <button
                 onClick={() => setOpenSection(openSection === idx ? null : idx)}
-                className="w-full flex items-center justify-between p-8 md:p-10 hover:bg-white/10 transition-colors text-left"
+                className="w-full flex items-center justify-between p-6 md:p-10 hover:bg-white/10 transition-colors text-left"
               >
-                <div className="flex items-center gap-6">
-                  <span className="p-4 bg-[#e0e5ec] rounded-2xl shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] text-slate-400 group-hover:text-sky-500 transition-colors duration-500">
+                <div className="flex items-center gap-4 md:gap-6">
+                  <span className="p-3 md:p-4 bg-[#e0e5ec] rounded-xl md:rounded-2xl shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] text-slate-400 group-hover:text-sky-500 transition-colors duration-500 scale-75 md:scale-100">
                     {category.icon}
                   </span>
-                  <h2 className="text-2xl md:text-3xl font-black text-slate-800 uppercase tracking-tight">{category.title}</h2>
+                  <h2 className="text-xl md:text-3xl font-black text-slate-800 uppercase tracking-tight">{category.title}</h2>
                 </div>
-                <div className={`w-12 h-12 rounded-2xl bg-[#e0e5ec] flex items-center justify-center transition-all duration-500 border border-white/40 ${
-                  openSection === idx 
-                    ? 'shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] text-sky-500' 
-                    : 'shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] text-slate-400 group-hover:text-slate-800'
-                }`}>
+                <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-[#e0e5ec] flex items-center justify-center transition-all duration-500 border border-white/40 ${openSection === idx
+                  ? 'shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] text-sky-500'
+                  : 'shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] text-slate-400 group-hover:text-slate-800'
+                  }`}>
                   <motion.div
                     animate={{ rotate: openSection === idx ? 180 : 0 }}
                     transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                   >
-                    <ChevronDown className="w-6 h-6 stroke-[3]" />
+                    <ChevronDown className="w-5 h-5 md:w-6 md:h-6 stroke-[3]" />
                   </motion.div>
                 </div>
               </button>
@@ -235,37 +206,34 @@ export default function CompareClient() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                   >
-                    <div className="px-4 pb-8 md:px-10 overflow-x-auto">
+                    <div className="px-2 pb-8 md:px-10 overflow-x-auto scrollbar-hide">
                       <table className="w-full border-collapse table-fixed">
                         <thead>
                           <tr className="border-b-2 border-slate-300/30">
-                            <th className="py-6 text-left font-mono text-[9px] md:text-[10px] text-slate-400 uppercase tracking-[0.2em] md:tracking-[0.3em]">Feature Set</th>
-                            <th className="py-6 text-center font-black text-slate-700 uppercase tracking-tighter md:tracking-tight w-16 md:w-32">
-                              <span className="hidden md:inline">Zoho Books</span>
-                              <span className="md:hidden text-[10px]">Zoho</span>
+                            <th className="py-4 md:py-6 text-left font-mono text-[8px] md:text-[10px] text-slate-400 uppercase tracking-[0.1em] md:tracking-[0.3em]">Feature Set</th>
+                            <th className="py-4 md:py-6 text-center font-black text-slate-700 uppercase tracking-tight w-14 sm:w-20 md:w-32 text-[10px] md:text-base">
+                              Zoho
                             </th>
-                            <th className="py-6 text-center font-black text-slate-700 uppercase tracking-tighter md:tracking-tight w-16 md:w-32">
-                              <span className="hidden md:inline">Vyapar App</span>
-                              <span className="md:hidden text-[10px]">Vyapar</span>
+                            <th className="py-4 md:py-6 text-center font-black text-slate-700 uppercase tracking-tight w-14 sm:w-20 md:w-32 text-[10px] md:text-base">
+                              Vyapar
                             </th>
-                            <th className="py-6 text-center font-black text-sky-500 uppercase tracking-tighter md:tracking-tight w-16 md:w-32">
-                              <span className="hidden md:inline">KWIQBILL</span>
-                              <span className="md:hidden text-[10px]">KWIQ</span>
+                            <th className="py-4 md:py-6 text-center font-black text-sky-500 uppercase tracking-tight w-14 sm:w-20 md:w-32 text-[10px] md:text-base">
+                              KWIQ
                             </th>
                           </tr>
                         </thead>
                         <tbody>
                           {category.features.map((item, i) => (
                             <tr key={i} className="group border-b border-slate-300/10 hover:bg-sky-500/5 transition-colors">
-                              <td className="py-4 md:py-5 text-slate-600 font-bold text-[11px] md:text-base leading-tight pr-2 break-words">{item.feature}</td>
-                              <td className="py-5">
-                                <div className="flex justify-center">{statusIcons[item.zoho]}</div>
+                              <td className="py-3 md:py-5 text-slate-600 font-bold text-[9px] sm:text-[11px] md:text-base leading-tight pr-2 break-words">{item.feature}</td>
+                              <td className="py-3 md:py-5">
+                                <div className="flex justify-center scale-75 md:scale-100">{statusIcons[item.zoho]}</div>
                               </td>
-                              <td className="py-5">
-                                <div className="flex justify-center">{statusIcons[item.vyapar]}</div>
+                              <td className="py-3 md:py-5">
+                                <div className="flex justify-center scale-75 md:scale-100">{statusIcons[item.vyapar]}</div>
                               </td>
-                              <td className="py-5 bg-sky-500/5">
-                                <div className="flex justify-center">{statusIcons[item.kwiqbill]}</div>
+                              <td className="py-3 md:py-5 bg-sky-500/5">
+                                <div className="flex justify-center scale-75 md:scale-100">{statusIcons[item.kwiqbill]}</div>
                               </td>
                             </tr>
                           ))}
@@ -275,6 +243,7 @@ export default function CompareClient() {
                   </motion.div>
                 )}
               </AnimatePresence>
+
             </motion.div>
           ))}
         </div>
@@ -289,7 +258,7 @@ export default function CompareClient() {
           </div>
           <div className="p-10 bg-[#e0e5ec] rounded-[3rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/60">
             <h3 className="text-2xl font-black text-slate-800 uppercase mb-6">Vyapar</h3>
-            <p className="text-sm font-bold text-slate-500 leading-relaxed uppercase">
+            <p className="text-sm font-bold text-slate-600 leading-relaxed uppercase">
               Strongly focused on Indian MSMEs with excellent inventory and barcode support. Primarily a desktop application with sync capabilities. Lacks a robust web-first application and open-source accessibility.
             </p>
           </div>
@@ -303,9 +272,9 @@ export default function CompareClient() {
 
         {/* CTA */}
         <div className="mt-32 text-center">
-            <Link href="/contact" className="inline-block px-12 py-6 bg-slate-900 text-white font-black text-xl uppercase tracking-[0.2em] rounded-2xl shadow-xl hover:bg-sky-600 hover:-translate-y-1 transition-all">
-              REQUEST A FEATURE
-            </Link>
+          <Link href="/contact" className="inline-block px-12 py-6 bg-slate-900 text-white font-black text-xl uppercase tracking-[0.2em] rounded-2xl shadow-xl hover:bg-sky-600 hover:-translate-y-1 transition-all">
+            REQUEST A FEATURE
+          </Link>
         </div>
 
       </div>

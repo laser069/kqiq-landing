@@ -9,16 +9,12 @@ const schabo = localFont({
   variable: "--font-schabo",
 });
 
-const oswald = localFont({
-  src: [
-    { path: "../public/fonts/Oswald-ExtraLight.ttf", weight: "200", style: "normal" },
-    { path: "../public/fonts/Oswald-Light.ttf", weight: "300", style: "normal" },
-    { path: "../public/fonts/Oswald-Regular.ttf", weight: "400", style: "normal" },
-    { path: "../public/fonts/Oswald-Medium.ttf", weight: "500", style: "normal" },
-    { path: "../public/fonts/Oswald-SemiBold.ttf", weight: "600", style: "normal" },
-    { path: "../public/fonts/Oswald-Bold.ttf", weight: "700", style: "normal" },
-  ],
+import { Oswald } from "next/font/google";
+
+const oswald = Oswald({
+  subsets: ["latin"],
   variable: "--font-oswald",
+  weight: ["200", "300", "400", "500", "600", "700"],
 });
 
 export default function RootLayout({

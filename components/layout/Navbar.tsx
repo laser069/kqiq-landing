@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 
 const navItems = [
   { label: "INDEX", href: "/" },
@@ -99,7 +100,7 @@ export default function Navbar(): React.JSX.Element {
       </motion.div>
 
       {/* Mobile Bar - Sticky on Mobile */}
-      <motion.div 
+      <motion.div
         animate={{ y: isVisible ? 0 : -100 }}
         className="md:hidden flex justify-between w-full px-6 py-4 items-center bg-white/80 backdrop-blur-xl border-b border-slate-200/50 pointer-events-auto shadow-sm"
       >
@@ -108,9 +109,10 @@ export default function Navbar(): React.JSX.Element {
         </Link>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-2 sm:p-3 bg-white/50 backdrop-blur-md rounded-2xl shadow-[4px_4px_10px_#bebebe,-4px_-4px_10px_#ffffff] text-slate-800 z-[1001] transition-all active:scale-95 border border-white/40"
+          className="p-3 bg-white/50 backdrop-blur-md rounded-2xl shadow-[4px_4px_10px_#bebebe,-4px_-4px_10px_#ffffff] text-slate-800 z-[1001] transition-all active:scale-95 border border-white/40 min-w-[48px] min-h-[48px] flex items-center justify-center"
+          aria-label="Toggle Menu"
         >
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-1.5 pointer-events-none">
             <div className={`w-6 h-0.5 bg-slate-800 transition-all ${isMobileMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
             <div className={`w-6 h-0.5 bg-slate-800 transition-all ${isMobileMenuOpen ? "opacity-0" : ""}`} />
             <div className={`w-6 h-0.5 bg-slate-800 transition-all ${isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
@@ -128,6 +130,14 @@ export default function Navbar(): React.JSX.Element {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 bg-[#e0e5ec] z-[1000] flex flex-col pt-32 px-12 pointer-events-auto"
           >
+            {/* Close Button Inside Menu - The "X" for Exit */}
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="absolute top-6 right-6 p-4 bg-[#e0e5ec] rounded-2xl shadow-[6px_6px_12px_#bebebe,-6px_-6px_12px_#ffffff] text-slate-800 border border-white/40 active:shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] transition-all"
+              aria-label="Close Menu"
+            >
+              <X className="w-6 h-6 stroke-[3]" />
+            </button>
             <div className="space-y-8">
               {navItems.map((item, idx) => (
                 <motion.div
@@ -139,7 +149,7 @@ export default function Navbar(): React.JSX.Element {
                   <Link
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-4xl sm:text-5xl font-oswald font-black uppercase tracking-tighter block ${pathname === item.href ? "text-sky-500" : "text-slate-800"
+                    className={`text-3xl sm:text-5xl font-oswald font-black uppercase tracking-tighter block py-2 ${pathname === item.href ? "text-sky-500" : "text-slate-800"
                       }`}
                   >
                     {item.label}

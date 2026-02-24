@@ -47,7 +47,7 @@ export default function ContactForm() {
                     <div className="lg:col-span-4 space-y-12">
                         <div className="space-y-6">
                             <span className="font-mono text-[10px] text-sky-500 font-bold tracking-[0.4em] uppercase block">Client Relations</span>
-                            <h2 className="font-oswald text-4xl md:text-6xl text-slate-900 uppercase leading-[0.9] tracking-tighter">
+                            <h2 className="font-oswald text-4xl md:text-6xl text-slate-900 uppercase leading-[0.9] tracking-tighter text-[clamp(2.5rem,8vw,5.5rem)]">
                                 START A <br />
                                 <span className="text-sky-500">PROJECT.</span>
                             </h2>

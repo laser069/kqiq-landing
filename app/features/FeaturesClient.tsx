@@ -80,9 +80,9 @@ const subFeatures = [
 
 export default function FeaturesClient() {
   return (
-    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-20 pb-24 px-6 md:px-12">
+    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-20 pb-24 px-4 sm:px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* 1. Page Hero Section */}
         <section className="mb-20 md:mb-32">
           <motion.div
@@ -92,17 +92,17 @@ export default function FeaturesClient() {
             className="md:max-w-4xl"
           >
             <div className="flex items-center gap-3 mb-6">
-               <div className="h-[2px] w-8 bg-sky-500" />
-               <span className="font-mono text-[9px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">Capabilties // V2.0</span>
+              <div className="h-[2px] w-8 bg-sky-500" />
+              <span className="font-mono text-[9px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">Capabilties // V2.0</span>
             </div>
-            <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8">
+            <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8 text-[clamp(2.5rem,10vw,8rem)]">
               Powerful Billing & Store <span className="text-sky-500">Management</span> — Made Simple
             </h1>
             <p className="font-oswald text-lg md:text-2xl text-slate-500 font-bold italic leading-relaxed uppercase tracking-tight mb-12">
               KWIQBILL helps Indian businesses manage billing, inventory, customers, and reports with ease — online or offline.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <button 
+              <button
                 onClick={() => document.getElementById('core-features')?.scrollIntoView({ behavior: 'smooth' })}
                 className="w-full sm:w-auto px-10 py-5 bg-slate-900 text-white font-oswald font-bold text-sm uppercase tracking-[0.2em] shadow-[10px_10px_20px_rgba(0,0,0,0.2)] hover:bg-sky-600 transition-all active:scale-95"
               >
@@ -146,45 +146,45 @@ export default function FeaturesClient() {
         {/* 3. Core Feature Sections */}
         <section id="core-features" className="space-y-32">
           {coreFeatures.map((feature, index) => (
-            <div 
-              key={feature.title} 
+            <div
+              key={feature.title}
               id={feature.id}
               className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 md:gap-24`}
             >
               {/* Text Side */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
                 className="flex-1 space-y-8"
               >
-                 <div>
-                    <span className="font-mono text-[10px] text-sky-500 font-black tracking-[0.3em] uppercase mb-4 block">Protocols // 0{index + 1}</span>
-                    <h2 className="font-oswald font-black text-4xl md:text-6xl text-slate-900 uppercase tracking-tight">
-                      {feature.title}
-                    </h2>
-                    <h3 className="font-oswald text-xl md:text-2xl text-slate-400 font-bold italic uppercase mt-2">
-                       {feature.subtitle}
-                    </h3>
-                 </div>
-                 
-                 <p className="text-slate-600 text-lg font-bold leading-relaxed italic opacity-80 border-l-2 border-sky-500/20 pl-6">
-                   {feature.description}
-                 </p>
+                <div>
+                  <span className="font-mono text-[10px] text-sky-500 font-black tracking-[0.3em] uppercase mb-4 block">Protocols // 0{index + 1}</span>
+                  <h2 className="font-oswald font-black text-3xl sm:text-4xl md:text-6xl text-slate-900 uppercase tracking-tight">
+                    {feature.title}
+                  </h2>
+                  <h3 className="font-oswald text-xl md:text-2xl text-slate-400 font-bold italic uppercase mt-2">
+                    {feature.subtitle}
+                  </h3>
+                </div>
 
-                 <ul className="space-y-4">
-                    {feature.points.map(point => (
-                      <li key={point} className="flex items-center gap-4 text-slate-500 font-oswald font-bold uppercase tracking-wide group cursor-default">
-                        <div className="w-6 h-[1px] bg-slate-300 group-hover:w-10 group-hover:bg-sky-500 transition-all duration-300" />
-                        {point}
-                      </li>
-                    ))}
-                 </ul>
+                <p className="text-slate-600 text-lg font-bold leading-relaxed italic opacity-80 border-l-2 border-sky-500/20 pl-6">
+                  {feature.description}
+                </p>
+
+                <ul className="space-y-4">
+                  {feature.points.map(point => (
+                    <li key={point} className="flex items-center gap-4 text-slate-500 font-oswald font-bold uppercase tracking-wide group cursor-default">
+                      <div className="w-6 h-[1px] bg-slate-300 group-hover:w-10 group-hover:bg-sky-500 transition-all duration-300" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
 
               {/* Visual Side */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -195,12 +195,12 @@ export default function FeaturesClient() {
                   /* 9:16 Mobile Card */
                   <div className="relative bg-white rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 max-w-sm aspect-[9/19.5] w-full overflow-hidden">
                     <div className="relative w-full h-full">
-                        <Image 
-                           src={feature.image}
-                           alt={feature.title}
-                           fill
-                           className="object-contain"
-                        />
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-contain"
+                      />
 
                     </div>
                   </div>
@@ -208,12 +208,12 @@ export default function FeaturesClient() {
                   /* Original 16:9 Widescreen Card */
                   <div className="absolute inset-0 bg-white rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 overflow-hidden">
                     <div className="relative w-full h-full">
-                        <Image 
-                           src={feature.image}
-                           alt={feature.title}
-                           fill
-                           className="object-contain"
-                        />
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-contain"
+                      />
 
                     </div>
                   </div>
@@ -225,53 +225,53 @@ export default function FeaturesClient() {
 
         {/* 4. Supporting Features Section */}
         <section className="mt-48 mb-32">
-           <div className="text-center mb-16">
-              <h2 className="font-oswald font-black text-4xl md:text-5xl text-slate-800 uppercase tracking-tight">Additional Capabilities</h2>
-              <div className="h-[2px] w-24 bg-sky-500 mx-auto mt-6" />
-           </div>
-           
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {subFeatures.map((f, i) => (
-                <motion.div
-                  key={f.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-[#e0e5ec] p-10 rounded-3xl shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] border-t border-l border-white/40 flex flex-col items-start gap-4 group hover:shadow-inner transition-all duration-300"
-                >
-                  <span className="font-mono text-[9px] text-sky-500 font-black tracking-widest">{f.tag}</span>
-                  <span className="font-oswald font-black text-xl text-slate-800 uppercase tracking-[0.1em]">
-                    {f.title}
-                  </span>
-                  <div className="w-full h-[1px] bg-slate-300/30 group-hover:bg-sky-500/30 transition-colors mt-2" />
-                </motion.div>
-              ))}
-           </div>
+          <div className="text-center mb-16">
+            <h2 className="font-oswald font-black text-4xl md:text-5xl text-slate-800 uppercase tracking-tight">Additional Capabilities</h2>
+            <div className="h-[2px] w-24 bg-sky-500 mx-auto mt-6" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {subFeatures.map((f, i) => (
+              <motion.div
+                key={f.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-[#e0e5ec] p-10 rounded-3xl shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] border-t border-l border-white/40 flex flex-col items-start gap-4 group hover:shadow-inner transition-all duration-300"
+              >
+                <span className="font-mono text-[9px] text-sky-500 font-black tracking-widest">{f.tag}</span>
+                <span className="font-oswald font-black text-xl text-slate-800 uppercase tracking-[0.1em]">
+                  {f.title}
+                </span>
+                <div className="w-full h-[1px] bg-slate-300/30 group-hover:bg-sky-500/30 transition-colors mt-2" />
+              </motion.div>
+            ))}
+          </div>
         </section>
 
         {/* 5. Platform Compatibility Section */}
         <section className="mb-32 bg-[#e0e5ec] p-8 md:p-20 rounded-[3rem] md:rounded-[4rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60">
-           <div className="text-center mb-12 md:mb-16">
-              <h2 className="font-oswald font-black text-3xl sm:text-5xl md:text-7xl text-slate-900 uppercase tracking-tight mb-6">Works Where Your Business Works</h2>
-              <p className="max-w-xl mx-auto text-slate-500 font-bold text-sm md:text-lg uppercase tracking-widest leading-relaxed">KWIQBILL runs seamlessly across platforms so you’re never tied to a single device.</p>
-           </div>
-           
-           <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-16">
-              {["MOBILE (ANDROID)", "DESKTOP", "WEB"].map(platform => (
-                <div key={platform} className="px-8 py-6 md:px-12 md:py-8 bg-[#e0e5ec] rounded-2xl shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff] border border-white/20 flex flex-col items-center">
-                   <div className="font-mono text-[8px] md:text-[9px] text-sky-500 font-black tracking-[0.4em] mb-4 uppercase">DEPLOYED_STABLE</div>
-                   <span className="font-oswald font-black text-lg md:text-xl text-slate-800 tracking-[0.2em]">{platform}</span>
-                </div>
-              ))}
-           </div>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="font-oswald font-black text-3xl sm:text-5xl md:text-7xl text-slate-900 uppercase tracking-tight mb-6 text-[clamp(2rem,8vw,6rem)]">Works Where Your Business Works</h2>
+            <p className="max-w-xl mx-auto text-slate-500 font-bold text-xs sm:text-sm md:text-lg uppercase tracking-widest leading-relaxed px-4">KWIQBILL runs seamlessly across platforms so you’re never tied to a single device.</p>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-16">
+            {["MOBILE (ANDROID)", "DESKTOP", "WEB"].map(platform => (
+              <div key={platform} className="px-8 py-6 md:px-12 md:py-8 bg-[#e0e5ec] rounded-2xl shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff] border border-white/20 flex flex-col items-center">
+                <div className="font-mono text-[8px] md:text-[9px] text-sky-500 font-black tracking-[0.4em] mb-4 uppercase">DEPLOYED_STABLE</div>
+                <span className="font-oswald font-black text-lg md:text-xl text-slate-800 tracking-[0.2em]">{platform}</span>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* 6. Why These Features Matter */}
         <section className="text-center mb-32 md:mb-48 max-w-3xl mx-auto px-4">
-           <p className="font-oswald text-xl md:text-3xl text-slate-800 font-bold italic leading-relaxed uppercase tracking-tight">
-             &ldquo; Every feature in KWIQBILL is designed to reduce complexity, save time, and give business owners complete control over their billing and data. &rdquo;
-           </p>
+          <p className="font-oswald text-xl md:text-3xl text-slate-800 font-bold italic leading-relaxed uppercase tracking-tight">
+            &ldquo; Every feature in KWIQBILL is designed to reduce complexity, save time, and give business owners complete control over their billing and data. &rdquo;
+          </p>
         </section>
 
         {/* 7. Closing CTA Section */}
