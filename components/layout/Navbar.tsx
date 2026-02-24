@@ -75,6 +75,7 @@ export default function Navbar(): React.JSX.Element {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className={`relative text-[14px] font-oswald font-bold tracking-[0.15em] transition-colors duration-300 ${isActive ? "text-sky-600" : "text-slate-500 hover:text-sky-400"
                   }`}
               >
@@ -148,7 +149,10 @@ export default function Navbar(): React.JSX.Element {
                 >
                   <Link
                     href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
                     className={`text-3xl sm:text-5xl font-oswald font-black uppercase tracking-tighter block py-2 ${pathname === item.href ? "text-sky-500" : "text-slate-800"
                       }`}
                   >

@@ -26,7 +26,7 @@ export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="bg-white py-20 md:py-32 px-6 md:px-12 relative border-t-2 border-slate-100">
+        <section className="bg-white py-12 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 relative border-t-2 border-slate-100">
 
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
 
@@ -37,12 +37,12 @@ export default function FAQSection() {
                             <div className="w-2 h-2 bg-sky-500 rounded-full" />
                             <div className="w-2 h-2 bg-slate-200 rounded-full" />
                         </div>
-                        <h2 className="font-oswald text-3xl md:text-5xl text-slate-900 uppercase leading-[1.1] tracking-tighter">
+                        <h2 className="font-oswald text-3xl md:text-5xl text-slate-900 uppercase leading-[1.1] tracking-tighter text-[clamp(2rem,10vw,3rem)] md:text-5xl">
                             COMMON <br />
                             QUESTIONS.
                         </h2>
-                        <div className="space-y-4 pt-12">
-                            <p className="font-mono text-[11px] text-slate-500 font-bold tracking-widest leading-loose uppercase">
+                        <div className="space-y-4 pt-6 md:pt-12">
+                            <p className="font-mono text-[10px] sm:text-[11px] text-slate-500 font-bold tracking-widest leading-loose uppercase">
                                 SECTION: GENERAL INQUIRIES <br />
                                 UPDATED: Q1 2026 <br />
                                 STATUS: VERIFIED
@@ -63,15 +63,15 @@ export default function FAQSection() {
                             className="border-b border-slate-100 group cursor-pointer"
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
                         >
-                            <div className="py-10 px-4 flex items-center justify-between group-hover:bg-slate-50/50 transition-colors">
-                                <div className="flex items-center gap-8">
+                            <div className="py-6 sm:py-10 px-2 sm:px-4 flex items-center justify-between group-hover:bg-slate-50/50 transition-colors gap-4">
+                                <div className="flex items-center gap-4 sm:gap-8">
                                     <span className="font-mono text-[10px] text-slate-400 font-bold">0{index + 1}</span>
-                                    <h3 className="font-oswald text-xl md:text-3xl text-slate-900 tracking-tight transition-transform group-hover:translate-x-2">
+                                    <h3 className="font-oswald text-lg md:text-3xl text-slate-900 tracking-tight transition-transform group-hover:translate-x-2">
                                         {faq.q}
                                     </h3>
                                 </div>
-                                <div className={`w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center transition-all ${openIndex === index ? 'bg-sky-500 border-sky-500 rotate-45 shadow-lg shadow-sky-500/20' : 'bg-white'}`}>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={openIndex === index ? 'text-white' : 'text-slate-400'}>
+                                <div className={`w-8 h-8 sm:w-10 sm:h-10 shrink-0 border border-slate-200 rounded-full flex items-center justify-center transition-all ${openIndex === index ? 'bg-sky-500 border-sky-500 rotate-45 shadow-lg shadow-sky-500/20' : 'bg-white'}`}>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={openIndex === index ? 'text-white scale-75 sm:scale-100' : 'text-slate-400 scale-75 sm:scale-100'}>
                                         <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
                                     </svg>
                                 </div>
@@ -86,8 +86,8 @@ export default function FAQSection() {
                                         transition={{ duration: 0.3, ease: "easeOut" }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="pl-12 md:pl-20 pr-4 pb-10">
-                                            <p className="text-slate-600 font-medium text-base md:text-lg leading-relaxed max-w-2xl">
+                                        <div className="pl-10 sm:pl-12 md:pl-20 pr-4 pb-10">
+                                            <p className="text-slate-600 font-medium text-sm md:text-lg leading-relaxed max-w-2xl">
                                                 {faq.a}
                                             </p>
                                             <div className="mt-6">

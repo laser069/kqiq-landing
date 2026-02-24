@@ -15,7 +15,7 @@ export default function SignalAnalysis() {
     ];
 
     return (
-        <div className="bg-white py-16 border-y-2 border-slate-200 relative overflow-hidden">
+        <div className="bg-white py-12 sm:py-16 border-y-2 border-slate-200 relative overflow-hidden">
 
             {/* Central Ticker */}
             <div className="flex overflow-hidden whitespace-nowrap mb-16">
@@ -34,7 +34,7 @@ export default function SignalAnalysis() {
             </div>
 
             {/* Internal Data Grid */}
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                 {[
                     { label: "FISCAL_RECORDS", val: "140,291" },
                     { label: "RECONCILIATION", val: "99.992%" },

@@ -34,12 +34,12 @@ export default function Footer() {
         <div className="space-y-6">
           <h4 className="font-oswald font-black text-xs tracking-[0.3em] text-slate-400 uppercase">Navigation</h4>
           <ul className="space-y-3 font-oswald font-bold text-sm uppercase tracking-widest">
-            <li><Link href="/" className="hover:text-sky-500 transition-colors">Index</Link></li>
-            <li><Link href="/features" className="hover:text-sky-500 transition-colors">Features</Link></li>
-            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Resources</Link></li>
-            <li><Link href="/observatory" className="hover:text-sky-500 transition-colors">Observatory</Link></li>
-            <li><Link href="/expedition" className="hover:text-sky-500 transition-colors">Mission</Link></li>
-            <li><Link href="/contact" className="hover:text-sky-500 transition-colors">Contact</Link></li>
+            <li><Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Index</Link></li>
+            <li><Link href="/features" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Features</Link></li>
+            <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Resources</Link></li>
+            <li><Link href="/observatory" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Observatory</Link></li>
+            <li><Link href="/expedition" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Mission</Link></li>
+            <li><Link href="/contact" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Contact</Link></li>
           </ul>
         </div>
 
@@ -47,11 +47,11 @@ export default function Footer() {
         <div className="space-y-6">
           <h4 className="font-oswald font-black text-xs tracking-[0.3em] text-slate-400 uppercase">Resources</h4>
           <ul className="space-y-3 font-oswald font-bold text-sm uppercase tracking-widest">
-            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Invoice Templates</Link></li>
-            <li><Link href="/terms" className="hover:text-sky-500 transition-colors">Terms</Link></li>
-            <li><Link href="/terms" className="hover:text-sky-500 transition-colors">Privacy</Link></li>
-            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Compare</Link></li>
-            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Support</Link></li>
+            <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Invoice Templates</Link></li>
+            <li><Link href="/terms" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Terms</Link></li>
+            <li><Link href="/terms" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Privacy</Link></li>
+            <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Compare</Link></li>
+            <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Support</Link></li>
           </ul>
         </div>
 
@@ -66,7 +66,7 @@ export default function Footer() {
             </p>
             <div className="mt-4 pt-4 border-t border-slate-300/30 flex justify-between items-center">
               <span className="font-mono text-[9px] text-sky-500 font-black">STABLE_RELEASE_V2</span>
-              <Link href="/terms" className="font-oswald font-black text-[10px] text-slate-800 hover:text-sky-500 transition-colors uppercase tracking-[0.2em]">View Full Terms →</Link>
+              <Link href="/terms" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="font-oswald font-black text-[10px] text-slate-800 hover:text-sky-500 transition-colors uppercase tracking-[0.2em]">View Full Terms →</Link>
             </div>
           </div>
         </div>

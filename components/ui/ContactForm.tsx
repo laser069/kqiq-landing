@@ -47,7 +47,7 @@ export default function ContactForm() {
                     <div className="lg:col-span-4 space-y-12">
                         <div className="space-y-6">
                             <span className="font-mono text-[10px] text-sky-500 font-bold tracking-[0.4em] uppercase block">Client Relations</span>
-                            <h2 className="font-oswald text-4xl md:text-6xl text-slate-900 uppercase leading-[0.9] tracking-tighter text-[clamp(2.5rem,8vw,5.5rem)]">
+                            <h2 className="font-oswald text-slate-900 uppercase leading-[0.9] tracking-tighter text-[clamp(2.5rem,10vw,5.5rem)]">
                                 START A <br />
                                 <span className="text-sky-500">PROJECT.</span>
                             </h2>
@@ -68,13 +68,13 @@ export default function ContactForm() {
                             </div>
 
                             <div className="space-y-4 pt-4 border-t border-slate-300/20">
-                                <div className="flex justify-between items-center text-[10px] font-mono">
-                                    <span className="text-slate-400">Inquiry Status</span>
-                                    <span className="text-emerald-500 font-bold uppercase tracking-wider">Awaiting Entry</span>
+                                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-4 text-[10px] font-mono">
+                                    <span className="text-slate-400 shrink-0">Inquiry Status</span>
+                                    <span className="text-emerald-500 font-bold uppercase tracking-wider truncate">Awaiting Entry</span>
                                 </div>
-                                <div className="flex justify-between items-center text-[10px] font-mono">
-                                    <span className="text-slate-400">Office Region</span>
-                                    <span className="text-slate-800 uppercase tracking-wider">Madurai, Tamil Nadu</span>
+                                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 sm:gap-4 text-[10px] font-mono">
+                                    <span className="text-slate-400 shrink-0">Office Region</span>
+                                    <span className="text-slate-800 uppercase tracking-wider truncate">Madurai, Tamil Nadu</span>
                                 </div>
                                 <div className="h-1.5 w-full bg-[#e0e5ec] rounded-full shadow-[inset_1px_1px_3px_#bebebe,inset_-1px_-1px_3px_#ffffff] overflow-hidden">
                                     <motion.div
@@ -104,7 +104,7 @@ export default function ContactForm() {
                                         required
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        className="w-full bg-[#e0e5ec] rounded-2xl px-6 py-5 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] outline-none focus:text-sky-500 transition-all font-sans font-bold text-slate-700 placeholder:text-slate-400/50"
+                                        className="w-full bg-[#e0e5ec] rounded-2xl px-5 py-4 sm:px-6 sm:py-5 shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] sm:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] outline-none focus:text-sky-500 transition-all font-sans font-bold text-slate-700 placeholder:text-slate-400/50"
                                     />
                                 </div>
                                 <div className="space-y-4">
@@ -115,7 +115,7 @@ export default function ContactForm() {
                                         required
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        className="w-full bg-[#e0e5ec] rounded-2xl px-6 py-5 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] outline-none focus:text-sky-500 transition-all font-sans font-bold text-slate-700 placeholder:text-slate-400/50"
+                                        className="w-full bg-[#e0e5ec] rounded-2xl px-5 py-4 sm:px-6 sm:py-5 shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] sm:shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] outline-none focus:text-sky-500 transition-all font-sans font-bold text-slate-700 placeholder:text-slate-400/50"
                                     />
                                 </div>
                             </div>
@@ -128,7 +128,7 @@ export default function ContactForm() {
                                     required
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full bg-[#e0e5ec] rounded-3xl px-8 py-6 shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff] outline-none focus:text-sky-500 transition-all font-sans font-bold text-slate-700 placeholder:text-slate-400/50 resize-none"
+                                    className="w-full bg-[#e0e5ec] rounded-2xl sm:rounded-3xl px-6 py-5 sm:px-8 sm:py-6 shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] sm:shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff] outline-none focus:text-sky-500 transition-all font-sans font-bold text-slate-700 placeholder:text-slate-400/50 resize-none"
                                 />
                             </div>
 

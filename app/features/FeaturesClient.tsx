@@ -95,10 +95,10 @@ export default function FeaturesClient() {
               <div className="h-[2px] w-8 bg-sky-500" />
               <span className="font-mono text-[9px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">Capabilties // V2.0</span>
             </div>
-            <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8 text-[clamp(2.5rem,10vw,8rem)]">
+            <h1 className="font-oswald font-black text-3xl sm:text-6xl md:text-8xl text-slate-900 leading-[0.95] md:leading-[0.9] uppercase mb-8 text-[clamp(2.5rem,8vw,8rem)]">
               Powerful Billing & Store <span className="text-sky-500">Management</span> — Made Simple
             </h1>
-            <p className="font-oswald text-lg md:text-2xl text-slate-500 font-bold italic leading-relaxed uppercase tracking-tight mb-12">
+            <p className="font-oswald text-lg md:text-2xl text-slate-500 font-bold italic leading-relaxed uppercase tracking-tight mb-8 md:mb-12">
               KWIQBILL helps Indian businesses manage billing, inventory, customers, and reports with ease — online or offline.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
@@ -127,7 +127,7 @@ export default function FeaturesClient() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-4 px-6 py-4 bg-[#e0e5ec] rounded-full shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] border-t border-l border-white/40 group"
+                className="flex items-center gap-2 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-[#e0e5ec] rounded-full shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] border-t border-l border-white/40 group mb-2 sm:mb-0"
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse shadow-[0_0_8px_rgba(14,165,233,0.5)]" />
                 <div className="flex flex-col">
@@ -161,15 +161,15 @@ export default function FeaturesClient() {
               >
                 <div>
                   <span className="font-mono text-[10px] text-sky-500 font-black tracking-[0.3em] uppercase mb-4 block">Protocols // 0{index + 1}</span>
-                  <h2 className="font-oswald font-black text-3xl sm:text-4xl md:text-6xl text-slate-900 uppercase tracking-tight">
+                  <h2 className="font-oswald font-black text-2xl sm:text-4xl md:text-6xl text-slate-900 uppercase tracking-tight text-[clamp(1.5rem,8vw,3.75rem)] sm:text-4xl md:text-6xl">
                     {feature.title}
                   </h2>
-                  <h3 className="font-oswald text-xl md:text-2xl text-slate-400 font-bold italic uppercase mt-2">
+                  <h3 className="font-oswald text-lg md:text-2xl text-slate-400 font-bold italic uppercase mt-2">
                     {feature.subtitle}
                   </h3>
                 </div>
 
-                <p className="text-slate-600 text-lg font-bold leading-relaxed italic opacity-80 border-l-2 border-sky-500/20 pl-6">
+                <p className="text-slate-600 text-base md:text-lg font-bold leading-relaxed italic opacity-80 border-l-2 border-sky-500/20 pl-6">
                   {feature.description}
                 </p>
 
@@ -230,7 +230,7 @@ export default function FeaturesClient() {
             <div className="h-[2px] w-24 bg-sky-500 mx-auto mt-6" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {subFeatures.map((f, i) => (
               <motion.div
                 key={f.title}
@@ -238,10 +238,10 @@ export default function FeaturesClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-[#e0e5ec] p-10 rounded-3xl shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] border-t border-l border-white/40 flex flex-col items-start gap-4 group hover:shadow-inner transition-all duration-300"
+                className="bg-[#e0e5ec] p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] border-t border-l border-white/40 flex flex-col items-start gap-3 sm:gap-4 group hover:shadow-inner transition-all duration-300"
               >
                 <span className="font-mono text-[9px] text-sky-500 font-black tracking-widest">{f.tag}</span>
-                <span className="font-oswald font-black text-xl text-slate-800 uppercase tracking-[0.1em]">
+                <span className="font-oswald font-black text-lg sm:text-xl text-slate-800 uppercase tracking-[0.1em]">
                   {f.title}
                 </span>
                 <div className="w-full h-[1px] bg-slate-300/30 group-hover:bg-sky-500/30 transition-colors mt-2" />
