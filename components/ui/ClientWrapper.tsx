@@ -42,8 +42,8 @@ export function DataTraceCard({ title, description }: DataTraceCardProps) {
 
 export function PlatformCards() {
     const cards = [
-        { title: "Mobile", icon: <Smartphone className="w-5 h-5 sm:w-6 sm:h-6" />, desc: "Native Android & iOS apps with full offline capabilities." },
-        { title: "Desktop", icon: <Monitor className="w-5 h-5 sm:w-6 sm:h-6" />, desc: "Powerful Windows & Mac apps for robust management." },
+        { title: "Mobile", icon: <Smartphone className="w-5 h-5 sm:w-6 sm:h-6" />, desc: "Native Android apps with full offline capabilities." },
+        { title: "Desktop", icon: <Monitor className="w-5 h-5 sm:w-6 sm:h-6" />, desc: "Powerful Windows apps for robust management." },
         { title: "Sync", icon: <RefreshCw className="w-5 h-5 sm:w-6 sm:h-6" />, desc: "Instant sync across all your devices, anywhere." },
         { title: "Security", icon: <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6" />, desc: "AES-256 encryption protects every transaction." },
     ];

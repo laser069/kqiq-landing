@@ -6,6 +6,7 @@ import {
   IntelligenceCard,
   AnimatedStats
 } from "@/components/ui/ClientWrapper";
+import Downloads from "@/components/ui/Downloads";
 
 export const metadata = {
   title: "KWIQ BILLING | High-Velocity Revenue Infrastructure",
@@ -39,12 +40,33 @@ export default function Page() {
               <p className="text-slate-500 text-base md:text-xl font-bold italic leading-relaxed uppercase tracking-tight max-w-xl">
                 Deploy KWIQBILL across your entire infrastructure. Whether on Mobile or Desktop, your data remains synchronized and secure.
               </p>
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-4">
-                <div className="p-4 sm:p-6 bg-[#e0e5ec] rounded-2xl shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] border-t border-l border-white/40">
-                  <span className="font-oswald font-black text-lg md:text-xl text-slate-800 uppercase">Android</span>
+              <div className="flex flex-col gap-4 pt-4 max-w-md">
+                <div className="flex gap-4">
+                  <div className="flex-1 p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-between group overflow-hidden relative shadow-2xl shadow-emerald-900/20">
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent transition-opacity" />
+                    <span className="font-oswald font-black text-xl text-white uppercase relative z-10 tracking-wide">Android</span>
+                    <div className="flex items-center gap-2 relative z-10">
+                      <span className="font-mono text-[9px] text-sky-500 tracking-widest hidden sm:inline-block">AVAILABLE</span>
+                      <div className="w-2.5 h-2.5 rounded-full bg-sky-500 shadow-[0_0_12px_#0ea5e9]" />
+                    </div>
+                  </div>
+
+                  <div className="flex-1 p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-between group overflow-hidden relative shadow-2xl shadow-sky-900/20">
+                    <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent transition-opacity" />
+                    <span className="font-oswald font-black text-xl text-white uppercase relative z-10 tracking-wide">Windows</span>
+                    <div className="flex items-center gap-2 relative z-10">
+                      <span className="font-mono text-[9px] text-sky-500 tracking-widest hidden sm:inline-block">AVAILABLE</span>
+                      <div className="w-2.5 h-2.5 rounded-full bg-sky-500 shadow-[0_0_12px_#0ea5e9]" />
+                    </div>
+                  </div>
                 </div>
-                <div className="p-4 sm:p-6 bg-[#e0e5ec] rounded-2xl shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] border-t border-l border-white/40">
-                  <span className="font-oswald font-black text-lg md:text-xl text-slate-800 uppercase">Windows</span>
+
+                <div className="p-4 bg-white/40 backdrop-blur-sm border border-slate-300/40 rounded-2xl flex items-center justify-start gap-4 shadow-sm border-l-4 border-l-amber-500">
+                  <div className="w-3 h-3 rounded-full bg-amber-500 shadow-[0_0_10px_#f59e0b] animate-pulse" />
+                  <div className="flex flex-col">
+                    <span className="font-oswald text-sm md:text-base text-slate-800 font-bold uppercase tracking-wider leading-none mb-1">iOS & Mac OS</span>
+                    <span className="font-mono text-[9px] md:text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] leading-none">Development in Progress</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -57,9 +79,37 @@ export default function Page() {
           </div>
         </div>
       </section>
+      {/* ------------------------------------------------------------ */}
+      {/* 5. DOWNLOAD INFRASTRUCTURE                                   */}
+      {/* ------------------------------------------------------------ */}
+      <Downloads />
 
       {/* ------------------------------------------------------------ */}
-      {/* 3. CORE INTELLIGENCE GRID                                     */}
+      {/* 3. MAIN CONTENT                                              */}
+      {/* ------------------------------------------------------------ */}
+      <div id="features" className="relative z-50 bg-[#e0e5ec] border-t-[1.5px] border-white/70">
+        <div className="container mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-16">
+
+          <Suspense fallback={<div className="h-64 bg-slate-100 animate-pulse rounded-[3rem]" />}>
+            <AnimatedStats />
+          </Suspense>
+
+          <section className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <DataTraceCard
+              title="LIVE BILLING"
+              description="15 active businesses generating bills seamlessly across web, desktop, and mobile — online and offline."
+            />
+            <DataTraceCard
+              title="SYSTEM STATUS"
+              description="Billing system running smoothly. All invoices, expenses, and reports are securely stored and synced."
+            />
+          </section>
+
+        </div>
+      </div>
+
+      {/* ------------------------------------------------------------ */}
+      {/* 4. CORE INTELLIGENCE GRID                                     */}
       {/* ------------------------------------------------------------ */}
       <section className="relative z-40 bg-[#e0e5ec] pb-24">
         <div className="container mx-auto px-4 sm:px-6">
@@ -83,68 +133,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------ */}
-      {/* 4. STRATEGIC ADVANTAGES (TICKER)                              */}
-      {/* ------------------------------------------------------------ */}
-      <section className="relative z-40 py-12 overflow-hidden bg-[#e0e5ec]">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-500/5 to-transparent" />
-        <div className="relative border-y border-sky-500/10 bg-white/40 backdrop-blur-md py-8">
-          <div className="flex w-fit animate-marquee whitespace-nowrap">
-            <div className="flex gap-16 items-center px-8">
-              {[
-                "SECURE_AES_256", "CLOUD_BACKUP_ENABLED", "BARCODE_READY",
-                "THERMAL_PRINT_SUPPORT", "A4_INVOICING", "INVENTORY_TRACKING",
-                "EXPENSE_MANAGEMENT", "LIVE_API_READY", "MULTI_CURRENCY"
-              ].map((tag, idx) => (
-                <div key={idx} className="flex items-center gap-4">
-                  <div className="w-1.5 h-1.5 rounded-full bg-sky-500 shadow-[0_0_8px_#0ea5e9]" />
-                  <span className="font-mono text-[10px] font-black text-slate-800 tracking-[0.4em] uppercase opacity-70 hover:opacity-100 hover:text-sky-500 transition-all cursor-default">
-                    {tag}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <div className="flex gap-16 items-center px-8" aria-hidden="true">
-              {[
-                "SECURE_AES_256", "CLOUD_BACKUP_ENABLED", "BARCODE_READY",
-                "THERMAL_PRINT_SUPPORT", "A4_INVOICING", "INVENTORY_TRACKING",
-                "EXPENSE_MANAGEMENT", "LIVE_API_READY", "MULTI_CURRENCY"
-              ].map((tag, idx) => (
-                <div key={tag + "-dup"} className="flex items-center gap-4">
-                  <div className="w-1.5 h-1.5 rounded-full bg-sky-500 shadow-[0_0_8px_#0ea5e9]" />
-                  <span className="font-mono text-[10px] font-black text-slate-800 tracking-[0.4em] uppercase opacity-70 hover:opacity-100 hover:text-sky-500 transition-all cursor-default">
-                    {tag}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ------------------------------------------------------------ */}
-      {/* 5. MAIN CONTENT                                              */}
-      {/* ------------------------------------------------------------ */}
-      <div id="features" className="relative z-50 bg-[#e0e5ec] border-t-[1.5px] border-white/70">
-        <div className="container mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-32">
 
-          <Suspense fallback={<div className="h-64 bg-slate-100 animate-pulse rounded-[3rem]" />}>
-            <AnimatedStats />
-          </Suspense>
-
-          <section className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <DataTraceCard
-              title="LIVE BILLING"
-              description="15 active businesses generating bills seamlessly across web, desktop, and mobile — online and offline."
-            />
-            <DataTraceCard
-              title="SYSTEM STATUS"
-              description="Billing system running smoothly. All invoices, expenses, and reports are securely stored and synced."
-            />
-          </section>
-
-        </div>
-      </div>
     </div>
   );
 }

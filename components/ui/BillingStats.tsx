@@ -61,9 +61,6 @@ export default function BillingStats() {
                 {stat.label}
               </h3>
             </div>
-            <span className="font-mono text-[9px] text-sky-500 font-bold tracking-tighter opacity-40 group-hover:opacity-100 transition-opacity">
-              REF://ID_{index + 1}
-            </span>
           </div>
 
           {/* Value Section - Oswald Font */}
