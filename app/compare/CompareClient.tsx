@@ -42,6 +42,28 @@ const statusIcons: Record<Status, React.ReactNode> = {
 
 const comparisonData: Category[] = [
   {
+    title: "Platform Support",
+    icon: <MonitorSmartphone className="w-8 h-8" />,
+    features: [
+      { feature: "Web Application", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
+      { feature: "Desktop Application", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Android App", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Offline Mode", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Local Device Storage", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
+    ],
+  },
+  {
+    title: "Data, Security & Backup",
+    icon: <ShieldCheck className="w-8 h-8" />,
+    features: [
+      { feature: "Cloud Backup", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
+      { feature: "Google Drive Backup", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Local Backup", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
+      { feature: "Role-Based Access", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
+      { feature: "Audit Logs", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
+    ],
+  },
+  {
     title: "Billing & Invoicing",
     icon: <Receipt className="w-8 h-8" />,
     features: [
@@ -105,17 +127,7 @@ const comparisonData: Category[] = [
       { feature: "Receipt Upload", zoho: "Available", vyapar: "Not Available", kwiqbill: "Not Available" },
     ],
   },
-  {
-    title: "Platform Support",
-    icon: <MonitorSmartphone className="w-8 h-8" />,
-    features: [
-      { feature: "Web Application", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
-      { feature: "Desktop Application", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Android App", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Offline Mode", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Local Device Storage", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
-    ],
-  },
+  
   {
     title: "Settings & Customization",
     icon: <Settings className="w-8 h-8" />,
@@ -126,25 +138,15 @@ const comparisonData: Category[] = [
       { feature: "Printer Configuration", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
 
     ],
-  },
-  {
-    title: "Data, Security & Backup",
-    icon: <ShieldCheck className="w-8 h-8" />,
-    features: [
-      { feature: "Cloud Backup", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
-      { feature: "Google Drive Backup", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Local Backup", zoho: "Not Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Role-Based Access", zoho: "Available", vyapar: "Available", kwiqbill: "Not Available" },
-      { feature: "Audit Logs", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
-    ],
-  },
+  }
+  
 ];
 
 export default function CompareClient() {
   const [openSection, setOpenSection] = useState<number | null>(0);
 
   return (
-    <main className="min-h-screen bg-[#e0e5ec] pt-32 pb-24 px-6 md:px-12 font-oswald overflow-x-hidden">
+    <main className="min-h-screen bg-[#e0e5ec] pt-24 md:pt-32 pb-16 md:pb-24 px-4 sm:px-6 md:px-12 font-oswald overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Header Section */}
@@ -159,10 +161,10 @@ export default function CompareClient() {
               <div className="h-[2px] w-8 bg-sky-500" />
               <span className="font-mono text-[10px] md:text-xs font-black tracking-[0.4em] text-slate-400 uppercase">Comparison_Module // Ver. 2.0</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] uppercase mb-8 tracking-tighter">
+            <h1 className="text-4xl sm:text-5xl md:text-8xl font-black text-slate-900 leading-[0.9] uppercase mb-6 md:mb-8 tracking-tighter">
               Compare Billing <br /> Software <span className="text-sky-500">Features</span>
             </h1>
-            <p className="max-w-2xl text-xl text-slate-500 font-bold italic leading-relaxed uppercase border-l-2 border-sky-500/30 pl-6">
+            <p className="max-w-2xl text-sm md:text-xl text-slate-500 font-bold italic leading-relaxed uppercase border-l-2 border-sky-500/30 pl-4 md:pl-6">
               No Marketing, Just Facts. This transparent comparison is meant to help businesses choose the right tool and guide KWIQBILL’s development roadmap.
             </p>
           </motion.div>
@@ -256,16 +258,16 @@ export default function CompareClient() {
               A comprehensive cloud-based ERP solution. Mature, highly automated, and integrates well with the global Zoho ecosystem. Lacks native offline-first architecture and local data ownership.
             </p>
           </div>
-          <div className="p-10 bg-[#e0e5ec] rounded-[3rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/60">
-            <h3 className="text-2xl font-black text-slate-800 uppercase mb-6">Vyapar</h3>
-            <p className="text-sm font-bold text-slate-600 leading-relaxed uppercase">
-              Strongly focused on Indian MSMEs with excellent inventory and barcode support. Primarily a desktop application with sync capabilities. Lacks a robust web-first application and open-source accessibility.
-            </p>
-          </div>
           <div className="p-10 bg-[#e0e5ec] rounded-[3rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-2 border-sky-500/20">
             <h3 className="text-2xl font-black text-sky-500 uppercase mb-6">KWIQBILL</h3>
             <p className="text-sm font-bold text-slate-600 leading-relaxed uppercase">
               Built on a modular, offline-first architecture. Offers complete data ownership and open-source transparency. Strong in core billing and cross-platform flexibility, but currently has gaps in advanced automation and template variety.
+            </p>
+          </div>
+          <div className="p-10 bg-[#e0e5ec] rounded-[3rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/60">
+            <h3 className="text-2xl font-black text-slate-800 uppercase mb-6">Vyapar</h3>
+            <p className="text-sm font-bold text-slate-600 leading-relaxed uppercase">
+              Strongly focused on Indian MSMEs with excellent inventory and barcode support. Primarily a desktop application with sync capabilities. Lacks a robust web-first application and open-source accessibility.
             </p>
           </div>
         </section>

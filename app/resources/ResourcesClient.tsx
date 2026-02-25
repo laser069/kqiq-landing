@@ -12,7 +12,7 @@ const resources = [
     description: "Choose from professionally designed invoice templates that support GST compliance and suit different business needs. All templates are fully customizable inside the KWIQBILL application.",
     items: ["Classic Invoice", "Compact Invoice", "GST-Detailed Invoice", "Minimal Invoice"],
     ctas: [
-      { label: "View Templates", href: "#", primary: true },
+      { label: "View Templates", href: "/templates", primary: true },
     ],
   },
   {
@@ -49,7 +49,7 @@ const resources = [
 
 export default function ResourcesClient() {
   return (
-    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-32 pb-24 px-4 sm:px-6 md:px-12">
+    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-24 md:pt-32 pb-16 md:pb-24 px-4 sm:px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Page Hero Section */}
         <section className="mb-20 md:mb-24">

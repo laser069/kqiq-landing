@@ -64,7 +64,7 @@ export default function BillingStats() {
           </div>
 
           {/* Value Section - Oswald Font */}
-          <div className="text-6xl md:text-7xl font-oswald font-black text-slate-950 tabular-nums z-10 flex items-baseline tracking-tighter">
+          <div className="text-5xl lg:text-7xl font-oswald font-black text-slate-950 tabular-nums z-10 flex items-baseline tracking-tighter">
             {stat.prefix && (
               <span className="text-sky-500 mr-2 text-4xl opacity-50 group-hover:opacity-100 transition-opacity">
                 {stat.prefix}
@@ -78,15 +78,7 @@ export default function BillingStats() {
             )}
           </div>
 
-          {/* Technical Data Stream (Decorative) */}
-          <div className="mt-auto pt-4 border-t border-slate-300/20 flex justify-between items-center opacity-30 group-hover:opacity-100 transition-all duration-700 overflow-hidden">
-            <div className="flex gap-1 h-3">
-              {[...Array(6)].map((_, i) => (
-                <div key={i} className={`w-1 h-full bg-sky-500/20 rounded-full group-hover:animate-pulse`} style={{ animationDelay: `${i * 150}ms` }} />
-              ))}
-            </div>
-            <span className="text-[8px] font-mono text-slate-400 font-bold">STATUS://OPTIMIZED</span>
-          </div>
+
 
           {/* Background Grid - High Tech Variant */}
           <div className="absolute inset-0 opacity-[0.1] pointer-events-none bg-[radial-gradient(#0ea5e9_1px,transparent_1px)] bg-[size:24px_24px] group-hover:opacity-[0.15] transition-opacity" />

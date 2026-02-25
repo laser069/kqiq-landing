@@ -44,12 +44,11 @@ export default function Downloads() {
                                 <a
                                     href="/downloads/kwiqbill_v1.0.apk"
                                     download
-                                    className="flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-2xl font-oswald font-black uppercase tracking-wider hover:bg-sky-600 transition-all shadow-xl shadow-slate-950/20"
+                                    className="flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-2xl font-oswald font-black uppercase tracking-wider hover:bg-sky-600 transition-all shadow-xl shadow-slate-950/20 w-fit"
                                 >
                                     <Download size={20} />
                                     Download APK
                                 </a>
-                                <span className="font-mono text-[10px] text-slate-400 font-bold">V1.0.0 // 91MB</span>
                             </div>
                         </motion.div>
 
@@ -78,12 +77,11 @@ export default function Downloads() {
                                 <a
                                     href="/downloads/KWIQBILL_Setup.exe"
                                     download
-                                    className="flex items-center gap-3 px-8 py-4 bg-sky-500 text-white rounded-2xl font-oswald font-black uppercase tracking-wider hover:bg-white hover:text-sky-500 transition-all shadow-xl shadow-sky-400/20"
+                                    className="flex items-center gap-3 px-8 py-4 bg-sky-500 text-white rounded-2xl font-oswald font-black uppercase tracking-wider hover:bg-white hover:text-sky-500 transition-all shadow-xl shadow-sky-400/20 w-fit"
                                 >
                                     <Download size={20} />
                                     Download EXE
                                 </a>
-                                <span className="font-mono text-[10px] text-sky-400/40 font-bold">V1.0.0 // 114MB</span>
                             </div>
                         </motion.div>
                     </div>

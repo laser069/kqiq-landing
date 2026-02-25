@@ -32,24 +32,27 @@ export default function FAQSection() {
 
                 {/* Left: Professional Information Sidebar */}
                 <div className="lg:w-1/3">
-                    <div className="sticky top-32 space-y-8">
+                    <div className="sticky top-32 space-y-6 md:space-y-8">
                         <div className="flex gap-4">
                             <div className="w-2 h-2 bg-sky-500 rounded-full" />
                             <div className="w-2 h-2 bg-slate-200 rounded-full" />
                         </div>
-                        <h2 className="font-oswald text-3xl md:text-5xl text-slate-900 uppercase leading-[1.1] tracking-tighter text-[clamp(2rem,10vw,3rem)] md:text-5xl">
+                        <h2 className="font-oswald text-slate-900 uppercase leading-[1.1] tracking-tighter text-[clamp(2.5rem,10vw,3.5rem)] md:text-5xl">
                             COMMON <br />
                             QUESTIONS.
                         </h2>
-                        <div className="space-y-4 pt-6 md:pt-12">
-                            <p className="font-mono text-[10px] sm:text-[11px] text-slate-500 font-bold tracking-widest leading-loose uppercase">
+
+                        <div className="space-y-4 pt-4 md:pt-8 w-full">
+                            <div className="w-full h-[1px] bg-slate-200" />
+                            <p className="font-mono text-[9px] sm:text-[11px] text-slate-500 font-bold tracking-widest leading-loose uppercase">
                                 SECTION: GENERAL INQUIRIES <br />
                                 UPDATED: 2026 <br />
                                 STATUS: VERIFIED
                             </p>
+                            <div className="w-full h-[1px] bg-slate-200" />
                         </div>
-                        <div className="w-full h-[1px] bg-slate-200" />
-                        <p className="text-slate-500 text-sm font-medium leading-relaxed">
+
+                        <p className="text-slate-500 text-sm font-medium leading-relaxed max-w-sm">
                             Find answers to frequently asked questions regarding our engagement process, security standards, and global operations.
                         </p>
                     </div>
@@ -64,9 +67,9 @@ export default function FAQSection() {
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
                         >
                             <div className="py-6 sm:py-10 px-2 sm:px-4 flex items-center justify-between group-hover:bg-slate-50/50 transition-colors gap-4">
-                                <div className="flex items-center gap-4 sm:gap-8">
-                                    <span className="font-mono text-[10px] text-slate-400 font-bold">0{index + 1}</span>
-                                    <h3 className="font-oswald text-lg md:text-3xl text-slate-900 tracking-tight transition-transform group-hover:translate-x-2">
+                                <div className="flex items-start sm:items-center gap-4 sm:gap-6 w-[80%]">
+                                    <span className="font-mono text-[10px] text-slate-400 font-bold mt-1 sm:mt-0">0{index + 1}</span>
+                                    <h3 className="font-oswald text-lg md:text-2xl lg:text-3xl text-slate-900 tracking-tight transition-transform group-hover:translate-x-2 leading-tight">
                                         {faq.q}
                                     </h3>
                                 </div>

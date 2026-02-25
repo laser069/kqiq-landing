@@ -16,13 +16,13 @@ export default function ContactHero() {
           className="md:col-span-4 lg:col-span-8 row-span-2 rounded-[2rem] md:rounded-[3.5rem] bg-[#e0e5ec] p-6 sm:p-8 md:p-20 
                      shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] md:shadow-[25px_25px_50px_#bebebe,-25px_-25px_50px_#ffffff] 
                      border-t-[1.5px] border-l-[1.5px] border-white/70
-                     flex flex-col justify-between relative overflow-hidden min-h-[400px] md:min-h-[550px]"
+                     flex flex-col justify-between relative overflow-hidden min-h-[250px] md:min-h-[550px]"
         >
 
 
           {/* THE BOLD TYPOGRAPHY SECTION */}
-          <div className="relative z-10 mt-6 sm:mt-12">
-            <h1 className="font-oswald font-black text-[clamp(2.5rem,15vw,14rem)] md:text-[clamp(3.5rem,15vw,14rem)] leading-[0.8] text-slate-800 uppercase tracking-[-0.06em]">
+          <div className="relative z-10 mt-6 sm:mt-12 break-words">
+            <h1 className="font-oswald font-black text-[clamp(2.5rem,12vw,14rem)] md:text-[clamp(3.5rem,15vw,14rem)] leading-[0.8] text-slate-800 uppercase tracking-[-0.06em]">
               <span className="block drop-shadow-[4px_6px_8px_rgba(0,0,0,0.15)]">KWIQ</span>
               <span className="block text-sky-500 [text-shadow:_-2px_-2px_0_#fff,2px_-2px_0_#fff,-2px_2px_0_#fff,2px_2px_0_#fff,6px_8px_12px_rgba(14,165,233,0.3)]">
                 BILLING
@@ -96,7 +96,7 @@ export default function ContactHero() {
                      shadow-[25px_25px_50px_#bebebe,-25px_-25px_50px_#ffffff] 
                      flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10"
         >
-          <div className="flex-1 text-center lg:text-left">
+          <div className="flex-1 text-center lg:text-left break-words">
             <p className="font-oswald font-black text-3xl md:text-5xl text-slate-800 uppercase leading-[0.9] mb-4">
               Designed for <span className="text-sky-500">Global Scale.</span>
             </p>
@@ -106,9 +106,9 @@ export default function ContactHero() {
           </div>
           <button
             onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-12 py-6 rounded-2xl bg-[#e0e5ec] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] 
+            className="w-full sm:w-auto px-8 sm:px-12 py-5 sm:py-6 rounded-2xl bg-[#e0e5ec] shadow-[8px_8px_16px_#bebebe,-8px_-8px_16px_#ffffff] 
                                active:shadow-[inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff]
-                               text-slate-800 font-oswald font-black text-2xl uppercase tracking-widest transition-all"
+                               text-slate-800 font-oswald font-black text-xl sm:text-2xl uppercase tracking-widest transition-all"
           >
             Initiate Contact
           </button>

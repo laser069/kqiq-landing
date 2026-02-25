@@ -85,7 +85,7 @@ export function IntelligenceCard({ title, code, desc }: IntelligenceCardProps) {
             whileHover={{ y: -10 }}
             className="p-10 bg-[#e0e5ec] rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 group"
         >
-            <h3 className="font-oswald font-black text-3xl text-slate-800 uppercase mb-4">{title}</h3>
+            <h3 className="font-oswald font-black text-2xl md:text-3xl text-slate-800 uppercase mb-4">{title}</h3>
             <p className="text-slate-500 font-bold text-sm uppercase leading-relaxed opacity-70 group-hover:opacity-100 transition-opacity">
                 {desc}
             </p>

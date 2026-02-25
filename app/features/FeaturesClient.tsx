@@ -25,7 +25,7 @@ const coreFeatures = [
       "Touch-friendly interface",
       "Ideal for on-the-go businesses"
     ],
-    image: "/mobile_final_v1.png",
+    image: "/mobile.jpeg",
     id: "feature-mobile"
   },
   {
@@ -38,7 +38,7 @@ const coreFeatures = [
       "Local data storage",
       "Suitable for retail & wholesale stores"
     ],
-    image: "/desktop_dashboard_v1.png",
+    image: "/img1.png",
     id: "feature-desktop"
   },
   {
@@ -51,7 +51,7 @@ const coreFeatures = [
       "Payment method insights",
       "Export reports to PDF"
     ],
-    image: "/reporting_dashboard_v1.png",
+    image: "/img2.png",
     id: "feature-reporting"
   },
   {
@@ -64,7 +64,7 @@ const coreFeatures = [
       "Custom invoice templates",
       "Invoice history & reprints"
     ],
-    image: "/bill_management_v1.png",
+    image: "/img3.png",
     id: "feature-billing"
   }
 ];
@@ -183,7 +183,7 @@ export default function FeaturesClient() {
               >
                 {feature.id === 'feature-mobile' ? (
                   /* 9:16 Mobile Card */
-                  <div className="relative bg-white rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 max-w-sm aspect-[9/19.5] w-full overflow-hidden">
+                  <div className="relative bg-white rounded-2xl shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 max-w-sm aspect-[9/19.5] w-full overflow-hidden">
                     <div className="relative w-full h-full">
                       <Image
                         src={feature.image}
@@ -196,8 +196,8 @@ export default function FeaturesClient() {
                   </div>
                 ) : (
                   /* Original 16:9 Widescreen Card */
-                  <div className="absolute inset-0 bg-white rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 overflow-hidden">
-                    <div className="relative w-full h-full">
+                  <div className="absolute inset-0 bg-white rounded-2xl shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 overflow-hidden shrink-0">
+                    <div className="relative w-full h-full p-2">
                       <Image
                         src={feature.image}
                         alt={feature.title}

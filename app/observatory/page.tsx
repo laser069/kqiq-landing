@@ -62,7 +62,7 @@ export default function ObservatoryPage(): React.JSX.Element {
             {[
               { title: "Invoice & Billing Core", desc: "Fast, accurate billing with automatic tax calculation and clean invoice generation.", tag: "BILLING_ENGINE" },
               { title: "Hybrid Offline Sync", desc: "Create bills without internet. Sync automatically when you’re back online.", tag: "OFFLINE_FIRST" },
-              { title: "Security Framework", desc: "Secure data storage with AES-256 encryption and controlled access across devices.", tag: "DATA_SECURITY" },
+              { title: "Security Framework", desc: "Secure data storage with encryption and controlled access across devices.", tag: "DATA_SECURITY" },
               { title: "Cross-Platform Support", desc: "Use KWIQBILL seamlessly on Web, Desktop, and Mobile devices.", tag: "MULTI_PLATFORM" }
             ].map((spec, i) => (
               <motion.div

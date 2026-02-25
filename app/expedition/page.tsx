@@ -84,7 +84,7 @@ export default function ExpeditionPage(): React.JSX.Element {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.8] uppercase select-none text-[clamp(3.5rem,12vw,12rem)] flex flex-col">
+            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.8] uppercase select-none text-[clamp(2.5rem,10vw,12rem)] flex flex-col word-break break-words">
               <span className="block drop-shadow-[4px_6px_8px_rgba(0,0,0,0.05)]">KWIQBILL</span>
               <span className="block text-sky-500">MISSION</span>
             </h1>
@@ -137,7 +137,7 @@ export default function ExpeditionPage(): React.JSX.Element {
               <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#00afef_1px,transparent_1px)] [background-size:20px_20px]" />
 
               <div className="text-center space-y-4 md:space-y-6 relative z-10 mb-8 md:mb-12">
-                <h3 className="text-3xl md:text-6xl font-oswald font-black text-slate-800 tracking-wider uppercase">CORE MISSION</h3>
+                <h3 className="text-3xl sm:text-4xl md:text-6xl font-oswald font-black text-slate-800 tracking-wider uppercase">CORE MISSION</h3>
                 <p className="text-slate-500 font-bold uppercase tracking-widest leading-none text-[10px] md:text-sm px-4">
                   Accessible Professional Billing For Everyone
                 </p>
@@ -185,7 +185,7 @@ export default function ExpeditionPage(): React.JSX.Element {
 
         <div className="relative z-10 text-center space-y-16">
           <div className="space-y-4">
-            <h2 className="text-[clamp(3.5rem,15vw,9rem)] font-oswald font-black tracking-tighter text-slate-800 uppercase leading-[0.8]">SUPPORT THE VISION</h2>
+            <h2 className="text-[clamp(2.5rem,10vw,9rem)] font-oswald font-black tracking-tighter text-slate-800 uppercase leading-[0.8] break-words">SUPPORT THE VISION</h2>
             <p className="max-w-2xl mx-auto text-slate-500 font-mono text-xs tracking-[0.4em] uppercase font-bold italic">
               Join the community building free and open-source billing software. Help shape the future of KwiqBill.
             </p>

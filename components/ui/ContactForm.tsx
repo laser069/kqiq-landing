@@ -35,7 +35,7 @@ export default function ContactForm() {
         }
     };
     return (
-        <section id="contact-form" className="bg-[#e0e5ec] py-20 md:py-32 px-6 md:px-12 relative overflow-hidden border-t-[1.5px] border-white/70">
+        <section id="contact-form" className="bg-[#e0e5ec] py-16 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden border-t-[1.5px] border-white/70">
 
             {/* Background Structural Detail */}
             <div className="absolute top-0 right-0 w-[50vw] h-full bg-slate-400/5 -skew-x-12 translate-x-32 pointer-events-none" />
@@ -46,7 +46,7 @@ export default function ContactForm() {
                     {/* Left side: Professional Identity & Security */}
                     <div className="lg:col-span-4 space-y-12">
                         <div className="space-y-6">
-                            <h2 className="font-oswald text-slate-900 uppercase leading-[0.9] tracking-tighter text-[clamp(2.5rem,10vw,5.5rem)]">
+                            <h2 className="font-oswald text-slate-900 uppercase leading-[0.9] tracking-tighter text-[clamp(2.5rem,12vw,5.5rem)] break-words">
                                 START A <br />
                                 <span className="text-sky-500">PROJECT.</span>
                             </h2>
@@ -139,7 +139,7 @@ export default function ContactForm() {
                                     whileHover={{ scale: 1.01 }}
                                     whileTap={{ scale: 0.98 }}
                                     disabled={status === "submitting"}
-                                    className={`w-full bg-[#e0e5ec] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] active:shadow-[inset_5px_5px_10px_#bebebe,inset_-5px_-5px_10px_#ffffff] text-slate-800 rounded-[1.5rem] md:rounded-[2rem] py-6 md:py-8 px-8 md:px-12 font-oswald text-xl md:text-2xl uppercase tracking-[0.2em] md:tracking-[0.3em] flex items-center justify-between group transition-all ${status === "submitting" ? "opacity-50 cursor-not-allowed" : ""}`}
+                                    className={`w-full bg-[#e0e5ec] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] active:shadow-[inset_5px_5px_10px_#bebebe,inset_-5px_-5px_10px_#ffffff] text-slate-800 rounded-[1.5rem] md:rounded-[2rem] py-5 sm:py-6 md:py-8 px-6 sm:px-8 md:px-12 font-oswald text-lg sm:text-xl md:text-2xl uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] flex items-center justify-between group transition-all ${status === "submitting" ? "opacity-50 cursor-not-allowed" : ""}`}
                                 >
                                     <span className="font-black">
                                         {status === "idle" && "Submit Inquiry"}
