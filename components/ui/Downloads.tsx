@@ -42,8 +42,9 @@ export default function Downloads() {
 
                             <div className="mt-12 flex items-center justify-between">
                                 <a
-                                    href="/downloads/kwiqbill_v1.0.apk"
-                                    download
+                                    href="https://www.mediafire.com/file/yl7jbi6utlkute9/app-release.apk/file"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-2xl font-oswald font-black uppercase tracking-wider hover:bg-sky-600 transition-all shadow-xl shadow-slate-950/20 w-fit"
                                 >
                                     <Download size={20} />
@@ -75,8 +76,9 @@ export default function Downloads() {
 
                             <div className="mt-12 flex items-center justify-between relative z-10">
                                 <a
-                                    href="/downloads/KWIQBILL_Setup.exe"
-                                    download
+                                    href="https://www.mediafire.com/file/oqragbupaii3ucv/KWIQBILL_Setup.exe/file"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex items-center gap-3 px-8 py-4 bg-sky-500 text-white rounded-2xl font-oswald font-black uppercase tracking-wider hover:bg-white hover:text-sky-500 transition-all shadow-xl shadow-sky-400/20 w-fit"
                                 >
                                     <Download size={20} />
