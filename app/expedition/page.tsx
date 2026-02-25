@@ -111,10 +111,10 @@ export default function ExpeditionPage(): React.JSX.Element {
       </section>
 
       {/* 2. CORE FEATURES & MOTIVATION */}
-      <section className="py-20 md:py-32 px-6 md:px-24 bg-[#f8fafc]">
+      <section className="py-16 md:py-32 px-4 sm:px-6 md:px-24 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto space-y-32">
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl md:text-8xl font-oswald font-black tracking-tighter text-slate-800 uppercase leading-none">Why KWIQBILL?</h2>
               <div className="h-2 w-24 bg-sky-500" />
@@ -133,7 +133,7 @@ export default function ExpeditionPage(): React.JSX.Element {
                 </li>
               </ul>
             </div>
-            <div className="aspect-square bg-[#e0e5ec] rounded-[4rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden">
+            <div className="w-full aspect-auto sm:aspect-square bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[4rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] md:shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] flex flex-col items-center justify-center p-6 sm:p-8 md:p-12 relative overflow-hidden">
               <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#00afef_1px,transparent_1px)] [background-size:20px_20px]" />
 
               <div className="text-center space-y-4 md:space-y-6 relative z-10 mb-8 md:mb-12">
@@ -167,7 +167,7 @@ export default function ExpeditionPage(): React.JSX.Element {
               <div className="h-[2px] w-full md:w-1/3 bg-slate-200" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-16">
               {phases.map((phase, i) => (
                 <PhaseCard key={phase.id} phase={phase} index={i} />
               ))}
@@ -217,7 +217,7 @@ function PhaseCard({ phase, index }: { phase: Phase; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.8 }}
-      className="p-6 md:p-12 bg-[#e0e5ec] rounded-[2rem] md:rounded-[3.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6 md:space-y-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500"
+      className="p-6 sm:p-8 lg:p-12 bg-[#e0e5ec] rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3.5rem] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] md:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6 md:space-y-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500"
     >
       <div className="flex justify-between items-start relative z-10">
         <div className={`px-4 py-1 rounded-sm ${phase.color} text-white font-mono text-[9px] font-black tracking-widest uppercase`}>
@@ -227,7 +227,7 @@ function PhaseCard({ phase, index }: { phase: Phase; index: number }) {
       </div>
 
       <div className="space-y-4 relative z-10">
-        <h3 className="text-2xl md:text-5xl font-oswald font-black tracking-wide text-slate-800 leading-tight uppercase">{phase.title}</h3>
+        <h3 className="text-2xl sm:text-3xl lg:text-5xl font-oswald font-black tracking-wide text-slate-800 leading-tight uppercase">{phase.title}</h3>
         <p className="text-sm md:text-base text-slate-500 font-bold leading-relaxed italic">{phase.desc}</p>
       </div>
 

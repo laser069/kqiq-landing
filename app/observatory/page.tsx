@@ -25,10 +25,10 @@ export default function ObservatoryPage(): React.JSX.Element {
       />
 
       {/* 2. SYSTEM METRICS GRID */}
-      <section className="pt-12 pb-24 px-4 sm:px-6 md:px-24 bg-[#e0e5ec] border-t-[1.5px] border-white/70">
+      <section className="pt-12 pb-24 px-4 sm:px-6 md:px-12 lg:px-24 bg-[#e0e5ec] border-t-[1.5px] border-white/70">
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {[
               { label: "DATA_RELIABILITY", val: "99.9% DATA SYNC", desc: "Reliable syncing of invoices, expenses, and reports across devices." },
               { label: "ACTIVE_USERS", val: "140+ BUSINESSES", desc: "Trusted by growing businesses for daily billing operations." },
@@ -39,9 +39,9 @@ export default function ObservatoryPage(): React.JSX.Element {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="p-8 md:p-10 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[3rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6"
+                className="p-8 md:p-8 lg:p-10 bg-[#e0e5ec] rounded-[2.5rem] lg:rounded-[3rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6"
               >
-                <h3 className="text-4xl md:text-5xl font-black text-slate-800 uppercase leading-none">{metric.val}</h3>
+                <h3 className="text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-slate-800 uppercase leading-none tracking-tighter">{metric.val}</h3>
                 <p className="text-slate-500 font-bold leading-relaxed text-sm md:text-base">{metric.desc}</p>
               </motion.div>
             ))}
@@ -50,7 +50,7 @@ export default function ObservatoryPage(): React.JSX.Element {
       </section>
 
       {/* 3. SYSTEM PROTOCOLS */}
-      <section className="pt-24 pb-8 px-6 md:px-24 bg-[#e0e5ec] relative z-20">
+      <section className="pt-24 pb-8 px-6 md:px-12 lg:px-24 bg-[#e0e5ec] relative z-20">
         <div className="max-w-7xl w-full mx-auto mb-12 border-b border-slate-300/30 pb-6">
           <h2 className="text-3xl sm:text-6xl md:text-8xl font-black tracking-tighter text-slate-800 uppercase leading-none">
             Core <span className="text-sky-500 text-xl sm:text-3xl md:text-5xl">Features</span>
@@ -58,7 +58,7 @@ export default function ObservatoryPage(): React.JSX.Element {
         </div>
 
         <div className="max-w-7xl mx-auto space-y-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {[
               { title: "Invoice & Billing Core", desc: "Fast, accurate billing with automatic tax calculation and clean invoice generation.", tag: "BILLING_ENGINE" },
               { title: "Hybrid Offline Sync", desc: "Create bills without internet. Sync automatically when you’re back online.", tag: "OFFLINE_FIRST" },
@@ -70,9 +70,9 @@ export default function ObservatoryPage(): React.JSX.Element {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-8 md:p-12 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[4rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6"
+                className="p-8 md:p-8 lg:p-12 bg-[#e0e5ec] rounded-[2.5rem] lg:rounded-[4rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6"
               >
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-800 uppercase tracking-tight leading-none">{spec.title}</h3>
+                <h3 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-black text-slate-800 uppercase tracking-tight leading-none">{spec.title}</h3>
                 <p className="text-slate-500 font-bold leading-relaxed italic text-sm md:text-base">{spec.desc}</p>
               </motion.div>
             ))}

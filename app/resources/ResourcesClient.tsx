@@ -69,7 +69,7 @@ export default function ResourcesClient() {
         </section>
 
         {/* Resource Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16">
           {resources.map((resource, index) => (
             <motion.div
               key={resource.title}
@@ -78,7 +78,7 @@ export default function ResourcesClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.8 }}
-              className="group relative bg-[#e0e5ec] p-6 sm:p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/60 flex flex-col h-full hover:shadow-[15px_15px_40px_rgba(56,189,248,0.1)] transition-all duration-500"
+              className="group relative bg-[#e0e5ec] p-6 sm:p-8 md:p-10 lg:p-14 rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/60 flex flex-col h-full hover:shadow-[15px_15px_40px_rgba(56,189,248,0.1)] transition-all duration-500"
             >
 
               <h2 className="font-oswald font-black text-2xl md:text-4xl text-slate-800 uppercase mb-6 tracking-tight">
@@ -128,7 +128,7 @@ export default function ResourcesClient() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-[#e0e5ec] p-10 md:p-20 rounded-[3rem] md:rounded-[4rem] shadow-[inset_20px_20px_60px_#bebebe,inset_-20px_-20px_60px_#ffffff] border-t border-l border-white/40"
+            className="bg-[#e0e5ec] p-8 md:p-12 lg:p-20 rounded-[3rem] md:rounded-[4rem] shadow-[inset_20px_20px_60px_#bebebe,inset_-20px_-20px_60px_#ffffff] border-t border-l border-white/40"
           >
             <h2 className="font-oswald font-black text-3xl sm:text-5xl md:text-6xl text-slate-900 uppercase mb-10 tracking-tighter leading-none">
               Ready to explore <span className="text-sky-500">KWIQBILL</span> in detail?
