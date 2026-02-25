@@ -54,50 +54,52 @@ export default function Navbar(): React.JSX.Element {
           stiffness: 120,
           duration: 0.6
         }}
-        className="
-          hidden md:flex relative items-center justify-center
-          bg-white/80 backdrop-blur-2xl 
-          border-b border-sky-400/20
-          shadow-[0_8px_32px_rgba(56,189,248,0.1)]
-          px-14 py-3 min-h-[52px] pointer-events-auto
-        "
-        style={{ clipPath: "polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%)" }}
+        className="hidden md:flex relative pointer-events-auto filter drop-shadow-[0_12px_24px_rgba(14,165,233,0.15)]"
       >
-        <motion.div
-          className="flex items-center gap-10"
-          initial={{ opacity: 0, filter: "blur(4px)" }}
-          animate={{ opacity: 1, filter: "blur(0px)" }}
-          transition={{ delay: 0.5, duration: 0.4 }}
+        <div
+          className="relative flex items-center justify-center bg-white/80 backdrop-blur-2xl px-16 py-4 min-h-[56px]"
+          style={{ clipPath: "polygon(0% 0%, 100% 0%, 96% 100%, 4% 100%)" }}
         >
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className={`relative text-[14px] font-oswald font-bold tracking-[0.15em] transition-colors duration-300 ${isActive ? "text-sky-600" : "text-slate-500 hover:text-sky-400"
-                  }`}
-              >
-                {item.label}
-                {isActive && (
-                  <motion.span
-                    layoutId="nav-dot"
-                    className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-sky-500 rounded-full"
-                  />
-                )}
-              </Link>
-            );
-          })}
-        </motion.div>
+          {/* Subtle Inner Glow Edges */}
+          <div className="absolute top-0 left-0 w-full h-[1.5px] bg-white" />
+          <div className="absolute bottom-0 left-[2%] right-[2%] h-[1px] bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-50" />
 
-        {/* Scan Line effect */}
-        <motion.div
-          initial={{ left: "-100%" }}
-          animate={{ left: "100%" }}
-          transition={{ duration: 1.2, delay: 0.4, repeat: Infinity, repeatDelay: 5 }}
-          className="absolute top-0 h-[1px] w-full bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-40"
-        />
+          <motion.div
+            className="flex items-center gap-10 lg:gap-14"
+            initial={{ opacity: 0, filter: "blur(4px)" }}
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  className={`relative text-[14px] font-oswald font-black tracking-[0.2em] transition-colors duration-300 ${isActive ? "text-slate-900" : "text-slate-400 hover:text-sky-500"
+                    }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-indicator"
+                      className="absolute -bottom-2.5 left-0 w-full h-[2px] bg-sky-500 rounded-full shadow-[0_0_12px_rgba(14,165,233,0.8)]"
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </motion.div>
+
+          {/* Scan Line effect */}
+          <motion.div
+            initial={{ left: "-100%" }}
+            animate={{ left: "100%" }}
+            transition={{ duration: 1.5, delay: 0.5, repeat: Infinity, repeatDelay: 6 }}
+            className="absolute top-0 h-[2px] w-full bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-40 mix-blend-overlay"
+          />
+        </div>
       </motion.div>
 
       {/* Mobile Bar - Sticky on Mobile */}

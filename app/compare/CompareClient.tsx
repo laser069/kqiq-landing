@@ -124,7 +124,7 @@ const comparisonData: Category[] = [
       { feature: "Expense Categories", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Cash Flow View", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
       { feature: "Expense vs Revenue", zoho: "Available", vyapar: "Available", kwiqbill: "Available" },
-      { feature: "Receipt Upload", zoho: "Available", vyapar: "Not Available", kwiqbill: "Not Available" },
+      { feature: "Receipt Upload", zoho: "Available", vyapar: "Not Available", kwiqbill: "Available" },
     ],
   },
   

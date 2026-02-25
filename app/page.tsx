@@ -33,16 +33,16 @@ export default function Page() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 space-y-8">
-              <h2 className="font-oswald font-black text-4xl sm:text-5xl md:text-7xl text-slate-900 uppercase leading-[0.9] tracking-tighter">
+              <h2 className="font-oswald font-black text-4xl sm:text-5xl md:text-7xl text-slate-900 uppercase leading-[0.9] tracking-tighter break-words">
                 Multi-Platform <br />
                 <span className="text-sky-500 text-3xl sm:text-5xl md:text-7xl">Stability</span>
               </h2>
-              <p className="text-slate-500 text-base md:text-xl font-bold italic leading-relaxed uppercase tracking-tight max-w-xl">
+              <p className="text-slate-500 text-base md:text-xl font-bold italic leading-relaxed uppercase tracking-tight max-w-xl break-words">
                 Deploy KWIQBILL across your entire infrastructure. Whether on Mobile or Desktop, your data remains synchronized and secure.
               </p>
-              <div className="flex flex-col gap-4 pt-4 max-w-md">
-                <div className="flex gap-4">
-                  <div className="flex-1 p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-between group overflow-hidden relative shadow-2xl shadow-emerald-900/20">
+              <div className="flex flex-col gap-4 pt-4 max-w-md w-full">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
+                  <div className="flex-1 p-4 sm:p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-between group overflow-hidden relative shadow-2xl shadow-emerald-900/20">
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent transition-opacity" />
                     <span className="font-oswald font-black text-xl text-white uppercase relative z-10 tracking-wide">Android</span>
                     <div className="flex items-center gap-2 relative z-10">
@@ -51,7 +51,7 @@ export default function Page() {
                     </div>
                   </div>
 
-                  <div className="flex-1 p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-between group overflow-hidden relative shadow-2xl shadow-sky-900/20">
+                  <div className="flex-1 p-4 sm:p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-between group overflow-hidden relative shadow-2xl shadow-sky-900/20">
                     <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent transition-opacity" />
                     <span className="font-oswald font-black text-xl text-white uppercase relative z-10 tracking-wide">Windows</span>
                     <div className="flex items-center gap-2 relative z-10">
