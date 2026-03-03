@@ -21,8 +21,8 @@ export default function Hero({
   primaryCtaText,
   onPrimaryClick,
   onSecondaryClick,
-  subtitleLine1 = "Next-generation revenue infrastructure designed for high-velocity global transactions.",
-  subtitleLine2 = "Seamlessly integrate automated ledger reconciliation, tax compliance, and real-time merchant reporting.",
+  subtitleLine1 = "Next-generation revenue infrastructure designed for GST billing, POS, and inventory management.",
+  subtitleLine2 = "Seamlessly integrate automated ledger reconciliation, tax compliance, and real-time GST reporting for Indian SMBs.",
   titleLine1 = "KWIQ",
   titleLine2 = "BILLING",
   brandName = "ZIPPY",
@@ -34,7 +34,7 @@ export default function Hero({
       <div className="absolute inset-0 z-0">
         <Image
           src="/hero-bg.png"
-          alt="Billing Infrastructure"
+          alt="KWIQ BILLING - Best GST Billing Software Interface for Indian Businesses"
           fill
           priority
           className="object-cover object-right md:object-center opacity-[0.25] md:opacity-[0.40] contrast-125 saturate-110"
@@ -53,8 +53,8 @@ export default function Hero({
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.85] md:leading-[0.8] uppercase select-none text-[clamp(2.8rem,14vw,12rem)]">
-              <span className="block">{titleLine1}</span>
-              <span className="block text-sky-500">{titleLine2}</span>
+              <span className="block">Best GST Billing</span>
+              <span className="block text-sky-500">Software</span>
             </h1>
           </motion.div>
 

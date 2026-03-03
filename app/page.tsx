@@ -7,19 +7,18 @@ import {
   AnimatedStats
 } from "@/components/ui/ClientWrapper";
 import Downloads from "@/components/ui/Downloads";
-
-export const metadata = {
-  title: "KWIQ BILLING | High-Velocity Revenue Infrastructure",
-  description: "Next-generation billing system for global transactions.",
-};
+import StructuredData from "@/components/seo/StructuredData";
 
 export default function Page() {
   return (
     <div className="flex flex-col w-full min-h-screen bg-[#e0e5ec] text-slate-900 selection:bg-sky-500/20 font-oswald overflow-x-hidden">
+      <StructuredData />
 
       {/* ------------------------------------------------------------ */}
       {/* 1. HERO SECTION                                              */}
       {/* ------------------------------------------------------------ */}
+      {/* The Hero component should ideally have the H1. I'll check it or wrap the main branding here. */}
+      <h1 className="sr-only">KWIQ BILLING - Best GST Billing Software in India for SMBs</h1>
       <div className="relative z-50">
         <Hero
           badgeText="SYSTEM STATUS: ONLINE // 2026"
@@ -34,11 +33,11 @@ export default function Page() {
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 space-y-8">
               <h2 className="font-oswald font-black text-4xl sm:text-5xl md:text-7xl text-slate-900 uppercase leading-[0.9] tracking-tighter break-words">
-                Multi-Platform <br />
-                <span className="text-sky-500 text-3xl sm:text-5xl md:text-7xl">Stability</span>
+                Why KWIQ BILLING is the <br />
+                <span className="text-sky-500 text-3xl sm:text-5xl md:text-7xl">Best GST Solution</span>
               </h2>
               <p className="text-slate-500 text-base md:text-xl font-bold italic leading-relaxed uppercase tracking-tight max-w-xl break-words">
-                Deploy KWIQBILL across your entire infrastructure. Whether on Mobile or Desktop, your data remains synchronized and secure.
+                The most reliable GST billing app for retail shops and wholesale traders. Access your revenue infrastructure from Android or Windows.
               </p>
               <div className="flex flex-col gap-4 pt-4 max-w-md w-full">
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
@@ -120,15 +119,40 @@ export default function Page() {
               desc="Continue billing even during network outages. Data syncs automatically when online."
             />
             <IntelligenceCard
-              title="GST Compliant"
+              title="GST Billing App"
               code="TAX_RULES"
-              desc="Automatic CGST, SGST, and IGST calculations with HSN/SAC support for all invoices."
+              desc="Comprehensive GST software with automated CGST, SGST, & IGST calculations for retail and wholesale."
             />
             <IntelligenceCard
-              title="Live Analytics"
+              title="Live POS Analytics"
               code="REAL_TIME"
-              desc="Track sales, expenses, and inventory status in real-time with beautiful dashboards."
+              desc="Real-time POS billing dashboards to track sales, inventory, and revenue growth in one place."
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------ */}
+      {/* 5. FAQ SECTION (SEO OPTIMIZED)                               */}
+      {/* ------------------------------------------------------------ */}
+      <section className="relative z-40 bg-[#e0e5ec] pb-24 border-t border-white/40">
+        <div className="container mx-auto px-4 sm:px-6 pt-24">
+          <h2 className="font-oswald font-black text-4xl md:text-6xl text-slate-800 uppercase mb-12 text-center">
+            GST Billing <span className="text-sky-500">FAQ</span>
+          </h2>
+          <div className="max-w-4xl mx-auto grid grid-cols-1 gap-6">
+            <div className="p-8 bg-white/40 backdrop-blur-md rounded-3xl border border-white/60 shadow-lg">
+              <h3 className="font-oswald font-bold text-xl md:text-2xl text-slate-900 uppercase mb-4">What is the best GST billing software for small businesses in India?</h3>
+              <p className="text-slate-600 leading-relaxed font-bold">KWIQ BILLING is a top-rated choice for Indian SMBs, offering offline-first GST invoicing, inventory management, and secure Razorpay payments.</p>
+            </div>
+            <div className="p-8 bg-white/40 backdrop-blur-md rounded-3xl border border-white/60 shadow-lg">
+              <h3 className="font-oswald font-bold text-xl md:text-2xl text-slate-900 uppercase mb-4">Can I use KWIQ BILLING offline?</h3>
+              <p className="text-slate-600 leading-relaxed font-bold">Yes, KWIQ BILLING features an offline-first architecture. You can generate professional GST invoices without internet connectivity, and the data will sync automatically once you are online.</p>
+            </div>
+            <div className="p-8 bg-white/40 backdrop-blur-md rounded-3xl border border-white/60 shadow-lg">
+              <h3 className="font-oswald font-bold text-xl md:text-2xl text-slate-900 uppercase mb-4">Does it support E-Invoicing and E-Way Bills?</h3>
+              <p className="text-slate-600 leading-relaxed font-bold">Our 2026 infrastructure is designed to handle automated E-Invoicing and E-Way bill generation to keep your business 100% GST compliant.</p>
+            </div>
           </div>
         </div>
       </section>

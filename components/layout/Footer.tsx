@@ -30,28 +30,25 @@ export default function Footer() {
           </div> */}
         </div>
 
-        {/* QUICK NAVIGATION */}
+        {/* SOLUTIONS Column */}
         <div className="space-y-6">
-          <h4 className="font-oswald font-black text-xs tracking-[0.3em] text-slate-400 uppercase">Navigation</h4>
+          <h4 className="font-oswald font-black text-xs tracking-[0.3em] text-slate-400 uppercase">Solutions</h4>
           <ul className="space-y-3 font-oswald font-bold text-sm uppercase tracking-widest">
-            <li><Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Index</Link></li>
-            <li><Link href="/features" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Features</Link></li>
-            <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Resources</Link></li>
-            <li><Link href="/observatory" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Observatory</Link></li>
-            <li><Link href="/expedition" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Mission</Link></li>
-            <li><Link href="/contact" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Contact</Link></li>
+            <li><Link href="/features" className="hover:text-sky-500 transition-colors">GST Invoicing</Link></li>
+            <li><Link href="/features" className="hover:text-sky-500 transition-colors">Inventory Management</Link></li>
+            <li><Link href="/features" className="hover:text-sky-500 transition-colors">POS Billing</Link></li>
+            <li><Link href="/features" className="hover:text-sky-500 transition-colors">Offline Sync</Link></li>
           </ul>
         </div>
 
-        {/* RESOURCES LIST */}
+        {/* COMPARE Column */}
         <div className="space-y-6">
-          <h4 className="font-oswald font-black text-xs tracking-[0.3em] text-slate-400 uppercase">Resources</h4>
+          <h4 className="font-oswald font-black text-xs tracking-[0.3em] text-slate-400 uppercase">Compare</h4>
           <ul className="space-y-3 font-oswald font-bold text-sm uppercase tracking-widest">
-            <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Invoice Templates</Link></li>
-            <li><Link href="/terms" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Terms</Link></li>
-            <li><Link href="/privacy" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Privacy</Link></li>
-            <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Compare</Link></li>
-            <li><Link href="/contact" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Support</Link></li>
+            <li><Link href="/compare" className="hover:text-sky-500 transition-colors">KWIQ vs Vyapar</Link></li>
+            <li><Link href="/compare" className="hover:text-sky-500 transition-colors">KWIQ vs Zoho Books</Link></li>
+            <li><Link href="/compare" className="hover:text-sky-500 transition-colors">KWIQ vs Marg ERP</Link></li>
+            <li><Link href="/compare" className="hover:text-sky-500 transition-colors">KWIQ vs Busy</Link></li>
           </ul>
         </div>
 
