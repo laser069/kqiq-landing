@@ -49,9 +49,9 @@ export default function Footer() {
           <ul className="space-y-3 font-oswald font-bold text-sm uppercase tracking-widest">
             <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Invoice Templates</Link></li>
             <li><Link href="/terms" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Terms</Link></li>
-            <li><Link href="/terms" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Privacy</Link></li>
+            <li><Link href="/privacy" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Privacy</Link></li>
             <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Compare</Link></li>
-            <li><Link href="/resources" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Support</Link></li>
+            <li><Link href="/contact" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-sky-500 transition-colors">Support</Link></li>
           </ul>
         </div>
 

@@ -84,11 +84,11 @@ export default function ContactFooter() {
                         <div className="space-y-4">
                             <p className="font-mono text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-2">Direct Inquiries</p>
                             <div>
-                                <p className="font-oswald text-xl text-slate-800 uppercase">partners@kwiqbill.com</p>
+                                <p className="font-oswald text-xl text-slate-800 uppercase">knock@zippydigitalsolutions.in</p>
                                 <p className="font-mono text-[9px] text-slate-400 tracking-widest uppercase">For Integrations & Resellers</p>
                             </div>
                             <div className="pt-2">
-                                <p className="font-oswald text-xl text-slate-800 uppercase">support@kwiqbill.com</p>
+                                <p className="font-oswald text-xl text-slate-800 uppercase">knock@zippydigitalsolutions.in</p>
                                 <p className="font-mono text-[9px] text-slate-400 tracking-widest uppercase">For Technical Assistance</p>
                             </div>
                         </div>
