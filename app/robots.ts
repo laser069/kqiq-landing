@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/api/', '/_next/', '/static/'],
         },
-        sitemap: 'https://kwiq-billing.web.app/sitemap.xml',
+        sitemap: 'https://kwiq.zippydigitalsolutions.in/sitemap.xml',
     };
 }
