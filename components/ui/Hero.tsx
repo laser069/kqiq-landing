@@ -21,8 +21,8 @@ export default function Hero({
   primaryCtaText,
   onPrimaryClick,
   onSecondaryClick,
-  subtitleLine1 = "Next-generation revenue infrastructure designed for GST billing, POS, and inventory management.",
-  subtitleLine2 = "Seamlessly integrate automated ledger reconciliation, tax compliance, and real-time GST reporting for Indian SMBs.",
+  subtitleLine1 = "NEXT-GENERATION REVENUE INFRASTRUCTURE DESIGNED FOR HIGH-VELOCITY GLOBAL TRANSACTIONS.",
+  subtitleLine2 = "Seamlessly integrate automated ledger reconciliation, tax compliance, and real-time merchant reporting.",
   titleLine1 = "KWIQ",
   titleLine2 = "BILLING",
   brandName = "ZIPPY",
@@ -52,9 +52,9 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.85] md:leading-[0.8] uppercase select-none text-[clamp(2.8rem,14vw,12rem)]">
-              <span className="block">Best GST Billing</span>
-              <span className="block text-sky-500">Software</span>
+            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.85] md:leading-[0.8] uppercase select-none text-[clamp(3.5rem,14vw,12rem)]">
+              <span className="block">{titleLine1}</span>
+              <span className="block text-[#0ea5e9]">{titleLine2}</span>
             </h1>
           </motion.div>
 

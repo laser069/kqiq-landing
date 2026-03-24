@@ -1,187 +1,156 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { Metadata } from "next";
 
-export default function PrivacyPage(): React.JSX.Element {
-    const lastUpdated = "March 3, 2026";
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy policy detailing data collection, Google Sign-In, and Google Drive API usage for KwiqBill.",
+};
 
-    const sections = [
-        {
-            title: "1. Information We Collect",
-            content: (
-                <div className="space-y-4">
-                    <p>Kwiqbill is designed to operate primarily offline, keeping your sensitive business data stored locally on your device.</p>
-                    <div className="space-y-2">
-                        <p className="font-bold underline">1.1 Locally Stored Data</p>
-                        <ul className="list-disc pl-5 space-y-1">
-                            <li>Business Profile (Name, Address, Tax details (GST/VAT)).</li>
-                            <li>Customer & Vendor Data (Contacts, Addresses, Emails).</li>
-                            <li>Financial Data (Invoices, Estimates, Orders, Products, Expenses).</li>
-                        </ul>
-                    </div>
-                    <div className="space-y-2">
-                        <p className="font-bold underline">1.2 Account & Subscription Data</p>
-                        <ul className="list-disc pl-5 space-y-1">
-                            <li>User details (Name, Email, Password).</li>
-                            <li>Subscription status, license keys, and device linking information.</li>
-                            <li>Payment history (excluding raw card details).</li>
-                        </ul>
-                    </div>
-                    <div className="space-y-2">
-                        <p className="font-bold underline">1.3 Third-Party Integrations</p>
-                        <ul className="list-disc pl-5 space-y-1">
-                            <li>Google Drive Backups (Automated backups, authorized by you).</li>
-                            <li>Media Storage (Logos or product images uploaded to secure cloud storage).</li>
-                        </ul>
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "2. How We Use Your Information",
-            content: (
-                <ul className="list-disc pl-5 space-y-2">
-                    <li>To Provide Services: Invoicing, billing, inventory, and expense management.</li>
-                    <li>To Manage Subscriptions: Verifying license status and enforcing policies.</li>
-                    <li>To Enable Backups: Synchronizing your database to Google Drive (if authorized).</li>
-                    <li>To Improve the App: Analyzing anonymized usage data or error logs to fix bugs.</li>
-                    <li>To Communicate: Sending updates, notices, and providing support.</li>
+export default function PrivacyPage() {
+  return (
+    <div className="min-h-screen bg-[#e0e5ec] pt-32 pb-24 px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto bg-white/40 backdrop-blur-md rounded-[2rem] p-8 md:p-12 shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60">
+        <h1 className="font-oswald font-black text-4xl md:text-5xl text-slate-900 uppercase mb-4 tracking-tight">
+          Privacy <span className="text-sky-500">Policy</span>
+        </h1>
+        <p className="text-slate-500 font-bold mb-10 text-sm uppercase tracking-widest">
+          LAST UPDATED: March 24, 2026
+        </p>
+
+        <div className="space-y-10 text-slate-700 font-bold leading-relaxed text-sm">
+          <p>
+            Welcome to KwiqBill. <strong className="text-sky-600">Zippy Digital Solutions</strong> ("we," "our," or "us") is committed to protecting your privacy and transparently explaining how your information is collected, used, and safeguarded when you use our software.
+          </p>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-4">1. Information We Collect</h2>
+            <p className="mb-6 text-slate-500 italic">
+              KwiqBill is designed to operate primarily offline as a local-first application, keeping your sensitive business data stored locally on your device. We only collect the minimal information necessary to authenticate users and manage subscriptions.
+            </p>
+
+            <div className="space-y-6">
+              <div className="bg-white/60 rounded-xl p-6 shadow-sm border border-white">
+                <h3 className="font-oswald font-black tracking-widest text-sm text-slate-800 uppercase mb-2">1.1 Locally Stored Data (Not sent to our servers)</h3>
+                <p className="text-xs mb-2">The following data remains strictly on your local device unless you explicitly authorize and configure a third-party cloud sync:</p>
+                <ul className="list-disc list-inside space-y-1 text-slate-600">
+                  <li><strong>Business Profile:</strong> Name, Address, Tax details (GST/VAT).</li>
+                  <li><strong>Customer & Vendor Data:</strong> Contacts, Addresses, Emails.</li>
+                  <li><strong>Financial Data:</strong> Invoices, Estimates, Orders, Products, Expenses.</li>
                 </ul>
-            ),
-        },
-        {
-            title: "3. Data Sharing & Disclosure",
-            content: (
-                <div className="space-y-3">
-                    <p>We do not sell your personal or business data to third parties. Disclosure occurs only in limited circumstances:</p>
-                    <ul className="list-disc pl-5 space-y-2">
-                        <li>Service Providers: Trusted partners assisting in app operation (cloud hosting, storage, email).</li>
-                        <li>Legal Compliance: If required by law, subpoena, or to protect rights and safety.</li>
-                    </ul>
-                </div>
-            ),
-        },
-        {
-            title: "4. Data Security",
-            content: "We implement reasonable technical and organizational security measures, including encryption (bcrypt for passwords, JWT for authentication) and secure communication protocols (HTTPS/SSL) for transmitted data. Remember that no method of transmission is 100% secure.",
-        },
-        {
-            title: "5. Offline Capabilities",
-            content: "Kwiqbill is designed to function offline using securely cached authentication tokens (JWT). It is your responsibility to secure the physical device to prevent unauthorized local access.",
-        },
-        {
-            title: "6. Your Choices & Rights",
-            content: (
-                <ul className="list-disc pl-5 space-y-2">
-                    <li>Google Drive Access: You can revoke access at any time via your Google Account settings.</li>
-                    <li>Local Data: You retain full control over data stored locally on your device.</li>
-                    <li>Account Deletion: Contact us to request deletion of your account and subscription data.</li>
+              </div>
+
+              <div className="bg-white/60 rounded-xl p-6 shadow-sm border border-white">
+                <h3 className="font-oswald font-black tracking-widest text-sm text-slate-800 uppercase mb-2">1.2 Account & Subscription Data (Collected by us)</h3>
+                <p className="text-xs mb-2">To provide authentication and subscription management, we collect:</p>
+                <ul className="list-disc list-inside space-y-1 text-slate-600">
+                  <li><strong>User details:</strong> Name, Email, Password.</li>
+                  <li><strong>Subscription data:</strong> License status, license keys, and device linking information.</li>
+                  <li><strong>Payment history:</strong> Historical transaction records (excluding raw credit card details).</li>
+                  <li><strong>Authentication data:</strong> Securely hashed passwords and authentication tokens.</li>
                 </ul>
-            ),
-        },
-        {
-            title: "7. Policy Updates",
-            content: "We may update this Privacy Policy from time to time. We will notify you of material changes by updating the 'Last Updated' date and potentially via in-app notifications.",
-        },
-        {
-            title: "8. Contact Us",
-            content: (
-                <div className="space-y-2">
-                    <p className="font-bold">Kwiqbill Support</p>
-                    <p>Email: knock@zippydigitalsolutions.in</p>
-                    <p>Website: zippydigitalsolutions.in</p>
-                </div>
-            ),
-        },
-    ];
+              </div>
 
-    return (
-        <div className="min-h-screen bg-[#e0e5ec] text-slate-800 selection:bg-sky-500/20 font-oswald overflow-x-hidden pt-32 pb-24 px-6 md:px-12 lg:px-24">
+              <div className="bg-white/60 rounded-xl p-6 shadow-sm border border-white">
+                <h3 className="font-oswald font-black tracking-widest text-sm text-slate-800 uppercase mb-2">1.3 Google Sign-In (OAuth)</h3>
+                <p className="text-xs mb-2">When you choose to authenticate using Google Sign-In, KwiqBill accesses only the following standard profile information:</p>
+                <ul className="list-disc list-inside space-y-1 text-slate-600">
+                  <li>Your name</li>
+                  <li>Your email address</li>
+                </ul>
+                <p className="mt-3 text-[11px] text-sky-600 italic leading-tight">This information is used strictly to seamlessly create, log in to, and verify your KwiqBill account. We do not request, access, or collect any additional personal data from your Google account without your explicit, separate consent.</p>
+              </div>
 
-            {/* HEADER SECTION */}
-            <div className="max-w-4xl mx-auto mb-20 space-y-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-4"
-                >
-                    <div className="h-1 w-12 bg-sky-500" />
-                    <span className="font-mono text-xs text-sky-500 font-black tracking-[0.4em] uppercase">Privacy_Protocol</span>
-                </motion.div>
-
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
-                    className="text-5xl md:text-8xl font-black tracking-tighter text-slate-800 uppercase leading-none"
-                >
-                    PRIVACY <span className="text-sky-500">POLICY</span>
-                </motion.h1>
-
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-slate-500 font-bold uppercase tracking-widest text-sm"
-                >
-                    LAST UPDATED: {lastUpdated}
-                </motion.p>
+              <div className="bg-white/60 rounded-xl p-6 shadow-sm border border-white">
+                <h3 className="font-oswald font-black tracking-widest text-sm text-slate-800 uppercase mb-2">1.4 Google Drive Integration</h3>
+                <p className="text-xs mb-2">If you choose to enable automated cloud backups, KwiqBill requests access to the Google Drive API.</p>
+                <ul className="list-disc list-inside space-y-2 text-slate-600">
+                  <li><strong>Consent:</strong> Access is only granted after you provide explicit authorization.</li>
+                  <li><strong>Restricted Scope:</strong> KwiqBill only creates, uses, and accesses its own specific application backup files within your Google Drive.</li>
+                  <li><strong>No Access to Unrelated Files:</strong> KwiqBill does <strong className="text-rose-500">NOT</strong> and cannot access, read, modify, or delete any other unrelated files, folders, or personal data stored in your Google Drive.</li>
+                </ul>
+              </div>
             </div>
+          </section>
 
-            {/* CONTENT GRID */}
-            <div className="max-w-4xl mx-auto space-y-12">
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">2. How We Use Your Information</h2>
+            <ul className="list-disc list-inside space-y-2 text-slate-600">
+              <li><strong>To Provide Services:</strong> Facilitating user authentication, invoicing, billing, inventory, and expense management.</li>
+              <li><strong>To Manage Subscriptions:</strong> Verifying license status, processing payments, and enforcing service policies.</li>
+              <li><strong>To Enable Backups:</strong> Synchronizing your KwiqBill database strictly to your authorized Google Drive account.</li>
+              <li><strong>To Improve the App:</strong> Analyzing completely anonymized usage data or error logs to fix bugs and enhance performance.</li>
+              <li><strong>To Communicate:</strong> Sending important account updates, security notices, and providing customer support.</li>
+            </ul>
+          </section>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="p-8 md:p-10 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[3rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/40 space-y-6"
-                >
-                    <p className="text-lg md:text-2xl text-slate-600 font-bold leading-relaxed italic">
-                        &quot;Welcome to Kwiqbill. We are committed to protecting your privacy and explaining how your information is collected, used, and safeguarded when you use our software.&quot;
-                    </p>
-                </motion.div>
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">3. Data Sharing & Disclosure</h2>
+            <p className="mb-2">We do <strong className="text-rose-500">NOT</strong> sell your personal or business data to third parties. Disclosure occurs only in the following limited circumstances:</p>
+            <ul className="list-disc list-inside space-y-2 text-slate-600">
+              <li><strong>Service Providers:</strong> Trusted third-party partners assisting in app operation (e.g., cloud hosting, payment gateways, and transactional email services).</li>
+              <li><strong>Legal Compliance:</strong> If required by law, subpoena, or to protect the rights, property, and safety of Zippy Digital Solutions or our users.</li>
+            </ul>
+          </section>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {sections.map((item, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.05 }}
-                            className={`p-8 bg-[#e0e5ec] rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-4 ${i === 0 || i === 7 ? "md:col-span-2" : ""
-                                }`}
-                        >
-                            <h3 className="text-2xl font-black text-slate-800 uppercase tracking-tight">{item.title}</h3>
-                            <div className="text-slate-500 font-bold leading-relaxed text-sm">
-                                {item.content}
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">4. Data Retention and Deletion</h2>
+            <ul className="list-disc list-inside space-y-2 text-slate-600">
+              <li><strong>Retention:</strong> We retain your account and subscription data only for as long as your account is active, or as strictly needed to provide you with our services, comply with legal obligations, resolve disputes, and enforce our agreements.</li>
+              <li><strong>Deletion:</strong> Users have the right to request the complete deletion of their account and associated personal data at any time. Upon contacting us with a deletion request, all personally identifiable information stored on our servers will be permanently expunged within 30 days.</li>
+            </ul>
+          </section>
 
-                {/* CONTACT SECTION */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mt-20 md:mt-24 p-8 md:p-12 bg-slate-950 rounded-[3rem] md:rounded-[4rem] text-center space-y-8 shadow-2xl"
-                >
-                    <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter">QUESTIONS ON PRIVACY?</h2>
-                    <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-                        <Link href="/contact" className="w-full md:w-auto px-12 py-6 bg-sky-500 text-white font-black text-xl tracking-widest uppercase hover:bg-sky-400 transition-all rounded-2xl md:rounded-3xl">
-                            TALK TO US
-                        </Link>
-                        <div className="text-slate-400 font-mono text-[10px] md:text-xs tracking-widest uppercase">
-                            SECURE EMAIL: knock@zippydigitalsolutions.in
-                        </div>
-                    </div>
-                </motion.div>
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">5. Data Security</h2>
+            <p className="mb-2">We implement robust technical and organizational security measures to protect your information, including:</p>
+            <ul className="list-disc list-inside space-y-2 text-slate-600">
+              <li>Strong hashing encryption for stored passwords (bcrypt).</li>
+              <li>Secure token-based authentication (JWT).</li>
+              <li>Encrypted communication protocols (HTTPS/SSL) for any data transmitted between your device and our servers.</li>
+            </ul>
+            <p className="mt-4 italic text-[11px] text-slate-500 font-medium">
+              While we strive to use the highest commercially acceptable means to protect your data, please remember that no method of transmission over the internet or electronic storage is 100% secure.
+            </p>
+          </section>
 
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">6. Offline Capabilities</h2>
+            <p className="text-slate-600">
+              KwiqBill is designed to function offline using securely cached authentication tokens (JWT). Because your business data is primarily stored locally, it is your sole responsibility to secure physical and logical access to your device to prevent unauthorized local access to your data.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">7. Your Choices & Rights</h2>
+            <ul className="list-disc list-inside space-y-2 text-slate-600">
+              <li><strong>Google Drive Access:</strong> You retain full control and can revoke KwiqBill's access to your Google Drive at any time via your Google Account Security settings.</li>
+              <li><strong>Local Data:</strong> You retain full control over all business data stored natively on your device.</li>
+              <li><strong>Account Deletion:</strong> Contact us at any time to exercise your right to delete your account, subscription data, and email from our systems.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">8. Policy Updates</h2>
+            <p className="text-slate-600">
+              We may update this Privacy Policy from time to time to reflect changes in our practices or regulatory requirements. We will notify you of material changes by updating the "Last Updated" date and potentially via in-app notifications.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">9. Contact Us</h2>
+            <p className="text-slate-600">If you have any questions, concerns, or deletion requests regarding this Privacy Policy or your data, please reach out to:</p>
+            <div className="mt-6 p-6 md:p-8 bg-slate-900 rounded-3xl text-white inline-block shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500 opacity-20 blur-3xl rounded-full" />
+              <p className="font-oswald font-black text-2xl tracking-widest uppercase relative z-10 text-white">Zippy Digital Solutions</p>
+              <div className="mt-4 space-y-1 relative z-10 font-bold">
+                <p className="text-slate-400">Email: <span className="text-sky-400">knock@zippydigitalsolutions.in</span></p>
+                <p className="text-slate-400">Website: <span className="text-sky-400">zippydigitalsolutions.in</span></p>
+              </div>
             </div>
+          </section>
+
         </div>
-    );
+      </div>
+    </div>
+  );
 }

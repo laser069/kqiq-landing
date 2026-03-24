@@ -1,131 +1,90 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { Metadata } from "next";
 
-export default function TermsPage(): React.JSX.Element {
-  const lastUpdated = "February 2026";
+export const metadata: Metadata = {
+  title: "Terms & Conditions",
+  description: "Terms and conditions for using KwiqBill software by Zippy Digital Solutions.",
+};
 
+export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-[#e0e5ec] text-slate-800 selection:bg-sky-500/20 font-oswald overflow-x-hidden pt-32 pb-24 px-6 md:px-12 lg:px-24">
+    <div className="min-h-screen bg-[#e0e5ec] pt-32 pb-24 px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto bg-white/40 backdrop-blur-md rounded-[2rem] p-8 md:p-12 shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60">
+        <h1 className="font-oswald font-black text-4xl md:text-5xl text-slate-900 uppercase mb-4 tracking-tight">
+          Terms & <span className="text-sky-500">Conditions</span>
+        </h1>
+        <p className="text-slate-500 font-bold mb-10 text-sm uppercase tracking-widest">
+          LAST UPDATED: March 24, 2026
+        </p>
 
-      {/* HEADER SECTION */}
-      <div className="max-w-4xl mx-auto mb-20 space-y-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-4"
-        >
-          <div className="h-1 w-12 bg-sky-500" />
-          <span className="font-mono text-xs text-sky-500 font-black tracking-[0.4em] uppercase">Legal_Framework</span>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-5xl md:text-8xl font-black tracking-tighter text-slate-800 uppercase leading-none"
-        >
-          TERMS & <span className="text-sky-500">CONDITIONS</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-slate-500 font-bold uppercase tracking-widest text-sm"
-        >
-          LAST UPDATED: {lastUpdated}
-        </motion.p>
-      </div>
-
-      {/* CONTENT GRID */}
-      <div className="max-w-4xl mx-auto space-y-12">
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="p-8 md:p-10 bg-[#e0e5ec] rounded-[2.5rem] md:rounded-[3rem] shadow-[20px_20px_40px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/40 space-y-6"
-        >
-          <p className="text-lg md:text-2xl text-slate-600 font-bold leading-relaxed italic">
-            &quot;Welcome to KwiqBill. By accessing or using this website or software, you agree to the following terms.&quot;
+        <div className="space-y-8 text-slate-700 font-bold leading-relaxed text-sm">
+          <p>
+            Welcome to KwiqBill. By accessing or using this website or software, you agree to the following terms.
           </p>
-        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[
-            {
-              title: "1. About KwiqBill",
-              content: "KwiqBill is a free and open-source billing software developed and maintained by Zippy. It is provided to help individuals and organizations manage billing, invoicing, and related operations."
-            },
-            {
-              title: "2. Open-Source License",
-              content: "KwiqBill is released under the Apache License 2.0. You are free to use, modify, distribute, and self-host for personal or commercial purposes, provided you comply with the license terms."
-            },
-            {
-              title: "3. Use of Software",
-              content: "Use KwiqBill responsibly. Do not use for illegal activities, misrepresent as proprietary, remove copyright notices, or claim ownership of the original project."
-            },
-            {
-              title: "4. No Warranty",
-              content: "KwiqBill is provided 'as is'. We don't guarantee the software will be error-free or meet all requirements. Users are responsible for data accuracy and backups."
-            },
-            {
-              title: "5. Limitation of Liability",
-              content: "To the maximum extent permitted by law, Zippy and KwiqBill contributors are not liable for any damages, including data loss or financial loss. Use at your own risk."
-            },
-            {
-              title: "6. Data & Privacy",
-              content: "Data is stored locally or in user-configured cloud services. We do not collect or sell data by default. Syncing services like Google Drive are user-controlled."
-            },
-            {
-              title: "7. Contributions",
-              content: "By contributing code or designs, you agree they are licensed under Apache 2.0 and that you have the right to submit them."
-            },
-            {
-              title: "8. Third-Party Services",
-              content: "We are not responsible for the availability or behavior of third-party integrations like cloud storage or authentication."
-            },
-            {
-              title: "9. Changes to Terms",
-              content: "We may update these terms occasionally. Continued use of KwiqBill implies acceptance of the updated terms."
-            }
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className={`p-8 bg-[#e0e5ec] rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-4 ${i === 8 ? "md:col-span-2" : ""
-                }`}
-            >
-              <h3 className="text-2xl font-black text-slate-800 uppercase tracking-tight">{item.title}</h3>
-              <p className="text-slate-500 font-bold leading-relaxed text-sm">{item.content}</p>
-            </motion.div>
-          ))}
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">1. About KwiqBill</h2>
+            <p>
+              KwiqBill is a free and open-source billing software developed, owned, and maintained by <strong className="text-sky-600">Zippy Digital Solutions</strong>. It is provided to help individuals and organizations manage billing, invoicing, and related operations.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">2. Open-Source License</h2>
+            <p>
+              KwiqBill is released under the Apache License 2.0. You are free to use, modify, distribute, and self-host for personal or commercial purposes, provided you comply with all terms laid out within the Apache License 2.0.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">3. Acceptable Use of Software</h2>
+            <p>
+              You agree to use KwiqBill responsibly and in compliance with all applicable laws. You shall not use KwiqBill for any illegal or unauthorized activities, misrepresent KwiqBill as your own proprietary software, remove any copyright or proprietary notices, or falsely claim ownership of the original project.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">4. No Warranty</h2>
+            <p>
+              KwiqBill is provided "as is" and "as available", without warranties of any kind, either express or implied. Zippy Digital Solutions does not guarantee that the software will be uninterrupted, error-free, or meet all of your specific requirements. Users are solely responsible for ensuring their data accuracy and maintaining their own data backups.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">5. Limitation of Liability</h2>
+            <p>
+              To the maximum extent permitted by applicable law, Zippy Digital Solutions and KwiqBill contributors shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including but not limited to data loss, financial loss, loss of profits, or business interruption, arising out of your use or inability to use the software. You use KwiqBill entirely at your own risk.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">6. Data & Privacy</h2>
+            <p>
+              KwiqBill is designed with a local-first approach. Business data is securely stored locally on your device or in user-configured cloud services. We collect minimal operational data necessary for authentication and subscriptions as outlined in our Privacy Policy, and we do not sell your data. Third-party syncing services, including Google Drive integrations, are entirely opt-in and controlled by the user.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">7. Contributions</h2>
+            <p>
+              By contributing code, designs, or other materials to KwiqBill, you agree that your contributions are licensed under the Apache License 2.0 and warrant that you have the legal right to submit them.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">8. Third-Party Services</h2>
+            <p>
+              KwiqBill may integrate with third-party services like cloud storage or authentication providers (e.g., Google Sign-In, Google Drive). Zippy Digital Solutions is not responsible for the availability, security, or behavior of these third-party integrations.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-3">9. Changes to Terms</h2>
+            <p>
+              We may update these Terms & Conditions from time to time. Continued use of KwiqBill after any such changes constitutes your acceptance of the new terms.
+            </p>
+          </section>
         </div>
-
-        {/* CONTACT SECTION */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 md:mt-24 p-8 md:p-12 bg-slate-950 rounded-[3rem] md:rounded-[4rem] text-center space-y-8 shadow-2xl"
-        >
-          <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter">HAVE QUESTIONS?</h2>
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-            <Link href="/contact" className="w-full md:w-auto px-12 py-6 bg-sky-500 text-white font-black text-xl tracking-widest uppercase hover:bg-sky-400 transition-all rounded-2xl md:rounded-3xl">
-              CONTACT TEAM
-            </Link>
-            <div className="text-slate-400 font-mono text-[10px] md:text-xs tracking-widest uppercase">
-              OR EMAIL: knock@zippydigitalsolutions.in
-            </div>
-          </div>
-        </motion.div>
-
       </div>
     </div>
   );
