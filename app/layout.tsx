@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   verification: {
-    google: "yv_v_g_google_verification_placeholder", // Replace with real token
+    google: "1X8e-RTeYB22ybUIHkwUIMpC_U8u_S62ENiFcQO_xmg",
   },
   appleWebApp: {
     capable: true,
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
-  metadataBase: new URL("https://kwiq-billing.web.app"),
+ metadataBase: new URL("https://kwiq.zippydigitalsolutions.in"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Best GST Billing Software in India | KWIQ BILLING",
     description: "Next-generation revenue infrastructure designed for Indian SMBs. Offline-first, secure, and multi-platform.",
-    url: "https://kwiq-billing.web.app",
+    url: "https://kwiq.zippydigitalsolutions.in",
     siteName: "KWIQ BILLING",
     locale: "en_IN",
     type: "website",
