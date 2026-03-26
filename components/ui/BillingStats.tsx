@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { useMotionValue, useSpring, useInView } from "framer-motion";
+import { useMotionValue, useSpring, useInView, useMotionValueEvent } from "framer-motion";
 
 const stats = [
   { label: "TOTAL BILLS GENERATED", value: 10, color: "bg-sky-500", suffix: "K+" },
@@ -28,16 +28,14 @@ function AnimatedNumber({ value }: { value: number }) {
     }
   }, [isInView, value, motionValue]);
 
-  useEffect(() => {
-    return springValue.on("change", (latest) => {
-      // If it's a decimal value (like 8.9), show 1 decimal place. Otherwise show integer.
-      if (value % 1 !== 0) {
-        setDisplayValue(latest.toFixed(1));
-      } else {
-        setDisplayValue(Math.floor(latest).toString());
-      }
-    });
-  }, [springValue, value]);
+  useMotionValueEvent(springValue, "change", (latest) => {
+    // If it's a decimal value (like 8.9), show 1 decimal place. Otherwise show integer.
+    if (value % 1 !== 0) {
+      setDisplayValue(latest.toFixed(1));
+    } else {
+      setDisplayValue(Math.floor(latest).toString());
+    }
+  });
 
   return <span ref={ref}>{displayValue}</span>;
 }
