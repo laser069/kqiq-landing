@@ -22,9 +22,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   manifest: "/manifest.json",
-  verification: {
-    google: "1X8e-RTeYB22ybUIHkwUIMpC_U8u_S62ENiFcQO_xmg",
-  },
+
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
