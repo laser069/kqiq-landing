@@ -28,7 +28,7 @@ export default function Page() {
       {/* ------------------------------------------------------------ */}
       {/* 2. PLATFORM ARCHITECTURE                                     */}
       {/* ------------------------------------------------------------ */}
-      <section className="relative z-40 bg-[#e0e5ec] py-12 md:py-24 border-t-[1.5px] border-white/70 overflow-hidden">
+      <section className="relative z-40 bg-[#e0e5ec] py-12 md:py-24 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 space-y-8">
@@ -41,26 +41,26 @@ export default function Page() {
               </p>
               <div className="flex flex-col gap-4 pt-4 max-w-md w-full">
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
-                  <div className="flex-1 p-4 sm:p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-between group overflow-hidden relative shadow-2xl shadow-emerald-900/20">
+                  <div className="flex-1 p-4 sm:p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-start gap-4 group overflow-hidden relative shadow-2xl shadow-emerald-900/20 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-transparent transition-opacity" />
-                    <span className="font-oswald font-black text-xl text-white uppercase relative z-10 tracking-wide">Android</span>
-                    <div className="flex items-center gap-2 relative z-10">
-                      <span className="font-mono text-[9px] text-sky-500 tracking-widest hidden sm:inline-block">AVAILABLE</span>
-                      <div className="w-2.5 h-2.5 rounded-full bg-sky-500 shadow-[0_0_12px_#0ea5e9]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-sky-500 shadow-[0_0_12px_#0ea5e9] relative z-10" />
+                    <div className="flex flex-col relative z-10">
+                      <span className="font-oswald font-black text-xl text-white uppercase tracking-wide leading-none mb-1">Android</span>
+                      <span className="font-mono text-[9px] text-sky-500 tracking-widest uppercase leading-none mt-1">AVAILABLE</span>
                     </div>
                   </div>
 
-                  <div className="flex-1 p-4 sm:p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-between group overflow-hidden relative shadow-2xl shadow-sky-900/20">
+                  <div className="flex-1 p-4 sm:p-5 bg-slate-900 rounded-2xl border border-slate-800 flex items-center justify-start gap-4 group overflow-hidden relative shadow-2xl shadow-sky-900/20 cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent transition-opacity" />
-                    <span className="font-oswald font-black text-xl text-white uppercase relative z-10 tracking-wide">Windows</span>
-                    <div className="flex items-center gap-2 relative z-10">
-                      <span className="font-mono text-[9px] text-sky-500 tracking-widest hidden sm:inline-block">AVAILABLE</span>
-                      <div className="w-2.5 h-2.5 rounded-full bg-sky-500 shadow-[0_0_12px_#0ea5e9]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-sky-500 shadow-[0_0_12px_#0ea5e9] relative z-10" />
+                    <div className="flex flex-col relative z-10">
+                      <span className="font-oswald font-black text-xl text-white uppercase tracking-wide leading-none mb-1">Windows</span>
+                      <span className="font-mono text-[9px] text-sky-500 tracking-widest uppercase leading-none mt-1">AVAILABLE</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-4 bg-white/40 backdrop-blur-sm border border-slate-300/40 rounded-2xl flex items-center justify-start gap-4 shadow-sm border-l-4 border-l-amber-500">
+                <div className="p-4 bg-white/40 backdrop-blur-sm border border-slate-300/40 rounded-2xl flex items-center justify-start gap-4 shadow-sm border-l-4 border-l-amber-500 cursor-pointer">
                   <div className="w-3 h-3 rounded-full bg-amber-500 shadow-[0_0_10px_#f59e0b] animate-pulse" />
                   <div className="flex flex-col">
                     <span className="font-oswald text-sm md:text-base text-slate-800 font-bold uppercase tracking-wider leading-none mb-1">iOS & Mac OS</span>
@@ -86,7 +86,7 @@ export default function Page() {
       {/* ------------------------------------------------------------ */}
       {/* 3. MAIN CONTENT                                              */}
       {/* ------------------------------------------------------------ */}
-      <div id="features" className="relative z-50 bg-[#e0e5ec] border-t-[1.5px] border-white/70">
+      <div id="features" className="relative z-50 bg-[#e0e5ec]">
         <div className="container mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-16">
 
           <Suspense fallback={<div className="h-64 bg-slate-100 animate-pulse rounded-[3rem]" />}>
@@ -110,7 +110,7 @@ export default function Page() {
       {/* ------------------------------------------------------------ */}
       {/* 4. CORE INTELLIGENCE GRID                                     */}
       {/* ------------------------------------------------------------ */}
-      <section className="relative z-40 bg-[#e0e5ec] pb-24">
+      <section className="relative z-40 bg-[#e0e5ec] pt-16 md:pt-24 pb-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <IntelligenceCard
@@ -135,7 +135,7 @@ export default function Page() {
       {/* ------------------------------------------------------------ */}
       {/* 5. FAQ SECTION (SEO OPTIMIZED)                               */}
       {/* ------------------------------------------------------------ */}
-      <section className="relative z-40 bg-[#e0e5ec] pb-24 border-t border-white/40">
+      <section className="relative z-40 bg-[#e0e5ec] pb-24">
         <div className="container mx-auto px-4 sm:px-6 pt-24">
           <h2 className="font-oswald font-black text-4xl md:text-6xl text-slate-800 uppercase mb-12 text-center">
             GST Billing <span className="text-sky-500">FAQ</span>

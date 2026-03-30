@@ -33,10 +33,11 @@ export default function Hero({
       {/* 1. Background Image - High Visibility */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-bg.png"
+          src="/hero-bg.webp"
           alt="KWIQ BILLING - Best GST Billing Software Interface for Indian Businesses"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-right md:object-center opacity-[0.25] md:opacity-[0.40] contrast-125 saturate-110"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#e0e5ec] via-[#e0e5ec]/60 to-transparent z-10" />
@@ -52,7 +53,7 @@ export default function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.85] md:leading-[0.8] uppercase select-none text-[clamp(3.5rem,14vw,12rem)]">
+            <h1 className="font-oswald font-black text-slate-950 tracking-[-0.05em] leading-[0.85] md:leading-[0.8] uppercase select-none text-[clamp(3.5rem,11vw,12rem)]">
               <span className="block">{titleLine1}</span>
               <span className="block text-[#0ea5e9]">{titleLine2}</span>
             </h1>

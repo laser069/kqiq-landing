@@ -10,6 +10,7 @@
 
 html {
   overflow-x: hidden;
+  font-size: 80%; /* Scales down all Tailwind rem units by 20% to achieve the 80% zoom look at 100% zoom */
 }
 
 @theme inline {

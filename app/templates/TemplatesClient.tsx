@@ -7,11 +7,11 @@ import Link from "next/link";
 import { LayoutTemplate, X, ZoomIn } from "lucide-react";
 
 const invoices = [
-    { id: 1, name: "Classic Template", src: "/invoice1.png" },
-    { id: 2, name: "Modern Template", src: "/invoice2.png" },
-    { id: 3, name: "Compact Template", src: "/invoice3.png" },
-    { id: 4, name: "Thermal Template", src: "/invoice4.png" },
-    { id: 5, name: "GST Detailed", src: "/invoice5.png" },
+    { id: 1, name: "Classic Template", src: "/invoice1.webp" },
+    { id: 2, name: "Modern Template", src: "/invoice2.webp" },
+    { id: 3, name: "Compact Template", src: "/invoice3.webp" },
+    { id: 4, name: "Thermal Template", src: "/invoice4.webp" },
+    { id: 5, name: "GST Detailed", src: "/invoice5.webp" },
 ];
 
 export default function TemplatesClient() {

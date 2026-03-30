@@ -66,15 +66,16 @@ export default function ExpeditionPage(): React.JSX.Element {
 
       {/* 1. HERO SECTION - The Motivation */}
       <section className="relative h-screen w-full flex items-center px-4 sm:px-12 md:px-24 overflow-hidden bg-[#e0e5ec]">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
-            src="/expedition_hero_map.png"
-            alt="KWIQBILL Global Reach"
+            src="/hero-bg.webp"
+            alt="Background"
             fill
-            className="object-cover opacity-30 grayscale"
+            priority
+            sizes="100vw"
+            className="object-cover object-right md:object-center opacity-[0.25] md:opacity-[0.40] contrast-125 saturate-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#e0e5ec] via-[#e0e5ec]/60 to-transparent" />
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:24px_24px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#e0e5ec] via-[#e0e5ec]/60 to-transparent z-10" />
         </div>
 
 
@@ -217,7 +218,7 @@ function PhaseCard({ phase, index }: { phase: Phase; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.8 }}
-      className="p-6 sm:p-8 lg:p-12 bg-[#e0e5ec] rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3.5rem] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] md:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6 md:space-y-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500"
+      className="p-6 sm:p-8 lg:p-12 bg-[#e0e5ec] rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3.5rem] shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] md:shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/40 space-y-6 md:space-y-8 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
     >
       <div className="flex justify-between items-start relative z-10">
         <div className={`px-4 py-1 rounded-sm ${phase.color} text-white font-mono text-[9px] font-black tracking-widest uppercase`}>

@@ -7,7 +7,7 @@ import FAQSection from "@/components/ui/FAQSection";
 
 export default function ContactPage() {
     return (
-        <div className="bg-white min-h-screen font-oswald">
+        <div className="bg-[#e0e5ec] min-h-screen font-oswald">
             <ContactHero />
             <ContactForm />
             <FAQSection />

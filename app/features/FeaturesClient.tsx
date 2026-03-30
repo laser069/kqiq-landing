@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { Package, Users, Barcode, Cloud, Palette, Percent } from "lucide-react";
 
 const highlights = [
   { label: "Fast Billing & Checkout", code: "CMD_FAST" },
@@ -25,7 +26,7 @@ const coreFeatures = [
       "Touch-friendly interface",
       "Ideal for on-the-go businesses"
     ],
-    image: "/mobile.jpeg",
+    image: "/mobile.webp",
     id: "feature-mobile"
   },
   {
@@ -38,7 +39,7 @@ const coreFeatures = [
       "Local data storage",
       "Suitable for retail & wholesale stores"
     ],
-    image: "/img1.png",
+    image: "/img1.webp",
     id: "feature-desktop"
   },
   {
@@ -51,7 +52,7 @@ const coreFeatures = [
       "Payment method insights",
       "Export reports to PDF"
     ],
-    image: "/img2.png",
+    image: "/img2.webp",
     id: "feature-reporting"
   },
   {
@@ -64,24 +65,67 @@ const coreFeatures = [
       "Custom invoice templates",
       "Invoice history & reprints"
     ],
-    image: "/img3.png",
+    image: "/img3.webp",
     id: "feature-billing"
   }
 ];
 
 const subFeatures = [
-  { title: "Inventory & Stock", tag: "STK_V4" },
-  { title: "Customer Profiles", tag: "CRM_ID" },
-  { title: "Barcode Generation", tag: "BCODE_GEN" },
-  { title: "Google Drive Backup", tag: "CLD_SYNC" },
-  { title: "Invoice Customization", tag: "UI_THEME" },
-  { title: "Tax Configuration", tag: "GST_RULES" },
+  {
+    title: "Inventory & Stock",
+    tag: "STK_V4",
+    icon: <Package className="w-6 h-6" />,
+    description: "Real-time stock tracking, variant management, and automated low-stock alerts to keep your business running smoothly."
+  },
+  {
+    title: "Customer Profiles",
+    tag: "CRM_ID",
+    icon: <Users className="w-6 h-6" />,
+    description: "Maintain a comprehensive database of customer history, preferences, and loyalty data to personalize every checkout."
+  },
+  {
+    title: "Barcode Generation",
+    tag: "BCODE_GEN",
+    icon: <Barcode className="w-6 h-6" />,
+    description: "Create and print custom barcodes for your entire catalog to enable rapid-fire scanning and error-free billing."
+  },
+  {
+    title: "Google Drive Backup",
+    tag: "CLD_SYNC",
+    icon: <Cloud className="w-6 h-6" />,
+    description: "Automatically sync your sales reports and business data to your personal Google Drive for ultimate data security."
+  },
+  {
+    title: "Invoice Customization",
+    tag: "UI_THEME",
+    icon: <Palette className="w-6 h-6" />,
+    description: "Fully personalize your invoices with custom themes, business branding, and dynamic layout options that impress clients."
+  },
+  {
+    title: "Tax Configuration",
+    tag: "GST_RULES",
+    icon: <Percent className="w-6 h-6" />,
+    description: "Automated GST compliance with flexible rules for CGST, SGST, & IGST across all product categories and regions."
+  },
 ];
 
 export default function FeaturesClient() {
   return (
-    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-20 pb-24 px-4 sm:px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <main className="relative min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-32 pb-24 overflow-x-hidden">
+      {/* Shared Hero Background for Page Top */}
+      <div className="absolute top-0 left-0 w-full h-[100vh] lg:h-[80vh] z-0 pointer-events-none">
+        <Image
+          src="/hero-bg.webp"
+          alt="Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-right md:object-center opacity-[0.25] md:opacity-[0.40] contrast-125 saturate-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#e0e5ec] via-[#e0e5ec]/60 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#e0e5ec]/10 via-transparent to-[#e0e5ec] z-10" />
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
 
         {/* 1. Page Hero Section */}
         <section className="mb-20 md:mb-32">
@@ -183,7 +227,7 @@ export default function FeaturesClient() {
               >
                 {feature.id === 'feature-mobile' ? (
                   /* 9:16 Mobile Card */
-                  <div className="relative bg-white rounded-2xl shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 max-w-sm aspect-[9/19.5] w-full overflow-hidden">
+                  <div className="relative bg-white rounded-2xl shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60 max-w-sm aspect-[9/16] w-full overflow-hidden">
                     <div className="relative w-full h-full">
                       <Image
                         src={feature.image}
@@ -220,20 +264,46 @@ export default function FeaturesClient() {
             <div className="h-[2px] w-24 bg-sky-500 mx-auto mt-6" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {subFeatures.map((f, i) => (
               <motion.div
                 key={f.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-[#e0e5ec] p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] border-t border-l border-white/40 flex flex-col items-start gap-3 sm:gap-4 group hover:shadow-inner transition-all duration-300"
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="relative bg-[#e0e5ec] p-8 sm:p-12 rounded-[2.5rem] shadow-[15px_15px_30px_#bebebe,-15px_-15px_30px_#ffffff] border-t border-l border-white/60 flex flex-col items-start gap-6 group hover:shadow-inner transition-all duration-500 cursor-pointer overflow-hidden"
               >
-                <span className="font-oswald font-black text-lg sm:text-xl text-slate-800 uppercase tracking-[0.1em]">
-                  {f.title}
-                </span>
-                <div className="w-full h-[1px] bg-slate-300/30 group-hover:bg-sky-500/30 transition-colors mt-2" />
+                {/* Decorative Large Icon Background */}
+                <div className="absolute -top-6 -right-6 scale-[2.5] rotate-12 opacity-[0.03] group-hover:opacity-[0.06] transition-all duration-700 text-slate-900 group-hover:text-sky-500 pointer-events-none">
+                  {f.icon}
+                </div>
+
+                {/* Neumorphic Icon Container */}
+                <div className="w-16 h-16 rounded-2xl bg-[#e0e5ec] shadow-[inset_6px_6px_12px_#bebebe,inset_-6px_-6px_12px_#ffffff] flex items-center justify-center text-slate-400 group-hover:text-sky-500 transition-all duration-500">
+                  <div className="scale-110">
+                    {f.icon}
+                  </div>
+                </div>
+
+                <div className="space-y-4 relative z-10">
+                  <h3 className="font-oswald font-black text-2xl text-slate-950 uppercase tracking-tight leading-none group-hover:text-sky-500 transition-colors duration-500">
+                    {f.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm font-bold leading-relaxed uppercase italic opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+                    {f.description}
+                  </p>
+                </div>
+
+                {/* Animated Indicator Bar */}
+                <div className="mt-2 w-16 h-1.5 bg-[#e0e5ec] rounded-full shadow-[inset_3px_3px_6px_#bebebe,inset_-3px_-3px_6px_#ffffff] overflow-hidden">
+                  <motion.div
+                    className="h-full bg-sky-500 shadow-[0_0_10px_rgba(14,165,233,0.5)]"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    transition={{ delay: 0.5 + (i * 0.1), duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -247,8 +317,8 @@ export default function FeaturesClient() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-16">
-            {["MOBILE (ANDROID)", "DESKTOP", "WEB"].map(platform => (
-              <div key={platform} className="px-8 py-6 md:px-12 md:py-8 bg-[#e0e5ec] rounded-2xl shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff] border border-white/20 flex flex-col items-center">
+            {["MOBILE (ANDROID)", "DESKTOP"].map(platform => (
+              <div key={platform} className="px-8 py-6 md:px-12 md:py-8 bg-[#e0e5ec] rounded-2xl shadow-[inset_8px_8px_16px_#bebebe,inset_-8px_-8px_16px_#ffffff] border border-white/20 flex flex-col items-center cursor-pointer hover:shadow-inner transition-all duration-300">
                 <span className="font-oswald font-black text-lg md:text-xl text-slate-800 tracking-[0.2em]">{platform}</span>
               </div>
             ))}

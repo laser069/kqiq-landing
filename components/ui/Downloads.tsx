@@ -6,7 +6,7 @@ import { Smartphone, Monitor, Download, ArrowRight } from "lucide-react";
 
 export default function Downloads() {
     return (
-        <section className="relative z-40 bg-[#e0e5ec] py-24 border-t-[1.5px] border-white/70">
+        <section className="relative z-40 bg-[#e0e5ec] py-24">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col gap-12">
                     {/* Header */}

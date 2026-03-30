@@ -26,10 +26,10 @@ export default function TextOverlayScroll(): React.JSX.Element {
   });
 
   const cardData: BillingModule[] = [
-    { title: "RECONCILIATION_CORE", tag: "FIN_01", desc: "Real-time automated balancing of ledgers.", imageSrc: "/image.png" },
-    { title: "COMPLIANCE_SHIELD", tag: "GOV_02", desc: "Instant VAT/GST calculation and syncing.", imageSrc: "/image.png" },
-    { title: "SMART_INVOICING", tag: "DIST_03", desc: "Dynamic PDF generation with triggers.", imageSrc: "/image.png" },
-    { title: "REVENUE_FORENSICS", tag: "AUDIT_04", desc: "Deep-trace transaction logging.", imageSrc: "/image.png" },
+    { title: "RECONCILIATION_CORE", tag: "FIN_01", desc: "Real-time automated balancing of ledgers.", imageSrc: "/image.webp" },
+    { title: "COMPLIANCE_SHIELD", tag: "GOV_02", desc: "Instant VAT/GST calculation and syncing.", imageSrc: "/image.webp" },
+    { title: "SMART_INVOICING", tag: "DIST_03", desc: "Dynamic PDF generation with triggers.", imageSrc: "/image.webp" },
+    { title: "REVENUE_FORENSICS", tag: "AUDIT_04", desc: "Deep-trace transaction logging.", imageSrc: "/image.webp" },
   ];
 
   return (
@@ -45,7 +45,7 @@ export default function TextOverlayScroll(): React.JSX.Element {
             >
               Infrastructure Layer 01
             </motion.span>
-            <h2 className="text-[14vw] font-oswald font-black text-slate-950 uppercase tracking-[-0.07em] leading-[0.7] flex flex-col items-center">
+            <h2 className="text-[11vw] font-oswald font-black text-slate-950 uppercase tracking-[-0.07em] leading-[0.7] flex flex-col items-center">
               <span className="block">KWIQ</span>
               <span className="block text-slate-200 -mt-[10px] md:-mt-[20px]">PROTOCOL</span>
             </h2>

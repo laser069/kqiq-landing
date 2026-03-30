@@ -28,9 +28,9 @@ export default function Footer() {
           <ul className="space-y-[1.15rem] font-oswald font-bold text-[13px] uppercase tracking-widest text-slate-600">
             <li><Link href="/" className="hover:text-sky-500 transition-colors">Index</Link></li>
             <li><Link href="/features" className="hover:text-sky-500 transition-colors">Features</Link></li>
-            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Resources</Link></li>
             <li><Link href="/observatory" className="hover:text-sky-500 transition-colors">Observatory</Link></li>
-            <li><Link href="/mission" className="hover:text-sky-500 transition-colors">Mission</Link></li>
+            <li><Link href="/resources" className="hover:text-sky-500 transition-colors">Resources</Link></li>
+            <li><Link href="/expedition" className="hover:text-sky-500 transition-colors">Mission</Link></li>
             <li><Link href="/contact" className="hover:text-sky-500 transition-colors">Contact</Link></li>
           </ul>
         </div>
@@ -43,7 +43,7 @@ export default function Footer() {
             <li><Link href="/terms" className="hover:text-sky-500 transition-colors">Terms</Link></li>
             <li><Link href="/privacy" className="hover:text-sky-500 transition-colors">Privacy</Link></li>
             <li><Link href="/compare" className="hover:text-sky-500 transition-colors">Compare</Link></li>
-            <li><Link href="/support" className="hover:text-sky-500 transition-colors">Support</Link></li>
+            <li><Link href="/contact" className="hover:text-sky-500 transition-colors">Support</Link></li>
           </ul>
         </div>
 
@@ -64,7 +64,7 @@ export default function Footer() {
 
       </div>
 
-      <div className="max-w-7xl mx-auto mt-28 mb-4 flex justify-start items-center relative lg:left-0 text-left">
+      <div className="max-w-7xl mx-auto mt-8 mb-4 flex justify-start items-center relative lg:left-0 text-left">
         <p className="font-mono text-[9px] text-slate-400 font-bold uppercase tracking-widest">
           © {currentYear} KWIQBILL PROJECT // POWERED BY ZIPPY
         </p>

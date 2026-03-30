@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function ContactHero() {
   return (
-    <section className="relative w-full min-h-screen bg-[#e0e5ec] pt-24 sm:pt-32 p-4 sm:p-6 lg:p-12 flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-[#e0e5ec] pt-24 sm:pt-28 lg:pt-32 px-4 pb-4 sm:px-6 sm:pb-6 lg:px-12 lg:pb-12 flex items-center justify-center overflow-hidden">
 
       <div className="w-full max-w-screen-2xl grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-8 lg:gap-12">
 
@@ -22,7 +22,7 @@ export default function ContactHero() {
 
           {/* THE BOLD TYPOGRAPHY SECTION */}
           <div className="relative z-10 mt-6 sm:mt-12 break-words">
-            <h1 className="font-oswald font-black text-[clamp(2.5rem,12vw,14rem)] md:text-[clamp(3.5rem,15vw,14rem)] leading-[0.8] text-slate-800 uppercase tracking-[-0.06em]">
+            <h1 className="font-oswald font-black text-[clamp(2.5rem,9.5vw,14rem)] md:text-[clamp(3.5rem,12vw,14rem)] leading-[0.8] text-slate-800 uppercase tracking-[-0.06em]">
               <span className="block drop-shadow-[4px_6px_8px_rgba(0,0,0,0.15)]">KWIQ</span>
               <span className="block text-sky-500 [text-shadow:_-2px_-2px_0_#fff,2px_-2px_0_#fff,-2px_2px_0_#fff,2px_2px_0_#fff,6px_8px_12px_rgba(14,165,233,0.3)]">
                 BILLING

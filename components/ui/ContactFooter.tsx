@@ -44,7 +44,7 @@ export default function ContactFooter() {
                 >
 
                     <div className="flex-1">
-                        <h2 className="font-oswald text-3xl md:text-8xl text-slate-900 uppercase leading-[0.85] mb-6 md:mb-8 tracking-tight text-[clamp(2.5rem,10vw,8rem)] md:text-8xl">
+                        <h2 className="font-oswald text-3xl md:text-8xl text-slate-900 uppercase leading-[0.85] mb-6 md:mb-8 tracking-tight text-[clamp(2.5rem,8vw,8rem)] md:text-8xl">
                             SEND A <span className="text-sky-500">SIGNAL</span> IF <br />
                             YOU WANT TO <br />
                             CONNECT

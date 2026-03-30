@@ -26,9 +26,9 @@ export default function GatewayScroll(): React.JSX.Element {
   const btnScale = useTransform(scrollYProgress, [0.85, 1], [0.8, 1]);
 
   const pairs: { id: string; left: string; right: string; range: [number, number]; z: number }[] = [
-    { id: "pair-1", left: "/billing.png", right: "/dashboard.png", range: [0.0, 0.45], z: 30 },
-    { id: "pair-2", left: "/dashboard.png", right: "/billing.png", range: [0.25, 0.75], z: 20 },
-    { id: "pair-3", left: "/billing.png", right: "/dashboard.png", range: [0.55, 0.95], z: 10 },
+    { id: "pair-1", left: "/billing.webp", right: "/dashboard.webp", range: [0.0, 0.45], z: 30 },
+    { id: "pair-2", left: "/dashboard.webp", right: "/billing.webp", range: [0.25, 0.75], z: 20 },
+    { id: "pair-3", left: "/billing.webp", right: "/dashboard.webp", range: [0.55, 0.95], z: 10 },
   ];
 
   return (

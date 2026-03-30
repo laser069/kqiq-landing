@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const resources = [
   {
@@ -49,8 +50,21 @@ const resources = [
 
 export default function ResourcesClient() {
   return (
-    <main className="min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-24 md:pt-32 pb-16 md:pb-24 px-4 sm:px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <main className="relative min-h-screen bg-[#e0e5ec] selection:bg-sky-500/20 pt-32 md:pt-40 pb-16 md:pb-24 overflow-x-hidden">
+      {/* Shared Hero Background for Page Top */}
+      <div className="absolute top-0 left-0 w-full h-[80vh] lg:h-[70vh] z-0 pointer-events-none">
+        <Image
+          src="/hero-bg.webp"
+          alt="Background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-right md:object-center opacity-[0.25] md:opacity-[0.40] contrast-125 saturate-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#e0e5ec] via-[#e0e5ec]/60 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#e0e5ec]/10 via-transparent to-[#e0e5ec] z-10" />
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Page Hero Section */}
         <section className="mb-20 md:mb-24">
           <motion.div
@@ -78,7 +92,7 @@ export default function ResourcesClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.8 }}
-              className="group relative bg-[#e0e5ec] p-6 sm:p-8 md:p-10 lg:p-14 rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/60 flex flex-col h-full hover:shadow-[15px_15px_40px_rgba(56,189,248,0.1)] transition-all duration-500"
+              className="group relative bg-[#e0e5ec] p-6 sm:p-8 md:p-10 lg:p-14 rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[3rem] shadow-[20px_20px_60px_#bebebe,-20px_-20px_40px_#ffffff] border-t border-l border-white/60 flex flex-col h-full hover:shadow-[15px_15px_40px_rgba(56,189,248,0.1)] transition-all duration-500 cursor-pointer"
             >
 
               <h2 className="font-oswald font-black text-2xl md:text-4xl text-slate-800 uppercase mb-6 tracking-tight">

@@ -9,8 +9,8 @@ import { X } from "lucide-react";
 const navItems = [
   { label: "INDEX", href: "/" },
   { label: "FEATURES", href: "/features" },
-  { label: "RESOURCES", href: "/resources" },
   { label: "OBSERVATORY", href: "/observatory" },
+  { label: "RESOURCES", href: "/resources" },
   { label: "MISSION", href: "/expedition" },
   { label: "CONTACT", href: "/contact" },
 ];

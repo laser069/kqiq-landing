@@ -26,7 +26,7 @@ export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section className="bg-white py-12 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 relative border-t-2 border-slate-100">
+        <section className="bg-[#e0e5ec] py-12 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 relative">
 
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
 
@@ -37,7 +37,7 @@ export default function FAQSection() {
                             <div className="w-2 h-2 bg-sky-500 rounded-full" />
                             <div className="w-2 h-2 bg-slate-200 rounded-full" />
                         </div>
-                        <h2 className="font-oswald text-slate-900 uppercase leading-[1.1] tracking-tighter text-[clamp(2.5rem,10vw,3.5rem)] md:text-5xl">
+                        <h2 className="font-oswald text-slate-900 uppercase leading-[1.1] tracking-tighter text-[clamp(2.5rem,8vw,3.5rem)] md:text-5xl">
                             COMMON <br />
                             QUESTIONS.
                         </h2>
@@ -63,18 +63,18 @@ export default function FAQSection() {
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
-                            className="border-b border-slate-100 group cursor-pointer"
+                            className="border-b border-slate-300/40 group cursor-pointer"
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
                         >
-                            <div className="py-6 sm:py-10 px-2 sm:px-4 flex items-center justify-between group-hover:bg-slate-50/50 transition-colors gap-4">
+                            <div className="py-6 sm:py-10 px-2 sm:px-4 flex items-center justify-between group-hover:bg-slate-300/20 transition-colors gap-4">
                                 <div className="flex items-start sm:items-center gap-4 sm:gap-6 w-[80%]">
                                     <span className="font-mono text-[10px] text-slate-400 font-bold mt-1 sm:mt-0">0{index + 1}</span>
                                     <h3 className="font-oswald text-lg md:text-2xl lg:text-3xl text-slate-900 tracking-tight transition-transform group-hover:translate-x-2 leading-tight">
                                         {faq.q}
                                     </h3>
                                 </div>
-                                <div className={`w-8 h-8 sm:w-10 sm:h-10 shrink-0 border border-slate-200 rounded-full flex items-center justify-center transition-all ${openIndex === index ? 'bg-sky-500 border-sky-500 rotate-45 shadow-lg shadow-sky-500/20' : 'bg-white'}`}>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={openIndex === index ? 'text-white scale-75 sm:scale-100' : 'text-slate-400 scale-75 sm:scale-100'}>
+                                <div className={`w-8 h-8 sm:w-10 sm:h-10 shrink-0 border border-white/40 rounded-full flex items-center justify-center transition-all shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] ${openIndex === index ? 'bg-sky-500 border-sky-500 rotate-45 !shadow-lg !shadow-sky-500/20' : 'bg-[#e0e5ec]'}`}>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className={openIndex === index ? 'text-white scale-75 sm:scale-100' : 'text-slate-500 scale-75 sm:scale-100'}>
                                         <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
                                     </svg>
                                 </div>

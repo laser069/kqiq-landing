@@ -35,7 +35,7 @@ export default function ContactForm() {
         }
     };
     return (
-        <section id="contact-form" className="bg-[#e0e5ec] py-16 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden border-t-[1.5px] border-white/70">
+        <section id="contact-form" className="bg-[#e0e5ec] py-16 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden">
 
             {/* Background Structural Detail */}
             <div className="absolute top-0 right-0 w-[50vw] h-full bg-slate-400/5 -skew-x-12 translate-x-32 pointer-events-none" />
@@ -46,7 +46,7 @@ export default function ContactForm() {
                     {/* Left side: Professional Identity & Security */}
                     <div className="lg:col-span-4 space-y-12">
                         <div className="space-y-6">
-                            <h2 className="font-oswald text-slate-900 uppercase leading-[0.9] tracking-tighter text-[clamp(2.5rem,12vw,5.5rem)] break-words">
+                            <h2 className="font-oswald text-slate-900 uppercase leading-[0.9] tracking-tighter text-[clamp(2.5rem,9.5vw,5.5rem)] break-words">
                                 START A <br />
                                 <span className="text-sky-500">PROJECT.</span>
                             </h2>
