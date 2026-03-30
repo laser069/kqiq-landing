@@ -2,8 +2,11 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
+  title: "Terms & Conditions | KwiqBill",
   description: "Terms and conditions for using KwiqBill software by Zippy Digital Solutions.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {

@@ -2,8 +2,11 @@ import React from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | KwiqBill",
   description: "Privacy policy detailing data collection, Google Sign-In, and Google Drive API usage for KwiqBill.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {
@@ -14,7 +17,7 @@ export default function PrivacyPage() {
           Privacy <span className="text-sky-500">Policy</span>
         </h1>
         <p className="text-slate-500 font-bold mb-10 text-sm uppercase tracking-widest">
-          LAST UPDATED: March 24, 2026
+          LAST UPDATED: March 30, 2026
         </p>
 
         <div className="space-y-10 text-slate-700 font-bold leading-relaxed text-sm">
@@ -68,6 +71,11 @@ export default function PrivacyPage() {
                   <li><strong>Restricted Scope:</strong> KwiqBill only creates, uses, and accesses its own specific application backup files within your Google Drive.</li>
                   <li><strong>No Access to Unrelated Files:</strong> KwiqBill does <strong className="text-rose-500">NOT</strong> and cannot access, read, modify, or delete any other unrelated files, folders, or personal data stored in your Google Drive.</li>
                 </ul>
+                <div className="mt-4 p-4 bg-sky-50/50 rounded-lg border border-sky-100">
+                  <p className="text-[11px] text-sky-800 leading-relaxed font-bold">
+                    KwiqBill's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="underline decoration-sky-300 hover:text-sky-600 transition-colors">Google API Service User Data Policy</a>, including the Limited Use requirements.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
