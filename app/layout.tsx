@@ -76,6 +76,9 @@ export const metadata: Metadata = {
     },
   },
   category: "Business",
+  verification: {
+    google: "1X8e-RTeYB22ybUIHkwUIMpC_U8u_S62ENiFcQO_xmg",
+  },
 };
 
 const schabo = localFont({
