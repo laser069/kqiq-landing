@@ -15,9 +15,12 @@ const navItems = [
   { label: "CONTACT", href: "/contact" },
 ];
 
-export default function Navbar(): React.JSX.Element {
+export default function Navbar(): React.ReactNode {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Google OAuth Branding Compliance: Minimalist Privacy Policy
+  if (pathname === "/privacy-policy") return null;
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 

@@ -2,9 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  // Google OAuth Branding Compliance: Minimalist Privacy Policy
+  if (pathname === "/privacy-policy") return null;
 
   return (
     <footer className="w-full bg-[#e0e5ec] pb-12 pt-24 px-4 sm:px-6 md:px-24">
