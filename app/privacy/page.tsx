@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | KwiqBill",
   description: "Privacy policy detailing data collection, Google Sign-In, and Google Drive API usage for KwiqBill.",
   alternates: {
-    canonical: "/privacy",
+    canonical: "https://kwiq.zippydigitalsolutions.in/privacy",
   },
 };
 
