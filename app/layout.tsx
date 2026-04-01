@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/layout/Navbar";
@@ -77,6 +79,9 @@ export const metadata: Metadata = {
     },
   },
   category: "Business",
+ verification: {
+  google: "1X8e-RTeYB22ybUIHkwUIMpC_U8u_S62ENiFcQO_xmg",
+},
 };
 
 const schabo = localFont({
@@ -100,14 +105,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`light ${schabo.variable} ${oswald.variable}`}>
       <body className="min-h-screen flex flex-col antialiased bg-white text-slate-900">
-          <Script id="google-verification" strategy="beforeInteractive">
-                {`
-                  var meta = document.createElement('meta');
-                  meta.name = 'google-site-verification';
-                  meta.content = '1X8e-RTeYB22ybUIHkwUIMpC_U8u_S62ENiFcQO_xmg';
-                  document.head.appendChild(meta);
-                `}
-              </Script>
+
         {/* Changed 'absolute' to 'fixed' to lock it to the top of the viewport */}
         <header className="fixed top-0 z-[100] w-full bg-transparent pointer-events-none">
           <div className="pointer-events-auto">
