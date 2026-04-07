@@ -11,30 +11,30 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="py-12 px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto bg-white/40 backdrop-blur-md rounded-[2rem] p-8 md:p-12 shadow-[20px_20px_60px_#bebebe,-20px_-20px_60px_#ffffff] border-t border-l border-white/60">
-        <h1 className="font-oswald font-black text-4xl md:text-5xl text-slate-900 uppercase mb-4 tracking-tight">
+    <div className="py-20 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto bg-white/50 backdrop-blur-xl rounded-[3rem] p-10 md:p-20 shadow-[40px_40px_80px_#bebebe,-40px_-40px_80px_#ffffff] border border-white/80">
+        <h1 className="font-oswald font-black text-5xl md:text-7xl text-slate-900 uppercase mb-6 tracking-tighter leading-none">
           Privacy <span className="text-sky-500">Policy</span>
         </h1>
-        <p className="text-slate-500 font-bold mb-10 text-sm uppercase tracking-widest">
+        <p className="text-slate-400 font-black mb-16 text-base uppercase tracking-[0.2em]">
           LAST UPDATED: March 30, 2026
         </p>
 
-        <div className="space-y-10 text-slate-700 font-bold leading-relaxed text-sm">
+        <div className="space-y-20 text-slate-600 font-medium leading-loose text-lg">
           <p>
             Welcome to KwiqBill. <strong className="text-sky-600">Zippy Digital Solutions</strong> ("we," "our," or "us") is committed to protecting your privacy and transparently explaining how your information is collected, used, and safeguarded when you use our software.
           </p>
 
           <section>
-            <h2 className="font-oswald font-black text-xl text-slate-900 uppercase mb-4">1. Information We Collect</h2>
+            <h2 className="font-oswald font-black text-3xl text-slate-900 uppercase mb-6 tracking-tight">1. Information We Collect</h2>
             <p className="mb-6 text-slate-500 italic">
               KwiqBill is designed to operate primarily offline as a local-first application, keeping your sensitive business data stored locally on your device. We only collect the minimal information necessary to authenticate users and manage subscriptions.
             </p>
 
             <div className="space-y-6">
               <div className="bg-white/60 rounded-xl p-6 shadow-sm border border-white">
-                <h3 className="font-oswald font-black tracking-widest text-sm text-slate-800 uppercase mb-2">1.1 Locally Stored Data (Not sent to our servers)</h3>
-                <p className="text-xs mb-2">The following data remains strictly on your local device unless you explicitly authorize and configure a third-party cloud sync:</p>
+                <h3 className="font-oswald font-black tracking-widest text-lg text-slate-800 uppercase mb-4">1.1 Locally Stored Data (Not sent to our servers)</h3>
+                <p className="text-sm mb-4">The following data remains strictly on your local device unless you explicitly authorize and configure a third-party cloud sync:</p>
                 <ul className="list-disc list-inside space-y-1 text-slate-600">
                   <li><strong>Business Profile:</strong> Name, Address, Tax details (GST/VAT).</li>
                   <li><strong>Customer & Vendor Data:</strong> Contacts, Addresses, Emails.</li>
@@ -43,8 +43,8 @@ export default function PrivacyPage() {
               </div>
 
               <div className="bg-white/60 rounded-xl p-6 shadow-sm border border-white">
-                <h3 className="font-oswald font-black tracking-widest text-sm text-slate-800 uppercase mb-2">1.2 Account & Subscription Data (Collected by us)</h3>
-                <p className="text-xs mb-2">To provide authentication and subscription management, we collect:</p>
+                <h3 className="font-oswald font-black tracking-widest text-lg text-slate-800 uppercase mb-4">1.2 Account & Subscription Data (Collected by us)</h3>
+                <p className="text-sm mb-4">To provide authentication and subscription management, we collect:</p>
                 <ul className="list-disc list-inside space-y-1 text-slate-600">
                   <li><strong>User details:</strong> Name, Email, Password.</li>
                   <li><strong>Subscription data:</strong> License status, license keys, and device linking information.</li>
@@ -54,17 +54,17 @@ export default function PrivacyPage() {
               </div>
 
               <div className="bg-white/60 rounded-xl p-6 shadow-sm border border-white">
-                <h3 className="font-oswald font-black tracking-widest text-sm text-slate-800 uppercase mb-2">1.3 Google Sign-In (OAuth)</h3>
-                <p className="text-xs mb-2">When you choose to authenticate using Google Sign-In, KwiqBill accesses only the following standard profile information:</p>
+                <h3 className="font-oswald font-black tracking-widest text-lg text-slate-800 uppercase mb-4">1.3 Google Sign-In (OAuth)</h3>
+                <p className="text-sm mb-4">When you choose to authenticate using Google Sign-In, KwiqBill accesses only the following standard profile information:</p>
                 <ul className="list-disc list-inside space-y-1 text-slate-600">
                   <li>Your name</li>
                   <li>Your email address</li>
                 </ul>
-                <p className="mt-3 text-[11px] text-sky-600 italic leading-tight">This information is used strictly to seamlessly create, log in to, and verify your KwiqBill account. We do not request, access, or collect any additional personal data from your Google account without your explicit, separate consent.</p>
+                <p className="mt-4 text-xs text-sky-600 italic leading-relaxed">This information is used strictly to seamlessly create, log in to, and verify your KwiqBill account. We do not request, access, or collect any additional personal data from your Google account without your explicit, separate consent.</p>
               </div>
 
               <div className="bg-white/60 rounded-xl p-6 shadow-sm border border-white">
-                <h3 className="font-oswald font-black tracking-widest text-sm text-slate-800 uppercase mb-2">1.4 Google Drive Integration</h3>
+                <h3 className="font-oswald font-black tracking-widest text-lg text-slate-800 uppercase mb-4">1.4 Google Drive Integration</h3>
                 <p className="text-xs mb-2">If you choose to enable automated cloud backups, KwiqBill requests access to the Google Drive API.</p>
                 <ul className="list-disc list-inside space-y-2 text-slate-600">
                   <li><strong>Consent:</strong> Access is only granted after you provide explicit authorization.</li>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
                   <li><strong>No Access to Unrelated Files:</strong> KwiqBill does <strong className="text-rose-500">NOT</strong> and cannot access, read, modify, or delete any other unrelated files, folders, or personal data stored in your Google Drive.</li>
                 </ul>
                 <div className="mt-4 p-4 bg-sky-50/50 rounded-lg border border-sky-100">
-                  <p className="text-[11px] text-sky-800 leading-relaxed font-bold">
+                  <p className="text-xs text-sky-800 leading-relaxed font-bold">
                     KwiqBill's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="underline decoration-sky-300 hover:text-sky-600 transition-colors">Google API Service User Data Policy</a>, including the Limited Use requirements.
                   </p>
                 </div>
@@ -116,7 +116,7 @@ export default function PrivacyPage() {
               <li>Secure token-based authentication (JWT).</li>
               <li>Encrypted communication protocols (HTTPS/SSL) for any data transmitted between your device and our servers.</li>
             </ul>
-            <p className="mt-4 italic text-[11px] text-slate-500 font-medium">
+            <p className="mt-6 italic text-sm text-slate-500 font-medium">
               While we strive to use the highest commercially acceptable means to protect your data, please remember that no method of transmission over the internet or electronic storage is 100% secure.
             </p>
           </section>
